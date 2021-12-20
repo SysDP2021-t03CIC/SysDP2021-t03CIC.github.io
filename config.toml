@@ -4,7 +4,7 @@ baseURL = "https://sysdp2021-t03cic.github.io/"
 # theme
 theme = "dot-hugo"
 # site title
-title = "t03 test site"
+title = "システム創成2021 CIC担当チーム 引継ぎ資料"
 # default language
 defaultContentLanguage = 'jp'
 # disable language
