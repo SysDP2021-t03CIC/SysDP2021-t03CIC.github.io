@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test1 on t03 test site</title>
+    <link>https://sysdp2021-t03cic.github.io/alpha/a/</link>
+    <description>Recent content in Test1 on t03 test site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
+    <lastBuildDate>Mon, 20 Dec 2021 13:54:50 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/alpha/a/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test2</title>
+      <link>https://sysdp2021-t03cic.github.io/alpha/a/test/</link>
+      <pubDate>Mon, 20 Dec 2021 13:54:50 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/alpha/a/test/</guid>
+      <description>first This is a test page&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>
