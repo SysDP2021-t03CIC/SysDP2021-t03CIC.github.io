@@ -1,6 +1,6 @@
 ################################# Default configuration ###################
 # provide your domain here
-baseURL = "https://examplesite.com/"
+baseURL = "https://sysdp2021-t03cic.github.io/"
 # theme
 theme = "dot-hugo"
 # site title
@@ -13,6 +13,7 @@ disableLanguages = []
 [markup.goldmark.renderer]
 unsafe = true
 
+publishDir = "docs"
 
 ############################# Default Parameters ##########################
 [params]
