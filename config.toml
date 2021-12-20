@@ -39,9 +39,6 @@ light_color = "#f8f9fa"
 # font family
 font_family = "lato" # Choose font family from : https://fonts.google.com/
 
-# contact form action
-contact_form_action = "#" # contact form works with : https://formspree.io
-
 
 ############################## social links ##############################
 [[params.social]]

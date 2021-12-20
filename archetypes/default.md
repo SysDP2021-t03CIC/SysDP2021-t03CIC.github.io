@@ -6,6 +6,6 @@ date: {{ .Date }}
 # trueにすると下書きとして非表示。falseにすると記事が表示されます。
 draft: true
 # 以下は検索用のタグです。適宜書き換えてください
-keywords: ["著者名","Unity","VR","ドローン","Tello"]
+keywords: ["著者名","Unity","ドローン","使い方","不具合"]
 ---
 
