@@ -3,27 +3,27 @@
   <head>
   <meta charset="utf-8">
   <title>システム創成2021 CIC担当チーム 引継ぎ資料</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="generator" content="Hugo 0.83.1" />
-  <meta name="description" content="システム創成2021 CIC担当チーム 引継ぎ資料 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+
+  <meta name="generator" content="Hugo 0.91.0" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <!-- ** CSS Plugins Needed for the Project ** -->
-  
+  <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
 
   <!-- themefy-icon -->
   <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
 
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/highlight/hybrid.css">
+
   <!--Favicon-->
   <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
 
   <!-- fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-
-  <!-- PDF.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
   
   <style>
   :root{
@@ -40,8 +40,6 @@
 <!-- Main Stylesheet -->
 
 <link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
-  
-<!-- ** JS Plugins Needed for the Project ** -->
 
 <!-- jquiry -->
 <script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
@@ -55,43 +53,20 @@
 <!-- match-height JS -->
 <script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
 
+<!-- highlight -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
-  
-
-  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
-
-
-
-
-
-
-
-
-<meta name="twitter:title" content="システム創成2021 CIC担当チーム 引継ぎ資料"/>
-<meta name="twitter:description" content="This is meta description"/>
-
-
-
-<meta property="og:title" content="システム創成2021 CIC担当チーム 引継ぎ資料" />
-<meta property="og:description" content="This is meta description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://sysdp2021-t03cic.github.io/" />
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="システム創成2021 CIC担当チーム 引継ぎ資料"/>
-<meta name="twitter:description" content="This is meta description"/>
 
 
 </head>
-
   
   <body>
     
     <!-- header -->
     <header class="banner overlay bg-cover" data-background="https://sysdp2021-t03cic.github.io/images/banner.jpg">
       <nav class="navbar navbar-expand-md navbar-dark">
-  <div class="container px-2 px-md-0">
+  <div class="container">
     <a class="navbar-brand px-2" href="/">
       
       
@@ -106,22 +81,25 @@
 
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/"></a>
+        </li>
         
         
         <li class="nav-item">
-          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
+          <a class="nav-link text-dark" href="/">Home</a>
         </li>
         
         
         
         <li class="nav-item">
-          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/faq">Faq</a>
+          <a class="nav-link text-dark" href="/faq">Faq</a>
         </li>
         
         
         
         <li class="nav-item">
-          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/contact">contact</a>
+          <a class="nav-link text-dark" href="/contact">contact</a>
         </li>
         
         
@@ -133,11 +111,11 @@
           </a>
           <div class="dropdown-menu">
             
-            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/installation">Installation</a>
+            <a class="dropdown-item" href="/installation">Installation</a>
             
-            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/billing-pricing">Billing and Pricing</a>
+            <a class="dropdown-item" href="/billing-pricing">Billing and Pricing</a>
             
-            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/features">Features</a>
+            <a class="dropdown-item" href="/features">Features</a>
             
           </div>
         </li>
@@ -148,7 +126,6 @@
     </div>
   </div>
 </nav>
-
       <!-- banner -->
 <div class="container section">
 	<div class="row">
@@ -168,6 +145,18 @@
 					var projects = [
 						
 						{
+							value: "Test_by_ban",
+							label: "<p>とりあえず使ってみた テストを兼ねて作成。実際にページを作成し、\n使った機能  ドローン パソコン VR やる気 根気 努力 友情 勝利  丸罰ゲーム    ここに うって いく。     ○ 罰 ○    罰    ○ 罰     まとめ いかがでしたでしょうか？もしよければチャンネル登録、高評価、Twitterのフォローなどなどをお願いします。\n</p><p>著者名</p><p>Unity</p><p>ドローン</p><p>使い方</p><p>不具合</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/a\/test_by_ban\/"
+						},
+						
+						{
+							value: "システム創成2021 CIC担当チーム 引継ぎ資料",
+							label: "<p></p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/"
+						},
+						
+						{
 							value: "TestCategory1",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/"
@@ -177,12 +166,6 @@
 							value: "TestCategory2",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/beta\/"
-						},
-						
-						{
-							value: "システム創成2021 CIC担当チーム 引継ぎ資料",
-							label: "<p></p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/"
 						},
 						
 						{
@@ -242,7 +225,6 @@
     
     
 
-  
   <!-- topics -->
   <section class="section">
     <div class="container">
@@ -286,13 +268,13 @@
       <div class="col-md-4 text-md-right text-center">
         <ul class="list-inline">
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Facebook"><i class="ti-facebook"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-facebook"></i></a></li>
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Twitter"><i class="ti-twitter-alt"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-twitter-alt"></i></a></li>
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Github"><i class="ti-github"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-github"></i></a></li>
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Linkedin"><i class="ti-linkedin"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-linkedin"></i></a></li>
           
         </ul>
       </div>
