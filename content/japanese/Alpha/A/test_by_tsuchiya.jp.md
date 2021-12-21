@@ -4,7 +4,7 @@ title: "Test_by_tsuchiya"
 # 投稿日時をご記入ください
 date: 2021-12-21T15:15:59+09:00
 # trueにすると下書きとして非表示。falseにすると記事が表示されます。
-draft: true
+draft: false
 # 以下は検索用のタグです。適宜書き換えてください
 keywords: ["著者名","Unity","ドローン","使い方","不具合"]
 ---
