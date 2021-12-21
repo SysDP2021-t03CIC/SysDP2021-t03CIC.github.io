@@ -3,27 +3,27 @@
   <head>
   <meta charset="utf-8">
   <title>Tags</title>
-
-  <meta name="generator" content="Hugo 0.91.0" />
-
-  <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="description" content="Tags - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
-  <!-- ** Plugins Needed for the Project ** -->
+  <!-- ** CSS Plugins Needed for the Project ** -->
+  
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
 
   <!-- themefy-icon -->
   <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
 
-  <!-- highlight -->
-  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/highlight/hybrid.css">
-
   <!--Favicon-->
   <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
 
   <!-- fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
   
   <style>
   :root{
@@ -40,6 +40,8 @@
 <!-- Main Stylesheet -->
 
 <link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
+  
+<!-- ** JS Plugins Needed for the Project ** -->
 
 <!-- jquiry -->
 <script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
@@ -53,20 +55,43 @@
 <!-- match-height JS -->
 <script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
 
-<!-- highlight -->
-<script src="https://sysdp2021-t03cic.github.io/plugins/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
+  
+
+  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Tags"/>
+<meta name="twitter:description" content="This is meta description"/>
+
+
+
+<meta property="og:title" content="Tags" />
+<meta property="og:description" content="This is meta description" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/tags/" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tags"/>
+<meta name="twitter:description" content="This is meta description"/>
 
 
 </head>
+
   
   <body>
     
     <!-- header -->
     <header class="shadow-bottom sticky-top bg-white">
       <nav class="navbar navbar-expand-md navbar-light">
-  <div class="container">
+  <div class="container px-2 px-md-0">
     <a class="navbar-brand px-2" href="/">
       
       
@@ -81,25 +106,22 @@
 
     <div class="collapse navbar-collapse text-center" id="navigation">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="/"></a>
-        </li>
         
         
         <li class="nav-item">
-          <a class="nav-link text-dark" href="/">Home</a>
-        </li>
-        
-        
-        
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="/faq">Faq</a>
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
         </li>
         
         
         
         <li class="nav-item">
-          <a class="nav-link text-dark" href="/contact">contact</a>
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/faq">Faq</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/contact">contact</a>
         </li>
         
         
@@ -111,11 +133,11 @@
           </a>
           <div class="dropdown-menu">
             
-            <a class="dropdown-item" href="/installation">Installation</a>
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/installation">Installation</a>
             
-            <a class="dropdown-item" href="/billing-pricing">Billing and Pricing</a>
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/billing-pricing">Billing and Pricing</a>
             
-            <a class="dropdown-item" href="/features">Features</a>
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/features">Features</a>
             
           </div>
         </li>
@@ -126,6 +148,7 @@
     </div>
   </div>
 </nav>
+
     </header>
     <!-- /header -->
     
@@ -136,21 +159,22 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3">
-        <div class="bg-white pl-lg-4 py-4 pr-4 mb-5 mb-lg-0 sticky-top top-100 overflow-hidden">
+        <div class="sidebar">
+        <a class="back-btn" href="/" aria-label="back"></a>
           <ul class="list-styled">
             
-            <a class="d-block h4 back-btn" href="/"></a>
             
               
             
               
+            
             
           </ul>
         </div>
       </div>
       <div class="col-lg-9">
-        <div class="p-lg-5 p-4 bg-white">
-          <h2 class="mb-5">Tags</h2>
+        <div class="p-lg-5 p-4 bg-white" id="content">
+          <h2 class="mb-5" id="title">Tags</h2>
           
           <div class="bg-light p-4">
             <ul class="page-list">
@@ -285,6 +309,38 @@
             
             
             
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -337,7 +393,7 @@
 
             
             
-            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/alpha/"> <span class="d-none d-md-block">TestCategory1</span><i class="ti-arrow-right ml-2"></i></a>
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/alpha/" aria-label="Previous page" > <span class="d-none d-md-block">TestCategory1</span><i class="ti-arrow-right ml-2"></i></a>
             
           </nav>
         </div>
@@ -361,13 +417,13 @@
       <div class="col-md-4 text-md-right text-center">
         <ul class="list-inline">
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-facebook"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Facebook"><i class="ti-facebook"></i></a></li>
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-twitter-alt"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Twitter"><i class="ti-twitter-alt"></i></a></li>
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-github"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Github"><i class="ti-github"></i></a></li>
           
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#"><i class="ti-linkedin"></i></a></li>
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="#" aria-label="Linkedin"><i class="ti-linkedin"></i></a></li>
           
         </ul>
       </div>
