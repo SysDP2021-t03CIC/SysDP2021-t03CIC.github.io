@@ -42,24 +42,14 @@ font_family = "lato" # Choose font family from : https://fonts.google.com/
 
 ############################## social links ##############################
 [[params.social]]
-icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
-name = "Facebook"
-link = "#"
-
-[[params.social]]
 icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
 name = "Twitter"
-link = "#"
+link = "https://twitter.com/JetJaguar_PSX"
   
 [[params.social]]
 icon = "ti-github" # themify icon pack : https://themify.me/themify-icons
 name = "Github"
-link = "#"
-  
-[[params.social]]
-icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
-name = "Linkedin"
-link = "#"
+link = "https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io"
 
 ################################ Japanese Language ######################
 [Languages.jp]
@@ -83,35 +73,42 @@ url = "/"
 weight = 1
 
 [[Languages.jp.menu.main]]
-name = "Faq"
-url = "faq"
-weight = 2
-
-[[Languages.jp.menu.main]]
 name = "contact"
-url = "contact"
-weight = 3
+url = "address"
+weight = 2
 
 # Dropdown menu
 [[Languages.jp.menu.main]]
-weight = 4
+weight = 3
 name = "docs"
 hasChildren = true
 
   [[Languages.jp.menu.main]]
   parent = "docs"
-  name = "Installation"
-  url = "installation"
+  name = "Unity"
+  url = "unity"
   weight = 1
 
   [[Languages.jp.menu.main]]
   parent = "docs"
-  name = "Billing and Pricing"
-  url = "billing-pricing"
+  name = "Tello"
+  url = "tello"
   weight = 2
 
   [[Languages.jp.menu.main]]
   parent = "docs"
-  name = "Features"
-  url = "features"
+  name = "OpenCV"
+  url = "opencv"
   weight = 3
+
+  [[Languages.jp.menu.main]]
+  parent = "docs"
+  name = "How to use"
+  url = "howtouse"
+  weight = 4
+
+  [[Languages.jp.menu.main]]
+  parent = "docs"
+  name = "How to edit"
+  url = "editS"
+  weight = 5
