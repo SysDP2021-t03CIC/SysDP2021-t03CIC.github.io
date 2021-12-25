@@ -2,10 +2,10 @@
 <html lang="ja-jp">
   <head>
   <meta charset="utf-8">
-  <title>Test2</title>
+  <title>ARマーカーの検知・計算</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="generator" content="Hugo 0.91.0" />
-  <meta name="description" content="Test2 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  <meta name="description" content="ARマーカーの検知・計算 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
   
@@ -67,22 +67,22 @@
 
 
 
-<meta name="twitter:title" content="Test2"/>
-<meta name="twitter:description" content="first This is a test page&hellip;"/>
+<meta name="twitter:title" content="ARマーカーの検知・計算"/>
+<meta name="twitter:description" content="ARマーカーの推定 事前説明  Matクラス : 行、列に加えてチャンネルという方向がある行列のようなもの cameraMat, distMatに設定する値はカメラパラメータの計算で求める  EstimateTra クラス "/>
 
 
 
-<meta property="og:title" content="Test2" />
-<meta property="og:description" content="first This is a test page&hellip;" />
+<meta property="og:title" content="ARマーカーの検知・計算" />
+<meta property="og:description" content="ARマーカーの推定 事前説明  Matクラス : 行、列に加えてチャンネルという方向がある行列のようなもの cameraMat, distMatに設定する値はカメラパラメータの計算で求める  EstimateTra クラス " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sysdp2021-t03cic.github.io/alpha/a/test/" /><meta property="article:section" content="Alpha" />
-<meta property="article:published_time" content="2021-12-20T13:54:50+09:00" />
-<meta property="article:modified_time" content="2021-12-20T13:54:50+09:00" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/description_of_codes/estimate/" /><meta property="article:section" content="OpenCV" />
+<meta property="article:published_time" content="2021-12-25T00:02:25+09:00" />
+<meta property="article:modified_time" content="2021-12-25T00:02:25+09:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Test2"/>
-<meta name="twitter:description" content="first This is a test page&hellip;"/>
+<meta name="twitter:title" content="ARマーカーの検知・計算"/>
+<meta name="twitter:description" content="ARマーカーの推定 事前説明  Matクラス : 行、列に加えてチャンネルという方向がある行列のようなもの cameraMat, distMatに設定する値はカメラパラメータの計算で求める  EstimateTra クラス "/>
 
 
 </head>
@@ -169,12 +169,6 @@
               
             
               
-            
-              
-            
-              
-            
-              
               
 
 
@@ -184,10 +178,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/alpha/" title="TestCategory1" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/" title="画像処理" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/alpha/">
-    TestCategory1
+  <a href="https://sysdp2021-t03cic.github.io/opencv/">
+    画像処理
   </a>
   
   
@@ -203,73 +197,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/alpha/a/" title="Test1" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/alpha/a/">
-    Test1
-  </a>
-  
-  
-    <ul>
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/alpha/a/test_by_tsuchiya/" title="Test_by_tsuchiya" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/alpha/a/test_by_tsuchiya/">
-    Test_by_tsuchiya
-  </a>
-  
-  
-</li>
-
-
-        
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/alpha/a/test_by_ban/" title="Test_by_ban" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/alpha/a/test_by_ban/">
-    Test_by_ban
-  </a>
-  
-  
-</li>
-
-
-        
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/alpha/a/test/" title="Test2" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/description_of_codes/estimate/" title="ARマーカーの検知・計算" class="sidelist
   active">
-  <a href="https://sysdp2021-t03cic.github.io/alpha/a/test/">
-    Test2
+  <a href="https://sysdp2021-t03cic.github.io/opencv/description_of_codes/estimate/">
+    ARマーカーの検知・計算
   </a>
   
   
@@ -283,61 +214,12 @@
 </li>
 
 
-        
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/alpha/b/" title="Test3" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/alpha/b/">
-    Test3
-  </a>
-  
-  
-    <ul>
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/alpha/b/test/" title="Test2" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/alpha/b/test/">
-    Test2
-  </a>
-  
-  
-</li>
-
-
-        
-      
-    </ul>
-  
-</li>
-
-
-        
-      
-    </ul>
-  
-</li>
-
-
+              
+            
+              
+            
+              
+            
               
             
               
@@ -352,13 +234,18 @@
       </div>
       <div class="col-lg-9">
         <div class="p-lg-5 p-4 bg-white" id="content">
-          <h2 class="mb-5" id="title">Test2</h2>
+          <h2 class="mb-5" id="title">ARマーカーの検知・計算</h2>
           
-          <div class="content"><h1 id="first">first</h1>
-<p>This is a test page&hellip;</p>
+          <div class="content"><h1 id="arマーカーの推定">ARマーカーの推定</h1>
+<h3 id="事前説明">事前説明</h3>
+<ul>
+<li>Matクラス : 行、列に加えてチャンネルという方向がある行列のようなもの</li>
+<li>cameraMat, distMatに設定する値はカメラパラメータの計算で求める</li>
+</ul>
+<h3 id="estimatetra-クラス">EstimateTra クラス</h3>
 </div>
           
-          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 20 Dec 2021</p>
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 25 Dec 2021</p>
           <nav class="pagination mt-3">
             
             
@@ -420,29 +307,12 @@
             
             
             
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
             
 
             
             
             
 
-            
-            
-            
-            
-            
             
             
             
@@ -465,33 +335,6 @@
             
             
             
-            
-            
-            
-
-            
-            
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-            
-            
-
             
             
             
@@ -537,6 +380,34 @@
             
             
             
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
 
             
             
@@ -549,7 +420,6 @@
             
             
             
-            
 
             
             
@@ -558,6 +428,19 @@
             
             
             
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
             
             
             
@@ -671,10 +554,10 @@
             
 
             
-            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/alpha/a/test_by_ban/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Test_by_ban</span></a>
+            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/opencv/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">画像処理</span></a>
             
             
-            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/alpha/b/" aria-label="Previous page" > <span class="d-none d-md-block">Test3</span><i class="ti-arrow-right ml-2"></i></a>
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/howtouse/" aria-label="Previous page" > <span class="d-none d-md-block">システム・機材の使い方</span><i class="ti-arrow-right ml-2"></i></a>
             
           </nav>
         </div>
