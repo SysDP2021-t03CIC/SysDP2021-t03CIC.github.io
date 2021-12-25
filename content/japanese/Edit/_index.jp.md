@@ -6,3 +6,11 @@ description: "GitHubの使い方、記事の書き方、このウェブサイト
 weight: 5
 type : "docs"
 ---
+
+[初期セットアップ](setup)
+
+[GitHubの使い方](github)
+
+[Markdown記事の書き方](markdown)
+
+[このウェブサイトが出来るまで](howtomake)

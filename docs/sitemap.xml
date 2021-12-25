@@ -5,6 +5,9 @@
     <loc>https://sysdp2021-t03cic.github.io/unity/</loc>
     <lastmod>2021-12-20T11:02:05+06:00</lastmod>
   </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/introduction/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/unity/steamvr/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
@@ -14,8 +17,17 @@
     <loc>https://sysdp2021-t03cic.github.io/howtouse/pc/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/setup/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/</loc>
     <lastmod>2021-12-20T11:02:05+06:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/ar_marker/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/github/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
@@ -38,19 +50,46 @@
     <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/parameter/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/article/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/</loc>
     <lastmod>2021-12-20T11:02:05+06:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/system/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/howtomake/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/address/tanaka/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/edit/</loc>
     <lastmod>2021-12-20T11:02:05+06:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/article/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/github/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/setup/testarticle/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/</loc>
@@ -63,6 +102,18 @@
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/</loc>
@@ -86,6 +137,18 @@
     <loc>https://sysdp2021-t03cic.github.io/unity/unityproject/testarticle/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/article/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/github/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/edit/setup/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
@@ -96,6 +159,18 @@
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle2/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/</loc>
@@ -131,25 +206,16 @@
     <loc>https://sysdp2021-t03cic.github.io/alpha/</loc>
     <lastmod>2021-12-20T11:02:05+06:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/beta/</loc>
-    <lastmod>2021-12-20T11:02:05+06:00</lastmod>
-  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/address/</loc>
     <lastmod>2021-12-20T11:02:05+06:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/alpha/a/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/beta/b/</loc>
-    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
-  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/alpha/a/test/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/alpha/b/test/</loc>
-    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
-  </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/beta/b/test/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/alpha/b/</loc>

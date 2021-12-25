@@ -10,6 +10,42 @@
     <lastBuildDate>Sat, 25 Dec 2021 08:59:39 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/article/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/article/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/github/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/github/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/setup/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/setup/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
       <link>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
@@ -41,6 +77,42 @@
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</guid>
       <description>これはテストページです。</description>
     </item>
     
@@ -109,6 +181,42 @@
     
     <item>
       <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/article/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/article/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/github/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/github/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/edit/setup/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/edit/setup/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
       <link>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
@@ -140,6 +248,42 @@
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle2/</guid>
       <description>これはテストページです。</description>
     </item>
     
@@ -250,15 +394,6 @@
       <pubDate>Mon, 20 Dec 2021 13:54:50 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/alpha/b/test/</guid>
-      <description>first This is a test page&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Test2</title>
-      <link>https://sysdp2021-t03cic.github.io/beta/b/test/</link>
-      <pubDate>Mon, 20 Dec 2021 13:54:50 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/beta/b/test/</guid>
       <description>first This is a test page&amp;hellip;</description>
     </item>
     
