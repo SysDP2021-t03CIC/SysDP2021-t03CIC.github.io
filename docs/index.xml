@@ -9,6 +9,15 @@
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
     <lastBuildDate>Sat, 25 Dec 2021 08:59:39 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ARマーカーの作成</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</guid>
+      <description>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更  //ここからusing OpenCVForUnity.CoreModule;using OpenCVForUnity.ArucoModule;using OpenCVForUnity.ImgcodecsModule;//ここまでが追加する名前空間using UnityEngine;public class CreateARmarker : MonoBehaviour{Dictionary ARdict;Mat ARmat;bool isCreated;// Start is called before the first frame updatevoid Start(){ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);ARmat = new Mat();// nの値が作成するARマーカーの枚数// iの値が作成するARマーカーのIDint n = 4, i;for (i = 0; i &amp;lt; n; i++){// ARマーカーの画像情報をARmatに格納Aruco.drawMarker(ARdict, i, 150, ARmat);string fileName = &amp;quot;id_&amp;quot; + i.</description>
+    </item>
+    
+    <item>
       <title>OpenCV for Unity</title>
       <link>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
@@ -102,15 +111,6 @@
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</guid>
       <description>これはテストページです。</description>
     </item>
     
@@ -355,15 +355,6 @@
       
       <guid>https://sysdp2021-t03cic.github.io/unity/unityproject/testarticle2/</guid>
       <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>ARマーカーの検知・計算</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/description_of_codes/estimate/</link>
-      <pubDate>Sat, 25 Dec 2021 00:02:25 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/description_of_codes/estimate/</guid>
-      <description>ARマーカーの推定 事前説明  Matクラス : 行、列に加えてチャンネルという方向がある行列のようなもの cameraMat, distMatに設定する値はカメラパラメータの計算で求める  EstimateTra クラス </description>
     </item>
     
     <item>

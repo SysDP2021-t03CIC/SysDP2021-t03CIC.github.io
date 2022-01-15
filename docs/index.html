@@ -310,14 +310,20 @@
 						},
 						
 						{
+							value: "ARマーカーの作成",
+							label: "<p>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更  \/\/ここから\rusing OpenCVForUnity.CoreModule;\rusing OpenCVForUnity.ArucoModule;\rusing OpenCVForUnity.ImgcodecsModule;\r\/\/ここまでが追加する名前空間\rusing UnityEngine;\rpublic class CreateARmarker : MonoBehaviour\r{\rDictionary ARdict;\rMat ARmat;\rbool isCreated;\r\/\/ Start is called before the first frame update\rvoid Start()\r{\rARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);\rARmat = new Mat();\r\/\/ nの値が作成するARマーカーの枚数\r\/\/ iの値が作成するARマーカーのID\rint n = 4, i;\rfor (i = 0; i \u0026lt; n; i\u002b\u002b)\r{\r\/\/ ARマーカーの画像情報をARmatに格納\rAruco.drawMarker(ARdict, i, 150, ARmat);\rstring fileName = \u0026quot;id_\u0026quot; \u002b i.ToString() \u002b \u0026quot;.png\u0026quot;;\r\/\/ ARマーカーの画像ファイルを作成\risCreated = Imgcodecs.imwrite(\u0026quot;Assets\/ARmarkers\/\u0026quot; \u002b fileName, ARmat);\r\/\/ 確認用ログ\rif (isCreated) Debug.Log(string.Format(\u0026quot;create {0}\u0026quot;, i));\r}\r}\r\/\/ Update is called once per frame\rvoid Update()\r{\r}\r}\r 空のオブジェクトを作成。そのオブジェクトに作成したスクリプトをアタッチ Assetsフォルダに「ARmarkers」という名前のフォルダを作成 実行 印刷  ※OpenCV for Unity試用版ではARマーカーにロゴが入ってしまう。\n</p><p>画像処理</p><p>ARマーカー</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/testarticle\/"
+						},
+						
+						{
 							value: "OpenCV for Unity",
-							label: "<p>2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity\n概要欄の「Trail \u0026amp; Demo」に試用版もある\n2021年度の開発で利用したバージョンは2.4.5\n  利用   コードの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。\nプログラムの処理の流れはスクリプトファイル内のコメントや参考にしたサイトを見てほしい。\n  Matクラスのインスタンス生成 new Mat(\/\/行数, \/\/列数, \/\/CvType.CV_[成分の型]C[チャンネル数])\r※成分の型:(例)double型 → 64F, short型 → 32S等\n※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(\/\/数値を入れ始める行の目, \/\/列の目, \/\/具体的な数値の格納された配列)\r  Matから具体的な数値を取り出す Mat.get(\/\/取り出す初める行の目,\/\/列の目,\/\/取り出した数値を格納する配列)\r  Mat同士の結合(横に並べる結合) Core.hconcat(\/\/結合するMatのList, \/\/結合結果を格納するMat)\r    その他のメソッドの内容もリファレンスで見ることができる。が正直分かりにくい\n  参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    </p><p>画像認識</p><p>OpenCV</p><p>OpenCV for Unity</p>",
+							label: "<p>2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity\n概要欄の「Trail \u0026amp; Demo」に試用版もある\n2021年度の開発で利用したバージョンは2.4.5\n  利用   コードの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。\nプログラムの処理の流れはスクリプトファイル内のコメントや参考にしたサイトを見てほしい。\n  Matクラスのインスタンス生成 new Mat(\/\/行数, \/\/列数, \/\/CvType.CV_[成分の型]C[チャンネル数])\r※成分の型:(例)double型 → 64F, short型 → 32S等\n※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(\/\/数値を入れ始める行の目, \/\/列の目, \/\/具体的な数値の格納された配列)\r  Matから具体的な数値を取り出す Mat.get(\/\/取り出す初める行の目,\/\/列の目,\/\/取り出した数値を格納する配列)\r  Mat同士の結合(横に並べる結合) Core.hconcat(\/\/結合するMatのList, \/\/結合結果を格納するMat)\r    その他のメソッドの内容もリファレンスで見ることができる。が正直分かりにくい\n  参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    </p><p>画像処理</p><p>OpenCV</p><p>OpenCV for Unity</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/introduction\/testarticle\/"
 						},
 						
 						{
 							value: "OpenCVSharp",
-							label: "<p>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー UnityではTelloからのカメラ映像が表示できなかった\n</p><p>画像認識</p><p>OpenCV</p><p>OpenCVSharp</p><p>断念</p>",
+							label: "<p>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー UnityではTelloからのカメラ映像が表示できなかった\n</p><p>画像処理</p><p>OpenCV</p><p>OpenCVSharp</p><p>断念</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/introduction\/testarticle2\/"
 						},
 						
@@ -373,12 +379,6 @@
 							value: "テスト記事",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/tello\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/testarticle\/"
 						},
 						
 						{
@@ -541,12 +541,6 @@
 							value: "テスト記事2",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/unityproject\/testarticle2\/"
-						},
-						
-						{
-							value: "ARマーカーの検知・計算",
-							label: "<p>ARマーカーの推定 事前説明  Matクラス : 行、列に加えてチャンネルという方向がある行列のようなもの cameraMat, distMatに設定する値はカメラパラメータの計算で求める  EstimateTra クラス </p><p>土屋洸賢</p><p>画像処理</p><p>画像認識</p><p>ARマーカー</p><p>AR</p><p>マーカー</p><p>推定</p><p>検知</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/description_of_codes\/estimate\/"
 						},
 						
 						{
