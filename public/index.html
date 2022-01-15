@@ -311,8 +311,14 @@
 						
 						{
 							value: "ARマーカーの作成",
-							label: "<p>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更  \/\/ここから\rusing OpenCVForUnity.CoreModule;\rusing OpenCVForUnity.ArucoModule;\rusing OpenCVForUnity.ImgcodecsModule;\r\/\/ここまでが追加する名前空間\rusing UnityEngine;\rpublic class CreateARmarker : MonoBehaviour\r{\rDictionary ARdict;\rMat ARmat;\rbool isCreated;\r\/\/ Start is called before the first frame update\rvoid Start()\r{\rARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);\rARmat = new Mat();\r\/\/ nの値が作成するARマーカーの枚数\r\/\/ iの値が作成するARマーカーのID\rint n = 4, i;\rfor (i = 0; i \u0026lt; n; i\u002b\u002b)\r{\r\/\/ ARマーカーの画像情報をARmatに格納\rAruco.drawMarker(ARdict, i, 150, ARmat);\rstring fileName = \u0026quot;id_\u0026quot; \u002b i.ToString() \u002b \u0026quot;.png\u0026quot;;\r\/\/ ARマーカーの画像ファイルを作成\risCreated = Imgcodecs.imwrite(\u0026quot;Assets\/ARmarkers\/\u0026quot; \u002b fileName, ARmat);\r\/\/ 確認用ログ\rif (isCreated) Debug.Log(string.Format(\u0026quot;create {0}\u0026quot;, i));\r}\r}\r\/\/ Update is called once per frame\rvoid Update()\r{\r}\r}\r 空のオブジェクトを作成。そのオブジェクトに作成したスクリプトをアタッチ Assetsフォルダに「ARmarkers」という名前のフォルダを作成 実行 印刷  ※OpenCV for Unity試用版ではARマーカーにロゴが入ってしまう。\n</p><p>画像処理</p><p>ARマーカー</p>",
+							label: "<p>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 \/\/ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; \/\/ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; \/\/ Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); \/\/ nの値が作成するARマーカーの枚数  \/\/ iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i \u0026lt; n; i\u002b\u002b) { \/\/ ARマーカーの画像情報をARmatに格納  Aruco.drawMarker(ARdict, i, 150, ARmat); string fileName = \u0026#34;id_\u0026#34; \u002b i.ToString() \u002b \u0026#34;.png\u0026#34;; \/\/ ARマーカーの画像ファイルを作成  isCreated = Imgcodecs.imwrite(\u0026#34;Assets\/ARmarkers\/\u0026#34; \u002b fileName, ARmat); \/\/ 確認用ログ  if (isCreated) Debug.Log(string.Format(\u0026#34;create {0}\u0026#34;, i)); } } \/\/ Update is called once per frame  void Update() { } }  空のオブジェクトを作成。そのオブジェクトに作成したスクリプトをアタッチ Assetsフォルダに「ARmarkers」という名前のフォルダを作成 実行 → 指定したフォルダに画像ファイルが生成されている 印刷  ※OpenCV for Unity試用版ではARマーカーにロゴが入ってしまう。\n</p><p>画像処理</p><p>ARマーカー</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/testarticle\/"
+						},
+						
+						{
+							value: "ARマーカーの認識",
+							label: "<p>ARマーカーの認識から追従対象の距離・角度の推定についての解説   座標 検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。\nその各座標値の平均を追従対象の座標としてます。  回転 おおよそ上記の座標と同じ。\nただし、計算時に 回転の値 \u002b 90 × ID として平均を求める。\nIDが0のARマーカーに関しては回転の値が負の時、\u002b360する。\nx軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。  方向 得られた座標の値から\n左右の方向 : arctan(x \/ z)\n上下の方向 : arctan(y \/ Z)\nで求められる。  距離 座標の値から求められる。  </p><p>画像処理</p><p>ARマーカー</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/testarticle2\/"
 						},
 						
 						{
@@ -481,12 +487,6 @@
 							value: "テスト記事2",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/tello\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/testarticle2\/"
 						},
 						
 						{

@@ -14,16 +14,23 @@
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</guid>
-      <description>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更  //ここからusing OpenCVForUnity.CoreModule;using OpenCVForUnity.ArucoModule;using OpenCVForUnity.ImgcodecsModule;//ここまでが追加する名前空間using UnityEngine;public class CreateARmarker : MonoBehaviour{Dictionary ARdict;Mat ARmat;bool isCreated;// Start is called before the first frame updatevoid Start(){ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);ARmat = new Mat();// nの値が作成するARマーカーの枚数// iの値が作成するARマーカーのIDint n = 4, i;for (i = 0; i &amp;lt; n; i++){// ARマーカーの画像情報をARmatに格納Aruco.drawMarker(ARdict, i, 150, ARmat);string fileName = &amp;quot;id_&amp;quot; + i.</description>
+      <description>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &amp;lt; n; i++) { // ARマーカーの画像情報をARmatに格納  Aruco.</description>
     </item>
     
     <item>
-      <title>テスト記事2</title>
+      <title>ARマーカーの認識</title>
       <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</guid>
-      <description>これはテストページです。</description>
+      <description>ARマーカーの認識から追従対象の距離・角度の推定についての解説   座標 検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。
+その各座標値の平均を追従対象の座標としてます。  回転 おおよそ上記の座標と同じ。
+ただし、計算時に 回転の値 + 90 × ID として平均を求める。
+IDが0のARマーカーに関しては回転の値が負の時、+360する。
+x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。  方向 得られた座標の値から
+左右の方向 : arctan(x / z)
+上下の方向 : arctan(y / Z)
+で求められる。  距離 座標の値から求められる。  </description>
     </item>
     
   </channel>

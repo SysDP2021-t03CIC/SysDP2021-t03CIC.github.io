@@ -68,12 +68,12 @@
 
 
 <meta name="twitter:title" content="ARマーカーの作成"/>
-<meta name="twitter:description" content="ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更  //ここからusing OpenCVForUnity.CoreModule;using OpenCVForUnity.ArucoModule;using OpenCVForUnity.ImgcodecsModule;//ここまでが追加する名前空間using UnityEngine;public class CreateARmarker : MonoBehaviour{Dictionary ARdict;Mat ARmat;bool isCreated;// Start is called before the first frame updatevoid Start(){ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);ARmat = new Mat();// nの値が作成するARマーカーの枚数// iの値が作成するARマーカーのIDint n = 4, i;for (i = 0; i &lt; n; i&#43;&#43;){// ARマーカーの画像情報をARmatに格納Aruco.drawMarker(ARdict, i, 150, ARmat);string fileName = &quot;id_&quot; &#43; i."/>
+<meta name="twitter:description" content="ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &lt; n; i&#43;&#43;) { // ARマーカーの画像情報をARmatに格納  Aruco."/>
 
 
 
 <meta property="og:title" content="ARマーカーの作成" />
-<meta property="og:description" content="ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更  //ここからusing OpenCVForUnity.CoreModule;using OpenCVForUnity.ArucoModule;using OpenCVForUnity.ImgcodecsModule;//ここまでが追加する名前空間using UnityEngine;public class CreateARmarker : MonoBehaviour{Dictionary ARdict;Mat ARmat;bool isCreated;// Start is called before the first frame updatevoid Start(){ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);ARmat = new Mat();// nの値が作成するARマーカーの枚数// iの値が作成するARマーカーのIDint n = 4, i;for (i = 0; i &lt; n; i&#43;&#43;){// ARマーカーの画像情報をARmatに格納Aruco.drawMarker(ARdict, i, 150, ARmat);string fileName = &quot;id_&quot; &#43; i." />
+<meta property="og:description" content="ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &lt; n; i&#43;&#43;) { // ARマーカーの画像情報をARmatに格納  Aruco." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/" /><meta property="article:section" content="OpenCV" />
 <meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
@@ -82,7 +82,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ARマーカーの作成"/>
-<meta name="twitter:description" content="ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更  //ここからusing OpenCVForUnity.CoreModule;using OpenCVForUnity.ArucoModule;using OpenCVForUnity.ImgcodecsModule;//ここまでが追加する名前空間using UnityEngine;public class CreateARmarker : MonoBehaviour{Dictionary ARdict;Mat ARmat;bool isCreated;// Start is called before the first frame updatevoid Start(){ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);ARmat = new Mat();// nの値が作成するARマーカーの枚数// iの値が作成するARマーカーのIDint n = 4, i;for (i = 0; i &lt; n; i&#43;&#43;){// ARマーカーの画像情報をARmatに格納Aruco.drawMarker(ARdict, i, 150, ARmat);string fileName = &quot;id_&quot; &#43; i."/>
+<meta name="twitter:description" content="ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &lt; n; i&#43;&#43;) { // ARマーカーの画像情報をARmatに格納  Aruco."/>
 
 
 </head>
@@ -308,10 +308,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/" title="テスト記事2" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/" title="ARマーカーの認識" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/">
-    テスト記事2
+    ARマーカーの認識
   </a>
   
   
@@ -498,50 +498,50 @@
 <li>OpenCVforUnityをインポート</li>
 <li>ARマーカー作成用のスクリプトを作成</li>
 <li>以下のようにコードを変更
-<pre tabindex="0"><code> //ここから
-using OpenCVForUnity.CoreModule;
-using OpenCVForUnity.ArucoModule;
-using OpenCVForUnity.ImgcodecsModule;
-//ここまでが追加する名前空間
-using UnityEngine;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"> <span style="color:#75715e">//ここから
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> OpenCVForUnity.CoreModule;
+<span style="color:#66d9ef">using</span> OpenCVForUnity.ArucoModule;
+<span style="color:#66d9ef">using</span> OpenCVForUnity.ImgcodecsModule;
+<span style="color:#75715e">//ここまでが追加する名前空間
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> UnityEngine;
 
-public class CreateARmarker : MonoBehaviour
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreateARmarker</span> : MonoBehaviour
 {
     Dictionary ARdict;
     Mat ARmat;
-    bool isCreated;
+    <span style="color:#66d9ef">bool</span> isCreated;
 
-    // Start is called before the first frame update
-    void Start()
+    <span style="color:#75715e">// Start is called before the first frame update
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start()
     {
         ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50);
-        ARmat = new Mat();
+        ARmat = <span style="color:#66d9ef">new</span> Mat();
 
-        // nの値が作成するARマーカーの枚数
-        // iの値が作成するARマーカーのID
-        int n = 4, i;
-        for (i = 0; i &lt; n; i++)
+        <span style="color:#75715e">// nの値が作成するARマーカーの枚数
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// iの値が作成するARマーカーのID
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> n = <span style="color:#ae81ff">4</span>, i;
+        <span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">0</span>; i &lt; n; i++)
         {
-            // ARマーカーの画像情報をARmatに格納
-            Aruco.drawMarker(ARdict, i, 150, ARmat);
-            string fileName = &quot;id_&quot; + i.ToString() + &quot;.png&quot;;
-            // ARマーカーの画像ファイルを作成
-            isCreated = Imgcodecs.imwrite(&quot;Assets/ARmarkers/&quot; + fileName, ARmat);
-            //  確認用ログ
-            if (isCreated) Debug.Log(string.Format(&quot;create {0}&quot;, i));
+            <span style="color:#75715e">// ARマーカーの画像情報をARmatに格納
+</span><span style="color:#75715e"></span>            Aruco.drawMarker(ARdict, i, <span style="color:#ae81ff">150</span>, ARmat);
+            <span style="color:#66d9ef">string</span> fileName = <span style="color:#e6db74">&#34;id_&#34;</span> + i.ToString() + <span style="color:#e6db74">&#34;.png&#34;</span>;
+            <span style="color:#75715e">// ARマーカーの画像ファイルを作成
+</span><span style="color:#75715e"></span>            isCreated = Imgcodecs.imwrite(<span style="color:#e6db74">&#34;Assets/ARmarkers/&#34;</span> + fileName, ARmat);
+            <span style="color:#75715e">//  確認用ログ
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (isCreated) Debug.Log(<span style="color:#66d9ef">string</span>.Format(<span style="color:#e6db74">&#34;create {0}&#34;</span>, i));
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    <span style="color:#75715e">// Update is called once per frame
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update()
     {
 
     }
 }
-</code></pre></li>
+</code></pre></div></li>
 <li>空のオブジェクトを作成。そのオブジェクトに作成したスクリプトをアタッチ</li>
 <li>Assetsフォルダに「ARmarkers」という名前のフォルダを作成</li>
-<li>実行</li>
+<li>実行 → 指定したフォルダに画像ファイルが生成されている</li>
 <li>印刷</li>
 </ol>
 <p>※OpenCV for Unity試用版ではARマーカーにロゴが入ってしまう。</p>
@@ -1719,7 +1719,7 @@ public class CreateARmarker : MonoBehaviour
             <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">ARマーカーについて</span></a>
             
             
-            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/" aria-label="Previous page" > <span class="d-none d-md-block">テスト記事2</span><i class="ti-arrow-right ml-2"></i></a>
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/" aria-label="Previous page" > <span class="d-none d-md-block">ARマーカーの認識</span><i class="ti-arrow-right ml-2"></i></a>
             
           </nav>
         </div>

@@ -13,7 +13,7 @@ keywords: ["画像処理","ARマーカー"]
 2. OpenCVforUnityをインポート
 3. ARマーカー作成用のスクリプトを作成
 4. 以下のようにコードを変更
-    ```
+    ```C#
      //ここから
     using OpenCVForUnity.CoreModule;
     using OpenCVForUnity.ArucoModule;
@@ -57,7 +57,7 @@ keywords: ["画像処理","ARマーカー"]
     ```
 5. 空のオブジェクトを作成。そのオブジェクトに作成したスクリプトをアタッチ
 6. Assetsフォルダに「ARmarkers」という名前のフォルダを作成
-7. 実行
+7. 実行 → 指定したフォルダに画像ファイルが生成されている
 8. 印刷
 
 ※OpenCV for Unity試用版ではARマーカーにロゴが入ってしまう。
