@@ -310,6 +310,12 @@
 						},
 						
 						{
+							value: "ARマーカーから追従対象の認識",
+							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \\ldots ]$,\n各ARマーカーから得られる情報を\n ARマーカーの座標 : $AR_i.TX,AR_i.TY,AR_i.TZ$\n ARマーカーの回転 : $AR_i.RX,AR_i.RY,AR_i.RZ$\n ARマーカーのID : $AR_i.ID$\nとしておく。  座標 追従対象の座標$[tx,ty,tz]$は\n $tx = 1\/n \\sum_{n}^{i=0}AR_i.X$\n $ty = 1\/n \\sum_{n}^{i=0}AR_i.Y$\n $tz = 1\/n \\sum_{n}^{i=0}AR_i.Z$\nで求める。    回転 追従対象の回転$[rx,ry,rz]$はおおよそ上記の座標と同じ。\n $rx = 1\/n \\sum_{n}^{i=0}AR_i.X \u002b AR_i.ID \\times 90$\n $ry = 1\/n \\sum_{n}^{i=0}AR_i.Y \u002b AR_i.ID \\times 90$\n $rz = 1\/n \\sum_{n}^{i=0}AR_i.Z \u002b AR_i.ID \\times 90$\nで求める。    方向 得られた座標の値から  左右の方向 : $arctan(tx \/ tz)$  上下の方向 : $arctan(ty \/ tz)$\nで求められる。    距離 座標の値から$d = \\sqrt{tx^2 \u002b ty^2 \u002b tz^2}$ で求められる。  </p><p>画像処理</p><p>ARマーカー</p><p>追従対象</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/testarticle\/"
+						},
+						
+						{
 							value: "ARマーカーの作成",
 							label: "<p>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 \/\/ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; \/\/ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; \/\/ Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); \/\/ nの値が作成するARマーカーの枚数  \/\/ iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i \u0026lt; n; i\u002b\u002b) { \/\/ ARマーカーの画像情報をARmatに格納  Aruco.drawMarker(ARdict, i, 150, ARmat); string fileName = \u0026#34;id_\u0026#34; \u002b i.ToString() \u002b \u0026#34;.png\u0026#34;; \/\/ ARマーカーの画像ファイルを作成  isCreated = Imgcodecs.imwrite(\u0026#34;Assets\/ARmarkers\/\u0026#34; \u002b fileName, ARmat); \/\/ 確認用ログ  if (isCreated) Debug.Log(string.Format(\u0026#34;create {0}\u0026#34;, i)); } } \/\/ Update is called once per frame  void Update() { } }  空のオブジェクトを作成。そのオブジェクトに作成したスクリプトをアタッチ Assetsフォルダに「ARmarkers」という名前のフォルダを作成 実行 → 指定したフォルダに画像ファイルが生成されている 印刷  ※OpenCV for Unity試用版ではARマーカーにロゴが入ってしまう。\n</p><p>画像処理</p><p>ARマーカー</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/testarticle\/"
@@ -317,7 +323,7 @@
 						
 						{
 							value: "ARマーカーの認識",
-							label: "<p>ARマーカーの認識から追従対象の距離・角度の推定についての解説   座標 検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。\nその各座標値の平均を追従対象の座標としてます。  回転 おおよそ上記の座標と同じ。\nただし、計算時に 回転の値 \u002b 90 × ID として平均を求める。\nIDが0のARマーカーに関しては回転の値が負の時、\u002b360する。\nx軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。  方向 得られた座標の値から\n左右の方向 : arctan(x \/ z)\n上下の方向 : arctan(y \/ Z)\nで求められる。  距離 座標の値から求められる。  </p><p>画像処理</p><p>ARマーカー</p>",
+							label: "<p>まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。\nusing System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { \/\/ CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; \/\/ Start is called before the first frame update  void Start() { \/\/ cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat.RGBA32; result = new Texture2D(sw, sh, format, false); var currentRT = RenderTexture.active; rt = new RenderTexture(sw, sh, 32); Graphics.Blit(self, rt); RenderTexture.active = rt; source = new Rect(0, 0, rt.width, rt.height); result.ReadPixels(source, 0, 0); result.Apply(); RenderTexture.active = currentRT; return result; } \/\/ Update is called once per frame  void Update() { texture = ToTexture2D(GetComponent\u0026lt;Renderer\u0026gt;().material.mainTexture); estimater.Estimate(texture); Destroy(result); Destroy(rt); } }  EstimateTraクラスのメソッド内 Aruco.detectMarkers(\/\/撮影された画像, \/\/ARマーカーの辞書, \/\/ARマーカーの角(Out), \/\/ARマーカーのID(Out), \/\/使わないのでいらないかも, \/\/使わないのでいらないかも)\r  public void Estimate(Texture2D texture) { Mat img = new Mat(texture.height, texture.width, CvType.CV_8UC3); Utils.texture2DToMat(texture, img); \/* * ARマーカーの検知 * 6cm四方だと2mぐらいまではっきり検知可能 *\/ Aruco.detectMarkers(img, dictionary, corners, ids, parameters, rejectedImgPoints); \/* 以下略 * ... *\/ } </p><p>画像処理</p><p>ARマーカー</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/testarticle2\/"
 						},
 						
@@ -331,6 +337,18 @@
 							value: "OpenCVSharp",
 							label: "<p>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー UnityではTelloからのカメラ映像が表示できなかった\n</p><p>画像処理</p><p>OpenCV</p><p>OpenCVSharp</p><p>断念</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/introduction\/testarticle2\/"
+						},
+						
+						{
+							value: "カメラの特徴に関する前置き",
+							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i カメラで撮影される映像(画像)は、カメラのレンズなどの種類によって様々な歪みが生じる。 この歪みを修正して、ARマーカーの正しい距離や角度を求めるために、カメラキャリブレーション(カメラ行列、歪み)を知っておく必要がある。\n カメラ行列\n$ 3 \\times 3 $の行列\n 歪み係数\n5つの係数を持つ配列 参考  OpenCVでのキャリブレーション カメラパラメータの解説 pythonのコード    </p><p>画像処理</p><p>カメラパラメータ</p><p>カメラキャリブレーション</p><p>歪み</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/parameter\/testarticle\/"
+						},
+						
+						{
+							value: "カメラ行列の計測",
+							label: "<p>カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List\u0026lt;Mat\u0026gt; objPoints; private List\u0026lt;Mat\u0026gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; \/\/ Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List\u0026lt;Mat\u0026gt;(); imgPoints = new List\u0026lt;Mat\u0026gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2.0f; crossNum = new Size(7.0, 7.0); Point3[] a = new Point3[7 * 7]; for (h = 0; h \u0026lt; 7; h\u002b\u002b) { for (w = 0; w \u0026lt; 7; w\u002b\u002b) { a[h * 7 \u002b w] = new Point3(w * pattern_size, h * pattern_size, 0); } } MatOfPoint3f b = new MatOfPoint3f(a); b.copyTo(pattern_points); } \/\/ Update is called once per frame  public void DataSampling(Texture2D texture, int calcPoint = 40) { img = new Mat(texture.height, texture.width, CvType.CV_8UC3); Utils.texture2DToMat(texture, img); if (img == null) return; if (!calculating) return; CalcPara(); Debug.Log(\u0026#34;Sampling \u0026lt;=== \u0026#34; \u002b objPoints.Count \u002b \u0026#34; \/ \u0026#34; \u002b calcPoint \u002b \u0026#34; ===\u0026gt; \u0026#34;); System.Threading.Thread.Sleep(200); if (calculating \u0026amp;\u0026amp; objPoints.Count.Equals(calcPoint)) { Debug.Log(\u0026#34;Calculating...\u0026#34;); CaliCamera(); calculating = false; cameraArray = new double[cameraMatrix.rows() * cameraMatrix.cols() * cameraMatrix.channels()]; distArray = new double[distCoeffs.rows() * distCoeffs.cols() * distCoeffs.channels()]; cameraMatrix.get(0, 0, cameraArray); distCoeffs.get(0, 0, distArray); int i, j; Debug.Log(\u0026#34; --- cameraMatrix --- \u0026#34;); for (i = 0; i \u0026lt; 3; i\u002b\u002b) { for (j = 0; j \u0026lt; 3; j\u002b\u002b) { \/\/ Debug.Log(cameraArray.Length);  Debug.Log(String.Format(\u0026#34;{0:00000.00000000}, \u0026#34;, cameraArray[i * 3 \u002b j])); } } Debug.Log(\u0026#34; --- distMatrix --- \u0026#34;); for (i = 0; i \u0026lt; distArray.Length; i\u002b\u002b) { Debug.Log((String.Format(\u0026#34;{0:00000.00000000},\u0026#34;, distArray[i]))); } } } private void CalcPara() { bool patternFound; Imgproc.cvtColor(img, gray, Imgproc.COLOR_BGR2GRAY); MatOfPoint2f corners = new MatOfPoint2f(); patternFound = Calib3d.findChessboardCorners(gray, crossNum, corners); \/* * corners * Channels : 2 * Rows : 49 * Cols : 1 *\/ if (patternFound) { TermCriteria term = new TermCriteria(TermCriteria.EPS | TermCriteria.COUNT, 30, 0.1); Imgproc.cornerSubPix(gray, corners, new Size(5, 5), new Size(-1, -1), term); imgPoints.Add(corners); objPoints.Add(pattern_points); } } private void CaliCamera() { List\u0026lt;Mat\u0026gt; rvecs = new List\u0026lt;Mat\u0026gt;(); List\u0026lt;Mat\u0026gt; tvecs = new List\u0026lt;Mat\u0026gt;(); Calib3d.calibrateCamera(objPoints, imgPoints, gray.size(), cameraMatrix, distCoeffs, rvecs, tvecs); } } } TextureSenderクラスのUpdateメソッドを以下のように書き換える。  public class TextureSender : MonoBehaviour { CameraParaCal cameraPara; \/\/←追加  \/\/ public EstimateTra estimater; \/\/←コメントアウト  Texture2D texture; Texture2D result; RenderTexture rt; Rect source; \/\/ Start is called before the first frame update  void Start() { cameraPara = new CameraParaCal(); \/\/←追加  \/\/ estimater = new EstimateTra(); \/\/←コメントアウト  } \/* * 省略 *\/ void Update() { \/\/ 追加  time \u002b= Time.deltaTime; if (time \u0026gt; 0.2f) { texture = ToTexture2D(GetComponent\u0026lt;Renderer\u0026gt;().material.mainTexture); cameraPara.DataSampling(texture); time = 0.0f; } \/\/ 追加ここまで  \/* コメントアウト texture = ToTexture2D(GetComponent\u0026lt;Renderer\u0026gt;().material.mainTexture); estimater.Estimate(texture); *\/ Destroy(result); Destroy(rt); } </p><p>画像処理</p><p>カメラパラメータ</p><p>カメラキャリブレーション</p><p>歪み</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/parameter\/testarticle2\/"
 						},
 						
 						{
@@ -385,18 +403,6 @@
 							value: "テスト記事",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/tello\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/parameter\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/testarticle\/"
 						},
 						
 						{
@@ -487,12 +493,6 @@
 							value: "テスト記事2",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/tello\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/parameter\/testarticle2\/"
 						},
 						
 						{

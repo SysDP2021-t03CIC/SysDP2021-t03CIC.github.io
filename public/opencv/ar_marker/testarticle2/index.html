@@ -68,26 +68,14 @@
 
 
 <meta name="twitter:title" content="ARマーカーの認識"/>
-<meta name="twitter:description" content="ARマーカーの認識から追従対象の距離・角度の推定についての解説   座標 検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。
-その各座標値の平均を追従対象の座標としてます。  回転 おおよそ上記の座標と同じ。
-ただし、計算時に 回転の値 &#43; 90 × ID として平均を求める。
-IDが0のARマーカーに関しては回転の値が負の時、&#43;360する。
-x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。  方向 得られた座標の値から
-左右の方向 : arctan(x / z)
-上下の方向 : arctan(y / Z)
-で求められる。  距離 座標の値から求められる。  "/>
+<meta name="twitter:description" content="まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat."/>
 
 
 
 <meta property="og:title" content="ARマーカーの認識" />
-<meta property="og:description" content="ARマーカーの認識から追従対象の距離・角度の推定についての解説   座標 検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。
-その各座標値の平均を追従対象の座標としてます。  回転 おおよそ上記の座標と同じ。
-ただし、計算時に 回転の値 &#43; 90 × ID として平均を求める。
-IDが0のARマーカーに関しては回転の値が負の時、&#43;360する。
-x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。  方向 得られた座標の値から
-左右の方向 : arctan(x / z)
-上下の方向 : arctan(y / Z)
-で求められる。  距離 座標の値から求められる。  " />
+<meta property="og:description" content="まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/" /><meta property="article:section" content="OpenCV" />
 <meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
@@ -96,14 +84,8 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ARマーカーの認識"/>
-<meta name="twitter:description" content="ARマーカーの認識から追従対象の距離・角度の推定についての解説   座標 検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。
-その各座標値の平均を追従対象の座標としてます。  回転 おおよそ上記の座標と同じ。
-ただし、計算時に 回転の値 &#43; 90 × ID として平均を求める。
-IDが0のARマーカーに関しては回転の値が負の時、&#43;360する。
-x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。  方向 得られた座標の値から
-左右の方向 : arctan(x / z)
-上下の方向 : arctan(y / Z)
-で求められる。  距離 座標の値から求められる。  "/>
+<meta name="twitter:description" content="まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat."/>
 
 
 </head>
@@ -377,10 +359,10 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/" title="テスト記事" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/" title="カメラの特徴に関する前置き" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/">
-    テスト記事
+    カメラの特徴に関する前置き
   </a>
   
   
@@ -399,10 +381,10 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/" title="テスト記事2" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/" title="カメラ行列の計測" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/">
-    テスト記事2
+    カメラ行列の計測
   </a>
   
   
@@ -447,10 +429,10 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/" title="テスト記事" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/" title="ARマーカーから追従対象の認識" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/">
-    テスト記事
+    ARマーカーから追従対象の認識
   </a>
   
   
@@ -513,29 +495,73 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
         <div class="p-lg-5 p-4 bg-white" id="content">
           <h2 class="mb-5" id="title">ARマーカーの認識</h2>
           
-          <div class="content"><h4 id="arマーカーの認識から追従対象の距離角度の推定についての解説">ARマーカーの認識から追従対象の距離・角度の推定についての解説</h4>
-<ul>
-<li>
-<h5 id="座標">座標</h5>
-検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。<br>
-その各座標値の平均を追従対象の座標としてます。</li>
-<li>
-<h5 id="回転">回転</h5>
-おおよそ上記の座標と同じ。<br>
-ただし、計算時に 回転の値 + 90 × ID として平均を求める。<br>
-IDが0のARマーカーに関しては回転の値が負の時、+360する。<br>
-x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。</li>
-<li>
-<h5 id="方向">方向</h5>
-得られた座標の値から<br>
-左右の方向 : arctan(x / z)<br>
-上下の方向 : arctan(y / Z)<br>
-で求められる。</li>
-<li>
-<h5 id="距離">距離</h5>
-座標の値から求められる。</li>
+          <div class="content"><p>まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。
+このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> System.Collections;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> UnityEngine;
+<span style="color:#66d9ef">using</span> EstimateTargetTransform_OCVfU;
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextureSender</span> : MonoBehaviour
+{
+    <span style="color:#75715e">// CameraParaCal cameraPara;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> EstimateTra estimater;
+    Texture2D texture;
+    Texture2D result;
+    RenderTexture rt;
+    Rect source;
+
+    <span style="color:#75715e">// Start is called before the first frame update
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start()
+    {
+        <span style="color:#75715e">// cameraPara = new CameraParaCal();
+</span><span style="color:#75715e"></span>        estimater = <span style="color:#66d9ef">new</span> EstimateTra();
+    }
+    <span style="color:#66d9ef">public</span> Texture2D ToTexture2D(Texture self)
+    {
+        <span style="color:#66d9ef">var</span> sw = self.width;
+        <span style="color:#66d9ef">var</span> sh = self.height;
+        <span style="color:#66d9ef">var</span> format = TextureFormat.RGBA32;
+        result = <span style="color:#66d9ef">new</span> Texture2D(sw, sh, format, <span style="color:#66d9ef">false</span>);
+        <span style="color:#66d9ef">var</span> currentRT = RenderTexture.active;
+        rt = <span style="color:#66d9ef">new</span> RenderTexture(sw, sh, <span style="color:#ae81ff">32</span>);
+        Graphics.Blit(self, rt);
+        RenderTexture.active = rt;
+        source = <span style="color:#66d9ef">new</span> Rect(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, rt.width, rt.height);
+        result.ReadPixels(source, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+        result.Apply();
+        RenderTexture.active = currentRT;
+        <span style="color:#66d9ef">return</span> result;
+    }
+
+    <span style="color:#75715e">// Update is called once per frame
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Update()
+    {
+        texture = ToTexture2D(GetComponent&lt;Renderer&gt;().material.mainTexture);
+        estimater.Estimate(texture);
+        Destroy(result);
+        Destroy(rt);
+    }
+}
+</code></pre></div><ul>
+<li>EstimateTraクラスのメソッド内
+<pre tabindex="0"><code>Aruco.detectMarkers(//撮影された画像, //ARマーカーの辞書, //ARマーカーの角(Out), //ARマーカーのID(Out), //使わないのでいらないかも, //使わないのでいらないかも)
+</code></pre></li>
 </ul>
-</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Estimate(Texture2D texture)
+    {
+        Mat img = <span style="color:#66d9ef">new</span> Mat(texture.height, texture.width, CvType.CV_8UC3);
+        Utils.texture2DToMat(texture, img);
+        <span style="color:#75715e">/*
+</span><span style="color:#75715e">         * ARマーカーの検知
+</span><span style="color:#75715e">         * 6cm四方だと2mぐらいまではっきり検知可能
+</span><span style="color:#75715e">         */</span>
+        Aruco.detectMarkers(img, dictionary, corners, ids, parameters, rejectedImgPoints);
+        <span style="color:#75715e">/* 以下略
+</span><span style="color:#75715e">         * ...
+</span><span style="color:#75715e">         */</span>
+    }
+</code></pre></div></div>
           
           <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 25 Dec 2021</p>
           <nav class="pagination mt-3">

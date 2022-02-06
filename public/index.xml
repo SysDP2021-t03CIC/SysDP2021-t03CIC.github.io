@@ -9,6 +9,15 @@
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
     <lastBuildDate>Sat, 25 Dec 2021 08:59:39 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ARマーカーから追従対象の認識</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \ldots ]$,</description>
+    </item>
+    
+    <item>
       <title>ARマーカーの作成</title>
       <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
@@ -23,14 +32,8 @@
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</guid>
-      <description>ARマーカーの認識から追従対象の距離・角度の推定についての解説   座標 検出できた各ARマーカーからx座標,y座標,z座標を得ることができる。
-その各座標値の平均を追従対象の座標としてます。  回転 おおよそ上記の座標と同じ。
-ただし、計算時に 回転の値 + 90 × ID として平均を求める。
-IDが0のARマーカーに関しては回転の値が負の時、+360する。
-x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回転のみ。  方向 得られた座標の値から
-左右の方向 : arctan(x / z)
-上下の方向 : arctan(y / Z)
-で求められる。  距離 座標の値から求められる。  </description>
+      <description>まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat.</description>
     </item>
     
     <item>
@@ -56,6 +59,25 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
       
       <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</guid>
       <description>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー UnityではTelloからのカメラ映像が表示できなかった</description>
+    </item>
+    
+    <item>
+      <title>カメラの特徴に関する前置き</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i カメラで撮影される映像(画像)は、カメラのレンズなどの種類によって様々な歪みが生じる。 この歪みを修正して、ARマーカーの正しい距離や角度を求めるために、カメラキャリブレーション(カメラ行列、歪み)を知っておく必要がある。
+ カメラ行列</description>
+    </item>
+    
+    <item>
+      <title>カメラ行列の計測</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</guid>
+      <description>カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List&amp;lt;Mat&amp;gt; objPoints; private List&amp;lt;Mat&amp;gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; // Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List&amp;lt;Mat&amp;gt;(); imgPoints = new List&amp;lt;Mat&amp;gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2.</description>
     </item>
     
     <item>
@@ -127,24 +149,6 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</guid>
       <description>これはテストページです。</description>
     </item>
     
@@ -280,15 +284,6 @@ x軸回転,y軸回転,z軸回転が得られるが、利用するのはy軸回�
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</guid>
       <description>これはテストページです。</description>
     </item>
     
