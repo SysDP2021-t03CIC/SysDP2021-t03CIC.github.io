@@ -7,6 +7,8 @@ weight: 2
 type : "docs"
 ---
 
+[Telloについて](tello)
+
 [Tello標準SDKについて](tellosdk)
 
 [Telloの制御に使ったもの](tellolib)
