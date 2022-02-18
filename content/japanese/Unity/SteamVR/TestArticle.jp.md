@@ -6,7 +6,9 @@ date: 2021-02-18
 # trueにすると下書きとして非表示。falseにすると記事が表示されます。
 draft: false
 # 以下は検索用のタグです。適宜書き換えてください
-keywords: ["中井","SteamVR"]
+keywords: ["SteamVR"]
+# 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
+Author: "Nakai"
 ---
 
 SteamVRの導入に関してです。
@@ -29,7 +31,7 @@ SteamVRを動かすにはSteamを入れる必要があるのでまずSteamをイ
 
 SteamVRが起動出来たら以下のような小さなウィンドウが開かれると思います。
 なお、VR機器が繋がっている状態の時は、ヘッドマウントディスプレイを始め、コントローラーなどの機器がこのウィンドウに表示されます。
-![SteamVRの起動状態](\..\..\..\..\static\images\steamVR.png "SteamVRの起動状態")
+![SteamVRの起動状態](/images/steamVR.png "SteamVRの起動状態")
 
 これでSteamVRの導入は終わりです。
 
