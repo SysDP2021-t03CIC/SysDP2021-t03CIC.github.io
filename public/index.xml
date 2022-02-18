@@ -163,6 +163,15 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
     
     <item>
       <title>テスト記事</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tello/testarticle/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tello/testarticle/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事</title>
       <link>https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
@@ -302,6 +311,15 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/</guid>
+      <description>これはテストページです。</description>
+    </item>
+    
+    <item>
+      <title>テスト記事2</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tello/testarticle2/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tello/testarticle2/</guid>
       <description>これはテストページです。</description>
     </item>
     

@@ -11,7 +11,7 @@
     <loc>https://sysdp2021-t03cic.github.io/unity/steamvr/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/tello/tellosdk/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/tello/tello/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/pc/</loc>
@@ -29,7 +29,7 @@
     <loc>https://sysdp2021-t03cic.github.io/edit/github/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/tello/tellosdk/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/unity/unityproject/</loc>
@@ -44,10 +44,10 @@
     <loc>https://sysdp2021-t03cic.github.io/unity/blender/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/tello/video/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/opencv/parameter/</loc>
@@ -62,10 +62,10 @@
     <loc>https://sysdp2021-t03cic.github.io/howtouse/system/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/edit/howtomake/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/tello/video/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/edit/howtomake/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/</loc>
@@ -73,6 +73,9 @@
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/edit/</loc>
     <lastmod>2021-12-20T11:02:05+06:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/</loc>
+    <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
@@ -125,6 +128,9 @@
     <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/tello/tello/testarticle/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
@@ -171,6 +177,9 @@
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/tello/tello/testarticle2/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/</loc>
