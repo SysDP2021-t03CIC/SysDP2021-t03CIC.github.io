@@ -13,16 +13,22 @@ Author: "Nakai"
 
 SteamVRの導入に関してです。
 
-1.Steamをインストールする。
+<span style="font-size: 150%; color: red;">1.Steamをインストールする。</span></n>
+
 SteamVRを動かすにはSteamを入れる必要があるのでまずSteamをインストールします。
 まずSteamのサイトに行きます。
-[https://store.steampowered.com/?l=japanese]
+
+[Steamのサイト](https://store.steampowered.com/?l=japanese)
 
 こちらのサイトの上の方にSteamをインストールという文字があるのでここからインストールできます。
+
+<span style="font-size: 150%; color: red;">2.Steamの起動</span></n>
 
 インストールが終わったらSteamにログインをします。
 ここは私の代(bunshin-drone3の代)が作ったアカウントがあるのでこれを使ってくれるもよし。新しく作ってもらってもよしです。
 詳しいアカウントの詳細は企業さんに聞いてください。
+
+<span style="font-size: 150%; color: red;">3.SteamVRの起動</span></n>
 
 ログインしたらSteamの右上にVRというマークが表示されているかと思うのでそちらをクリックしてください。
 もしも表示されていなかったらヘッドマウントディスプレイ(VR機器のことです)が接続されていないと思いますのでそちらを確認してみてください。
@@ -40,4 +46,5 @@ SteamVRが起動出来たら以下のような小さなウィンドウが開か�
 
 これはSteamVRをインストールするやりかたを書いてあるサイトです。
 このサイトではUE4というゲームを作るときに使われるものでの利用ですがインストール自体はこれの通りで行いました。
-[https://docs.unrealengine.com/4.26/ja/SharingAndReleasing/XRDevelopment/VR/SteamVR/Prerequisites/]
+
+[参考サイト](https://docs.unrealengine.com/4.26/ja/SharingAndReleasing/XRDevelopment/VR/SteamVR/Prerequisites/)
