@@ -11,6 +11,6 @@ type : "docs"
 
 [GitHubの使い方](github)
 
-[Markdown記事の書き方](markdown)
+[記事の書き方](article)
 
 [このウェブサイトが出来るまで](howtomake)
