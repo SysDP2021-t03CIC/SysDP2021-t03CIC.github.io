@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>システム創成2021 CIC担当チーム 引継ぎ資料</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.91.0" />
   <meta name="description" content="システム創成2021 CIC担当チーム 引継ぎ資料 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
@@ -346,6 +346,12 @@
 						},
 						
 						{
+							value: "TelloSDKについて",
+							label: "<p>TelloSDK 基本的に以下のサイトを見ればわかる。\n ニート翔ぶ～C#でドローンを飛ばす～\n 主なTelloコマンド  command\nSDKモードに入る（1番最初に命令するコマンド） takeoff\nTelloが離陸する land\nTelloが着陸する emergency\n全てのモーターが止まる（緊急着陸） streamon\nビデオストリームをON streamoff\nビデオストリームをOFF up x\nx cm上昇 down x\nx cm下降 left x\nx cm左へ right x\nx cm右へ forward x\nx cm前進 back x\nx cm後退 cw x\nx 度時計回りに旋回 ccw x\nx 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </p><p>tello</p><p>SDK</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/testarticle\/"
+						},
+						
+						{
 							value: "カメラの特徴に関する前置き",
 							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i カメラで撮影される映像(画像)は、カメラのレンズなどの種類によって様々な歪みが生じる。 この歪みを修正して、ARマーカーの正しい距離や角度を求めるために、カメラキャリブレーション(カメラ行列、歪み)を知っておく必要がある。\n カメラ行列\n$ 3 \\times 3 $の行列\n 歪み係数\n5つの係数を持つ配列 参考  OpenCVでのキャリブレーション カメラパラメータの解説 pythonのコード    </p><p>画像処理</p><p>カメラパラメータ</p><p>カメラキャリブレーション</p><p>歪み</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/parameter\/testarticle\/"
@@ -421,18 +427,6 @@
 							value: "テスト記事",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tello\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/testarticle\/"
 						},
 						
 						{
@@ -553,6 +547,12 @@
 							value: "テスト記事2",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/unityproject\/testarticle2\/"
+						},
+						
+						{
+							value: "主となる制御のコード",
+							label: "<p>注意事項 スクリプト内にTelloControllerの名前のファイルが二つ存在する場合、使われているファイルは「TelloController1122.cs」であることに気を付ける。\nファイル内の大まかな説明 ドローンの移動の制御は「TelloController1122.cs」のUpdate内のswitch内で行われる。ドローンが自動で移動するサイクルは「Stop」,「TakeOff」,「TakingOff」,「Detect」,「Follow」,「Land」,「Landing」に分かれる。\n  「Stop」   Telloが受けているコマンドの状態の初期化。\nSキーが入力されると、「TakeOff」に移行する。\n  「TakeOff」   Telloが離陸する段階。\ntakeoffのコマンドを送ったのち、「TakingOff」に移行する。\n  「TakingOff」   Telloが離陸して上昇、旋回してARマーカーを探す段階。\n離陸自体は瞬時に終了するが、ARマーカーを探すために高度を合わせる。\n（waitTimerが3以上4以下の時）今回は追従対象が決まっていたため固定値分上昇させた。\n（waitTimerが4以上の時）ARマーカーを認識するまで旋回を続ける。認識に成功したとき、 「Follow」に移行する。\n  「Detect」   「Follow」に移行する役割。今回は未使用。\n  「Follow」   Telloが追従していることを示す段階。この段階が続いている限りTelloは追従を続ける。\nLキーが入力されると、「Land」に移行する。\n  「Land」   Telloが着陸する段階。\nlandのコマンドを送ったのち、「Landing」に移行する。\n  「Landing」   Telloが着陸している段階。\n実質的にシステム終了の段階である。\n</p><p>Tello</p><p>tello</p><p>ドローン</p><p>制御</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/testarticle\/"
 						},
 						
 						{
