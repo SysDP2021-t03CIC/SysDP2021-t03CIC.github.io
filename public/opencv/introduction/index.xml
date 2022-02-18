@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 20 Dec 2021 13:54:50 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/opencv/introduction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenCV for Unity</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/</guid>
       <description>2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity
 概要欄の「Trail &amp;amp; Demo」に試用版もある
 2021年度の開発で利用したバージョンは2.4.5
@@ -26,10 +26,10 @@
     
     <item>
       <title>OpenCVSharp</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</guid>
       <description>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー UnityではTelloからのカメラ映像が表示できなかった</description>
     </item>
     

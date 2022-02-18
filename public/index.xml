@@ -10,38 +10,38 @@
     <lastBuildDate>Sat, 25 Dec 2021 08:59:39 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ARマーカーから追従対象の認識</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</guid>
       <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \ldots ]$,</description>
     </item>
     
     <item>
       <title>ARマーカーの作成</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</guid>
       <description>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &amp;lt; n; i++) { // ARマーカーの画像情報をARmatに格納  Aruco.</description>
     </item>
     
     <item>
       <title>ARマーカーの認識</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</guid>
       <description>まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
 using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat.</description>
     </item>
     
     <item>
       <title>OpenCV for Unity</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/</guid>
       <description>2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity
 概要欄の「Trail &amp;amp; Demo」に試用版もある
 2021年度の開発で利用したバージョンは2.4.5
@@ -54,10 +54,10 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
     
     <item>
       <title>OpenCVSharp</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/testarticle2/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</guid>
       <description>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー UnityではTelloからのカメラ映像が表示できなかった</description>
     </item>
     
@@ -88,20 +88,20 @@ x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が�
     
     <item>
       <title>カメラの特徴に関する前置き</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/description/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/description/</guid>
       <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i カメラで撮影される映像(画像)は、カメラのレンズなどの種類によって様々な歪みが生じる。 この歪みを修正して、ARマーカーの正しい距離や角度を求めるために、カメラキャリブレーション(カメラ行列、歪み)を知っておく必要がある。
  カメラ行列</description>
     </item>
     
     <item>
       <title>カメラ行列の計測</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/testarticle2/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/</guid>
       <description>カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List&amp;lt;Mat&amp;gt; objPoints; private List&amp;lt;Mat&amp;gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; // Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List&amp;lt;Mat&amp;gt;(); imgPoints = new List&amp;lt;Mat&amp;gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2.</description>
     </item>
     
@@ -296,10 +296,10 @@ x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が�
     
     <item>
       <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/testarticle2/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/</guid>
       <description>これはテストページです。</description>
     </item>
     

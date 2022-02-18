@@ -10,19 +10,19 @@
     <lastBuildDate>Mon, 20 Dec 2021 13:54:50 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ARマーカーの作成</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</guid>
       <description>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &amp;lt; n; i++) { // ARマーカーの画像情報をARmatに格納  Aruco.</description>
     </item>
     
     <item>
       <title>ARマーカーの認識</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/testarticle2/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</guid>
       <description>まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
 using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat.</description>
     </item>

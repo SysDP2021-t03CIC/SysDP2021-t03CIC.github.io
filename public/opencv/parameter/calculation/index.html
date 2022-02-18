@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+  <meta charset="utf-8">
+  <title>カメラ行列の計測</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="description" content="カメラ行列の計測 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  
+  <!-- ** CSS Plugins Needed for the Project ** -->
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+  
+  <style>
+  :root{
+    --primary-color:#1c7cc5;
+    --body-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --light-color:#f8f9fa;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
+  
+<!-- ** JS Plugins Needed for the Project ** -->
+
+<!-- jquiry -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+
+  
+
+  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="カメラ行列の計測"/>
+<meta name="twitter:description" content="カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List&lt;Mat&gt; objPoints; private List&lt;Mat&gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; // Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List&lt;Mat&gt;(); imgPoints = new List&lt;Mat&gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2."/>
+
+
+
+<meta property="og:title" content="カメラ行列の計測" />
+<meta property="og:description" content="カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List&lt;Mat&gt; objPoints; private List&lt;Mat&gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; // Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List&lt;Mat&gt;(); imgPoints = new List&lt;Mat&gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/" /><meta property="article:section" content="OpenCV" />
+<meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
+<meta property="article:modified_time" content="2021-12-25T08:59:39+09:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="カメラ行列の計測"/>
+<meta name="twitter:description" content="カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List&lt;Mat&gt; objPoints; private List&lt;Mat&gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; // Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List&lt;Mat&gt;(); imgPoints = new List&lt;Mat&gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2."/>
+
+
+</head>
+
+  
+  <body>
+    
+    <!-- header -->
+    <header class="shadow-bottom sticky-top bg-white">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <div class="container px-2 px-md-0">
+    <a class="navbar-brand px-2" href="/">
+      
+      
+      
+      システム創成2021 CIC担当チーム 引継ぎ資料
+      
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/address">contact</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            docs
+          </a>
+          <div class="dropdown-menu">
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/unity">Unity</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/tello">Tello</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/opencv">OpenCV</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/howtouse">How to use</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/editS">How to edit</a>
+            
+          </div>
+        </li>
+        
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <!-- /header -->
+    
+    
+
+<!-- details page -->
+<section class="single section-sm pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="sidebar">
+        <a class="back-btn" href="/" aria-label="back"></a>
+          <ul class="list-styled">
+            
+            
+              
+            
+              
+            
+              
+              
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/" title="画像処理" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/">
+    画像処理
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/introduction/" title="OpenCVの基礎知識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/introduction/">
+    OpenCVの基礎知識
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/" title="OpenCV for Unity" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/">
+    OpenCV for Unity
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/" title="OpenCVSharp" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/">
+    OpenCVSharp
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/" title="ARマーカーについて" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/">
+    ARマーカーについて
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/" title="ARマーカーの作成" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/">
+    ARマーカーの作成
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/" title="ARマーカーの認識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/">
+    ARマーカーの認識
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/" title="パラメータ（カメラ行列、歪み）の取得" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/">
+    パラメータ（カメラ行列、歪み）の取得
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/description/" title="カメラの特徴に関する前置き" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/description/">
+    カメラの特徴に関する前置き
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/" title="カメラ行列の計測" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/">
+    カメラ行列の計測
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/" title="追従対象の認識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/">
+    追従対象の認識
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/description/" title="ARマーカーから追従対象の認識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/description/">
+    ARマーカーから追従対象の認識
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-lg-5 p-4 bg-white" id="content">
+          <h2 class="mb-5" id="title">カメラ行列の計測</h2>
+          
+          <div class="content"><h4 id="カメラ行列歪み係数の計測の方法">カメラ行列・歪み係数の計測の方法</h4>
+<ol>
+<li>以下の内容のスクリプトを作成。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> OpenCVForUnity.Calib3dModule;
+<span style="color:#66d9ef">using</span> OpenCVForUnity.ImgprocModule;
+<span style="color:#66d9ef">using</span> OpenCVForUnity.CoreModule;
+<span style="color:#66d9ef">using</span> OpenCVForUnity.ArucoModule;
+<span style="color:#66d9ef">using</span> OpenCVForUnity.UnityUtils;
+
+<span style="color:#66d9ef">using</span> UnityEngine;
+
+<span style="color:#66d9ef">namespace</span> EstimateTargetTransform_OCVfU
+{
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CameraParaCal</span>
+    {
+        <span style="color:#66d9ef">private</span> Mat img;
+        <span style="color:#66d9ef">private</span> Mat gray;
+        <span style="color:#66d9ef">private</span> Size crossNum;
+        <span style="color:#66d9ef">private</span> List&lt;Mat&gt; objPoints;
+        <span style="color:#66d9ef">private</span> List&lt;Mat&gt; imgPoints;
+        <span style="color:#66d9ef">private</span> Mat pattern_points;
+        
+        <span style="color:#66d9ef">public</span> Mat cameraMatrix;
+        <span style="color:#66d9ef">public</span> Mat distCoeffs;
+
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span>[] cameraArray;
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span>[] distArray;
+
+        <span style="color:#66d9ef">bool</span> calculating;
+
+        <span style="color:#75715e">// Start is called before the first frame update
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> CameraParaCal()
+        {
+            gray = <span style="color:#66d9ef">new</span> Mat();
+
+            objPoints = <span style="color:#66d9ef">new</span> List&lt;Mat&gt;();
+            imgPoints = <span style="color:#66d9ef">new</span> List&lt;Mat&gt;();
+
+            pattern_points = <span style="color:#66d9ef">new</span> Mat();
+            cameraMatrix = <span style="color:#66d9ef">new</span> Mat();
+            distCoeffs = <span style="color:#66d9ef">new</span> Mat();
+
+            calculating = <span style="color:#66d9ef">true</span>;
+
+            <span style="color:#66d9ef">int</span> w, h;
+            <span style="color:#66d9ef">float</span> pattern_size = <span style="color:#ae81ff">2.0f</span>;
+            crossNum = <span style="color:#66d9ef">new</span> Size(<span style="color:#ae81ff">7.0</span>, <span style="color:#ae81ff">7.0</span>);
+            
+            Point3[] a = <span style="color:#66d9ef">new</span> Point3[<span style="color:#ae81ff">7</span> * <span style="color:#ae81ff">7</span>];
+            <span style="color:#66d9ef">for</span> (h = <span style="color:#ae81ff">0</span>; h &lt; <span style="color:#ae81ff">7</span>; h++)
+            {
+                <span style="color:#66d9ef">for</span> (w = <span style="color:#ae81ff">0</span>; w &lt; <span style="color:#ae81ff">7</span>; w++)
+                {
+                    a[h * <span style="color:#ae81ff">7</span> + w] = <span style="color:#66d9ef">new</span> Point3(w * pattern_size, h * pattern_size, <span style="color:#ae81ff">0</span>);
+                }
+            }
+            MatOfPoint3f b = <span style="color:#66d9ef">new</span> MatOfPoint3f(a);
+            b.copyTo(pattern_points);
+        }
+
+        <span style="color:#75715e">// Update is called once per frame
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> DataSampling(Texture2D texture, <span style="color:#66d9ef">int</span> calcPoint = <span style="color:#ae81ff">40</span>)
+        {
+            img = <span style="color:#66d9ef">new</span> Mat(texture.height, texture.width, CvType.CV_8UC3);
+            Utils.texture2DToMat(texture, img);
+
+            <span style="color:#66d9ef">if</span> (img == <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span>;
+            <span style="color:#66d9ef">if</span> (!calculating) <span style="color:#66d9ef">return</span>;
+            
+            CalcPara();
+            Debug.Log(<span style="color:#e6db74">&#34;Sampling &lt;=== &#34;</span> + objPoints.Count + <span style="color:#e6db74">&#34; / &#34;</span> + calcPoint + <span style="color:#e6db74">&#34; ===&gt; &#34;</span>);
+
+            System.Threading.Thread.Sleep(<span style="color:#ae81ff">200</span>);
+
+            <span style="color:#66d9ef">if</span> (calculating &amp;&amp; objPoints.Count.Equals(calcPoint))
+            {
+                Debug.Log(<span style="color:#e6db74">&#34;Calculating...&#34;</span>);
+                CaliCamera();
+                calculating = <span style="color:#66d9ef">false</span>;
+
+                cameraArray = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">double</span>[cameraMatrix.rows() * cameraMatrix.cols() * cameraMatrix.channels()];
+                distArray = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">double</span>[distCoeffs.rows() * distCoeffs.cols() * distCoeffs.channels()];
+                cameraMatrix.<span style="color:#66d9ef">get</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, cameraArray);
+                distCoeffs.<span style="color:#66d9ef">get</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, distArray);
+
+                <span style="color:#66d9ef">int</span> i, j;
+                Debug.Log(<span style="color:#e6db74">&#34; --- cameraMatrix --- &#34;</span>);
+                <span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">0</span>; i &lt; <span style="color:#ae81ff">3</span>; i++)
+                {
+                    <span style="color:#66d9ef">for</span> (j = <span style="color:#ae81ff">0</span>; j &lt; <span style="color:#ae81ff">3</span>; j++)
+                    {
+                        <span style="color:#75715e">// Debug.Log(cameraArray.Length);
+</span><span style="color:#75715e"></span>                        Debug.Log(String.Format(<span style="color:#e6db74">&#34;{0:00000.00000000}, &#34;</span>, cameraArray[i * <span style="color:#ae81ff">3</span> + j]));
+                    }
+                }
+
+                Debug.Log(<span style="color:#e6db74">&#34; --- distMatrix --- &#34;</span>);
+                <span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">0</span>; i &lt; distArray.Length; i++)
+                {
+                    Debug.Log((String.Format(<span style="color:#e6db74">&#34;{0:00000.00000000},&#34;</span>, distArray[i])));
+                }
+            }
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> CalcPara()
+        {
+            <span style="color:#66d9ef">bool</span> patternFound;
+
+            Imgproc.cvtColor(img, gray, Imgproc.COLOR_BGR2GRAY);
+
+            MatOfPoint2f corners = <span style="color:#66d9ef">new</span> MatOfPoint2f();
+
+            patternFound = Calib3d.findChessboardCorners(gray, crossNum, corners);
+
+            <span style="color:#75715e">/*
+</span><span style="color:#75715e">             * corners
+</span><span style="color:#75715e">             * Channels : 2
+</span><span style="color:#75715e">             * Rows     : 49
+</span><span style="color:#75715e">             * Cols     : 1
+</span><span style="color:#75715e">             */</span>
+
+            <span style="color:#66d9ef">if</span> (patternFound)
+            {
+                TermCriteria term = <span style="color:#66d9ef">new</span> TermCriteria(TermCriteria.EPS | TermCriteria.COUNT, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">0.1</span>);
+
+                Imgproc.cornerSubPix(gray, corners, <span style="color:#66d9ef">new</span> Size(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>), <span style="color:#66d9ef">new</span> Size(-<span style="color:#ae81ff">1</span>, -<span style="color:#ae81ff">1</span>), term);
+                imgPoints.Add(corners);
+                objPoints.Add(pattern_points);
+            }
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> CaliCamera()
+        {
+            List&lt;Mat&gt; rvecs = <span style="color:#66d9ef">new</span> List&lt;Mat&gt;();
+            List&lt;Mat&gt; tvecs = <span style="color:#66d9ef">new</span> List&lt;Mat&gt;();
+            Calib3d.calibrateCamera(objPoints, imgPoints, gray.size(), cameraMatrix, distCoeffs, rvecs, tvecs);
+        }
+    }
+}
+</code></pre></div><ol start="2">
+<li>TextureSenderクラスのUpdateメソッドを以下のように書き換える。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextureSender</span> : MonoBehaviour
+{
+    CameraParaCal cameraPara;           <span style="color:#75715e">//←追加
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// public EstimateTra estimater;    //←コメントアウト
+</span><span style="color:#75715e"></span>    Texture2D texture;
+    Texture2D result;
+    RenderTexture rt;
+    Rect source;
+
+    <span style="color:#75715e">// Start is called before the first frame update
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">void</span> Start()
+    {
+        cameraPara = <span style="color:#66d9ef">new</span> CameraParaCal();   <span style="color:#75715e">//←追加
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// estimater = new EstimateTra();   //←コメントアウト
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#75715e">/*
+</span><span style="color:#75715e">     * 省略
+</span><span style="color:#75715e">     */</span>
+    
+    <span style="color:#66d9ef">void</span> Update()
+    {
+        <span style="color:#75715e">// 追加
+</span><span style="color:#75715e"></span>        time += Time.deltaTime;
+        <span style="color:#66d9ef">if</span> (time &gt; <span style="color:#ae81ff">0.2f</span>)
+        {
+            texture = ToTexture2D(GetComponent&lt;Renderer&gt;().material.mainTexture);
+            cameraPara.DataSampling(texture);
+            time = <span style="color:#ae81ff">0.0f</span>;
+        }
+        <span style="color:#75715e">// 追加ここまで
+</span><span style="color:#75715e"></span>        
+        <span style="color:#75715e">/* コメントアウト
+</span><span style="color:#75715e">        texture = ToTexture2D(GetComponent&lt;Renderer&gt;().material.mainTexture);
+</span><span style="color:#75715e">        estimater.Estimate(texture);
+</span><span style="color:#75715e">        */</span>
+        Destroy(result);
+        Destroy(rt);
+    }
+</code></pre></div></div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2021 Dec 25</p>
+          
+          <nav class="pagination mt-3">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/opencv/parameter/description/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">カメラの特徴に関する前置き</span></a>
+            
+            
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/opencv/recognition/" aria-label="Previous page" > <span class="d-none d-md-block">追従対象の認識</span><i class="ti-arrow-right ml-2"></i></a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+    <!-- footer -->
+<footer class="section pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 text-md-left text-center">
+       <p class="mb-md-0 mb-4">Copyright © 2021 a Hugo theme by <a href="https://gethugothemes.com/">Gethugothemes</a></p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://twitter.com/JetJaguar_PSX" aria-label="Twitter"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io" aria-label="Github"><i class="ti-github"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://sysdp2021-t03cic.github.io/js/script.min.js"></script>
+  </body>
+
+</html>

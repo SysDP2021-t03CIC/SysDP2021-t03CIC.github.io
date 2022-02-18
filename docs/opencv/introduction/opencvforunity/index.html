@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+  <meta charset="utf-8">
+  <title>OpenCV for Unity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="description" content="OpenCV for Unity - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  
+  <!-- ** CSS Plugins Needed for the Project ** -->
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+  
+  <style>
+  :root{
+    --primary-color:#1c7cc5;
+    --body-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --light-color:#f8f9fa;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
+  
+<!-- ** JS Plugins Needed for the Project ** -->
+
+<!-- jquiry -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+
+  
+
+  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="OpenCV for Unity"/>
+<meta name="twitter:description" content="2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity
+概要欄の「Trail &amp; Demo」に試用版もある
+2021年度の開発で利用したバージョンは2.4.5
+  利用   コードの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。
+プログラムの処理の流れはスクリプトファイル内のコメントや参考にしたサイトを見てほしい。
+  Matクラスのインスタンス生成 new Mat(//行数, //列数, //CvType.CV_[成分の型]C[チャンネル数])※成分の型:(例)double型 → 64F, short型 → 32S等
+※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(//数値を入れ始める行の目, //列の目, //具体的な数値の格納された配列)  Matから具体的な数値を取り出す Mat.get(//取り出す初める行の目,//列の目,//取り出した数値を格納する配列)  Mat同士の結合(横に並べる結合) Core.hconcat(//結合するMatのList, //結合結果を格納するMat)    その他のメソッドの内容もリファレンスで見ることができる。が正直分かりにくい
+  参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    "/>
+
+
+
+<meta property="og:title" content="OpenCV for Unity" />
+<meta property="og:description" content="2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity
+概要欄の「Trail &amp; Demo」に試用版もある
+2021年度の開発で利用したバージョンは2.4.5
+  利用   コードの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。
+プログラムの処理の流れはスクリプトファイル内のコメントや参考にしたサイトを見てほしい。
+  Matクラスのインスタンス生成 new Mat(//行数, //列数, //CvType.CV_[成分の型]C[チャンネル数])※成分の型:(例)double型 → 64F, short型 → 32S等
+※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(//数値を入れ始める行の目, //列の目, //具体的な数値の格納された配列)  Matから具体的な数値を取り出す Mat.get(//取り出す初める行の目,//列の目,//取り出した数値を格納する配列)  Mat同士の結合(横に並べる結合) Core.hconcat(//結合するMatのList, //結合結果を格納するMat)    その他のメソッドの内容もリファレンスで見ることができる。が正直分かりにくい
+  参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/" /><meta property="article:section" content="OpenCV" />
+<meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
+<meta property="article:modified_time" content="2021-12-25T08:59:39+09:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenCV for Unity"/>
+<meta name="twitter:description" content="2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity
+概要欄の「Trail &amp; Demo」に試用版もある
+2021年度の開発で利用したバージョンは2.4.5
+  利用   コードの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。
+プログラムの処理の流れはスクリプトファイル内のコメントや参考にしたサイトを見てほしい。
+  Matクラスのインスタンス生成 new Mat(//行数, //列数, //CvType.CV_[成分の型]C[チャンネル数])※成分の型:(例)double型 → 64F, short型 → 32S等
+※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(//数値を入れ始める行の目, //列の目, //具体的な数値の格納された配列)  Matから具体的な数値を取り出す Mat.get(//取り出す初める行の目,//列の目,//取り出した数値を格納する配列)  Mat同士の結合(横に並べる結合) Core.hconcat(//結合するMatのList, //結合結果を格納するMat)    その他のメソッドの内容もリファレンスで見ることができる。が正直分かりにくい
+  参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    "/>
+
+
+</head>
+
+  
+  <body>
+    
+    <!-- header -->
+    <header class="shadow-bottom sticky-top bg-white">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <div class="container px-2 px-md-0">
+    <a class="navbar-brand px-2" href="/">
+      
+      
+      
+      システム創成2021 CIC担当チーム 引継ぎ資料
+      
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/address">contact</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            docs
+          </a>
+          <div class="dropdown-menu">
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/unity">Unity</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/tello">Tello</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/opencv">OpenCV</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/howtouse">How to use</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/editS">How to edit</a>
+            
+          </div>
+        </li>
+        
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <!-- /header -->
+    
+    
+
+<!-- details page -->
+<section class="single section-sm pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="sidebar">
+        <a class="back-btn" href="/" aria-label="back"></a>
+          <ul class="list-styled">
+            
+            
+              
+            
+              
+            
+              
+              
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/" title="画像処理" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/">
+    画像処理
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/introduction/" title="OpenCVの基礎知識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/introduction/">
+    OpenCVの基礎知識
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/" title="OpenCV for Unity" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/">
+    OpenCV for Unity
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/" title="OpenCVSharp" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/">
+    OpenCVSharp
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/" title="ARマーカーについて" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/">
+    ARマーカーについて
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/" title="ARマーカーの作成" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/">
+    ARマーカーの作成
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/" title="ARマーカーの認識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/">
+    ARマーカーの認識
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/" title="パラメータ（カメラ行列、歪み）の取得" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/">
+    パラメータ（カメラ行列、歪み）の取得
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/description/" title="カメラの特徴に関する前置き" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/description/">
+    カメラの特徴に関する前置き
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/" title="カメラ行列の計測" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/">
+    カメラ行列の計測
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/" title="追従対象の認識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/">
+    追従対象の認識
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/description/" title="ARマーカーから追従対象の認識" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/description/">
+    ARマーカーから追従対象の認識
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-lg-5 p-4 bg-white" id="content">
+          <h2 class="mb-5" id="title">OpenCV for Unity</h2>
+          
+          <div class="content"><h4 id="2021年度の開発で最終的に利用したアセット">2021年度の開発で最終的に利用したアセット</h4>
+<ul>
+<li>
+<h5 id="ダウンロード">ダウンロード</h5>
+</li>
+</ul>
+<p><a href="https://assetstore.unity.com/packages/tools/integration/opencv-for-unity-21088?locale=ja-JP">OpenCV for Unity</a><br>
+概要欄の「Trail &amp; Demo」に試用版もある<br>
+2021年度の開発で利用したバージョンは2.4.5</p>
+<ul>
+<li>
+<h5 id="利用">利用</h5>
+</li>
+<li>
+<h5 id="コードの説明">コードの説明</h5>
+<p>正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。<br>
+プログラムの処理の流れはスクリプトファイル内のコメントや参考にしたサイトを見てほしい。</p>
+<ul>
+<li>
+<h6 id="matクラスのインスタンス生成">Matクラスのインスタンス生成</h6>
+<pre tabindex="0"><code>new Mat(//行数, //列数, //CvType.CV_[成分の型]C[チャンネル数])
+</code></pre>※成分の型:(例)double型 → 64F, short型 → 32S等<br>
+※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)</li>
+<li>
+<h6 id="matに具体的な数値を格納する">Matに具体的な数値を格納する</h6>
+<pre tabindex="0"><code>Mat.put(//数値を入れ始める行の目, //列の目, //具体的な数値の格納された配列)
+</code></pre></li>
+<li>
+<h6 id="matから具体的な数値を取り出す">Matから具体的な数値を取り出す</h6>
+<pre tabindex="0"><code>Mat.get(//取り出す初める行の目,//列の目,//取り出した数値を格納する配列)
+</code></pre></li>
+<li>
+<h6 id="mat同士の結合横に並べる結合">Mat同士の結合(横に並べる結合)</h6>
+<pre tabindex="0"><code>Core.hconcat(//結合するMatのList, //結合結果を格納するMat)
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<p>その他のメソッドの内容も<a href="https://enoxsoftware.github.io/OpenCVForUnity/3.0.0/doc/html/namespace_open_c_v_for_unity.html">リファレンス</a>で見ることができる。<del>が正直分かりにくい</del></p>
+<ul>
+<li>
+<h5 id="参考">参考</h5>
+<ul>
+<li><a href="https://note.com/npaka/n/n0148bca896aa">OpenCV for Unity 入門 (1) - 事始め</a></li>
+<li><a href="https://sgrsn1711.hatenablog.com/entry/2018/02/15/224615">pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る</a></li>
+<li><a href="https://qiita.com/ReoNagai/items/a8fdee89b1686ec31d10">pythonでARマーカーの姿勢推定</a></li>
+<li><a href="https://enoxsoftware.github.io/OpenCVForUnity/3.0.0/doc/html/namespace_open_c_v_for_unity.html">OpenCV for Unityのリファレンス</a></li>
+</ul>
+</li>
+</ul>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2021 Dec 25</p>
+          
+          <nav class="pagination mt-3">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/opencv/introduction/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">OpenCVの基礎知識</span></a>
+            
+            
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/" aria-label="Previous page" > <span class="d-none d-md-block">OpenCVSharp</span><i class="ti-arrow-right ml-2"></i></a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+    <!-- footer -->
+<footer class="section pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 text-md-left text-center">
+       <p class="mb-md-0 mb-4">Copyright © 2021 a Hugo theme by <a href="https://gethugothemes.com/">Gethugothemes</a></p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://twitter.com/JetJaguar_PSX" aria-label="Twitter"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io" aria-label="Github"><i class="ti-github"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://sysdp2021-t03cic.github.io/js/script.min.js"></script>
+  </body>
+
+</html>
