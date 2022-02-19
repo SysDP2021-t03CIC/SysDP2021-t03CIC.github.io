@@ -7,6 +7,8 @@ date: 2021-12-25T08:59:39+09:00
 draft: false
 # 以下は検索用のタグです。適宜書き換えてください
 keywords: ["画像処理","ARマーカー","追従対象"]
+# 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
+Author: "Tsuchiya Koken"
 ---
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">

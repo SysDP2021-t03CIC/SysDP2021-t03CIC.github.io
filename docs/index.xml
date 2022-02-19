@@ -42,13 +42,13 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/</guid>
-      <description>2021年度の開発で最終的に利用したアセット   ダウンロード   OpenCV for Unity
+      <description>2021年度の開発で最終的に利用したアセット
+  ダウンロード   OpenCV for Unity
 概要欄の「Trail &amp;amp; Demo」に試用版もある
 2021年度の開発で利用したバージョンは2.4.5
-  利用   コードの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。
-プログラムの処理の流れはスクリプトファイル内のコメントや参考にしたサイトを見てほしい。
-  Matクラスのインスタンス生成 new Mat(//行数, //列数, //CvType.CV_[成分の型]C[チャンネル数])※成分の型:(例)double型 → 64F, short型 → 32S等
-※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(//数値を入れ始める行の目, //列の目, //具体的な数値の格納された配列)  Matから具体的な数値を取り出す Mat.get(//取り出す初める行の目,//列の目,//取り出した数値を格納する配列)  Mat同士の結合(横に並べる結合) Core.hconcat(//結合するMatのList, //結合結果を格納するMat)    その他のメソッドの内容もリファレンスで見ることができる。が正直分かりにくい
+  利用 アセットストアで購入(もしくは試用版) をダウンロードし、インポートする。
+Pluginsは使っているPCに合わせる  メソッドの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。   Matクラスのインスタンス生成 new Mat(/*行数*/, /*列数*/, /*CvType.CV_[成分の型]C[チャンネル数]*/) ※成分の型:(例)double型 → 64F, short型 → 32S等
+※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(/*数値を入れ始める行の目*/, /*列の目*/, /*具体的な数値の格納された配列*/)   Matから具体的な数値を取り出す Mat.get(/*取り出す初める行の目*/, /*列の目*/, /*取り出した数値を格納する配列*/)   Mat同士の結合(横に並べる結合) Core.hconcat(/*結合するMatのList*/, /*結合結果を格納するMat*/)     その他のメソッドの内容もリファレンスで見ることができる。
   参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    </description>
     </item>
     
