@@ -2,10 +2,10 @@
 <html lang="ja-jp">
   <head>
   <meta charset="utf-8">
-  <title>ARマーカーの認識</title>
+  <title>ARマーカーの検出</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="generator" content="Hugo 0.91.0" />
-  <meta name="description" content="ARマーカーの認識 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  <meta name="description" content="ARマーカーの検出 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
   
@@ -67,15 +67,23 @@
 
 
 
-<meta name="twitter:title" content="ARマーカーの認識"/>
-<meta name="twitter:description" content="まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
-using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat."/>
+<meta name="twitter:title" content="ARマーカーの検出"/>
+<meta name="twitter:description" content="カメラ映像を取り込む OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。
+基のシステムでTelloのカメラ映像をオブジェクトのTextureに変換して表示していたため、
+Texture →(TextureSender)→ Texture2D →(OpenCV for Unity)→ Mat
+ という手順で変換している。
+ 画像をARマーカーの検出に送る用スクリプトを作成 以下のようにコードを変更  このスクリプトでは、オブジェクトのTextureをTexture2Dに変換し、さらにARマーカー検出するEstimateメソッドを呼び出している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; //独自の名前空間 using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self."/>
 
 
 
-<meta property="og:title" content="ARマーカーの認識" />
-<meta property="og:description" content="まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
-using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat." />
+<meta property="og:title" content="ARマーカーの検出" />
+<meta property="og:description" content="カメラ映像を取り込む OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。
+基のシステムでTelloのカメラ映像をオブジェクトのTextureに変換して表示していたため、
+Texture →(TextureSender)→ Texture2D →(OpenCV for Unity)→ Mat
+ という手順で変換している。
+ 画像をARマーカーの検出に送る用スクリプトを作成 以下のようにコードを変更  このスクリプトでは、オブジェクトのTextureをTexture2Dに変換し、さらにARマーカー検出するEstimateメソッドを呼び出している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; //独自の名前空間 using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/" /><meta property="article:section" content="OpenCV" />
 <meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
@@ -83,9 +91,13 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ARマーカーの認識"/>
-<meta name="twitter:description" content="まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。 このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。
-using System.Collections; using System.Collections.Generic; using UnityEngine; using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat."/>
+<meta name="twitter:title" content="ARマーカーの検出"/>
+<meta name="twitter:description" content="カメラ映像を取り込む OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。
+基のシステムでTelloのカメラ映像をオブジェクトのTextureに変換して表示していたため、
+Texture →(TextureSender)→ Texture2D →(OpenCV for Unity)→ Mat
+ という手順で変換している。
+ 画像をARマーカーの検出に送る用スクリプトを作成 以下のようにコードを変更  このスクリプトでは、オブジェクトのTextureをTexture2Dに変換し、さらにARマーカー検出するEstimateメソッドを呼び出している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; //独自の名前空間 using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self."/>
 
 
 </head>
@@ -311,10 +323,10 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/" title="ARマーカーの認識" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/" title="ARマーカーの検出" class="sidelist
   active">
   <a href="https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/">
-    ARマーカーの認識
+    ARマーカーの検出
   </a>
   
   
@@ -493,14 +505,23 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
       </div>
       <div class="col-lg-9">
         <div class="p-lg-5 p-4 bg-white" id="content">
-          <h2 class="mb-5" id="title">ARマーカーの認識</h2>
+          <h2 class="mb-5" id="title">ARマーカーの検出</h2>
           
-          <div class="content"><p>まず、次の内容のスクリプトを作成し、スクリーンのオブジェクトにアタッチ。
-このスクリプトでは、オブジェクトのTextureをTexture2Dに変換している。</p>
+          <div class="content"><h4 id="カメラ映像を取り込む">カメラ映像を取り込む</h4>
+<p>OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。<br>
+基のシステムでTelloのカメラ映像をオブジェクトのTextureに変換して表示していたため、<br></p>
+<h5 id="texture-texturesender-texture2d-opencv-for-unity-matbr">Texture →(TextureSender)→ Texture2D →(OpenCV for Unity)→ Mat<br></h5>
+<p>という手順で変換している。</p>
+<ol>
+<li>画像をARマーカーの検出に送る用スクリプトを作成</li>
+<li>以下のようにコードを変更</li>
+</ol>
+<p>このスクリプトでは、オブジェクトのTextureをTexture2Dに変換し、さらにARマーカー検出するEstimateメソッドを呼び出している。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> System.Collections;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> UnityEngine;
-<span style="color:#66d9ef">using</span> EstimateTargetTransform_OCVfU;
+<span style="color:#75715e">//独自の名前空間
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> EstimateTargetTransform_OCVfU;
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextureSender</span> : MonoBehaviour
 {
@@ -543,11 +564,11 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
         Destroy(rt);
     }
 }
-</code></pre></div><ul>
-<li>EstimateTraクラスのメソッド内
-<pre tabindex="0"><code>Aruco.detectMarkers(//撮影された画像, //ARマーカーの辞書, //ARマーカーの角(Out), //ARマーカーのID(Out), //使わないのでいらないかも, //使わないのでいらないかも)
-</code></pre></li>
-</ul>
+</code></pre></div><ol start="3">
+<li>スクリーンとなるオブジェクトにアタッチ</li>
+</ol>
+<h4 id="画像からarマーカーの検出">画像からARマーカーの検出</h4>
+<p>呼び出したEstimateメソッドでは、画像をTexture2DからMatへ変換しARマーカーの検出を行っている</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Estimate(Texture2D texture)
     {
         Mat img = <span style="color:#66d9ef">new</span> Mat(texture.height, texture.width, CvType.CV_8UC3);
@@ -557,11 +578,19 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; u
 </span><span style="color:#75715e">         * 6cm四方だと2mぐらいまではっきり検知可能
 </span><span style="color:#75715e">         */</span>
         Aruco.detectMarkers(img, dictionary, corners, ids, parameters, rejectedImgPoints);
-        <span style="color:#75715e">/* 以下略
-</span><span style="color:#75715e">         * ...
-</span><span style="color:#75715e">         */</span>
+        <span style="color:#75715e">/* 以下略 */</span>
     }
-</code></pre></div></div>
+</code></pre></div><ul>
+<li>
+<h6 id="arマーカーを検出する">ARマーカーを検出する</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">Aruco.detectMarkers(<span style="color:#75715e">/*画像*/</span>, <span style="color:#75715e">/*ARマーカーの辞書*/</span>,
+                    <span style="color:#75715e">/*ARマーカーの角(Out)*/</span>,
+                    <span style="color:#75715e">/*ARマーカーのID(Out)*/</span>,
+                    <span style="color:#75715e">/*検出のパラメータ*/</span>,
+                    <span style="color:#75715e">/*異常検出用(Out)*/</span>)
+</code></pre></div>※第5,6引数は使っていないため与えなくても問題なく動作するとは思う(試していない)。createメソッドで検出のパラメータを設定しているがリファレンスに何も書いていないため、おそらくデフォルトのまま</li>
+</ul>
+</div>
           
           <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2021 Dec 25</p>
           
