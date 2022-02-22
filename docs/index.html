@@ -316,6 +316,30 @@
 						},
 						
 						{
+							value: "1.主となる制御のコード",
+							label: "<p>注意事項 スクリプト内にTelloControllerの名前のファイルが二つ存在する場合、使われているファイルは「TelloController1122.cs」であることに気を付ける。\nファイル内の大まかな説明 ドローンの移動の制御は「TelloController1122.cs」のUpdate内のswitch内で行われる。ドローンが自動で移動するサイクルは「Stop」,「TakeOff」,「TakingOff」,「Detect」,「Follow」,「Land」,「Landing」に分かれる。\n  「Stop」   Telloが受けているコマンドの状態の初期化。\nSキーが入力されると、「TakeOff」に移行する。\n  「TakeOff」   Telloが離陸する段階。\ntakeoffのコマンドを送ったのち、「TakingOff」に移行する。\n  「TakingOff」   Telloが離陸して上昇、旋回してARマーカーを探す段階。\n離陸自体は瞬時に終了するが、ARマーカーを探すために高度を合わせる。\n（waitTimerが3以上4以下の時）今回は追従対象が決まっていたため固定値分上昇させた。\n（waitTimerが4以上の時）ARマーカーを認識するまで旋回を続ける。認識に成功したとき、 「Follow」に移行する。\n  「Detect」   「Follow」に移行する役割。今回は未使用。\n  「Follow」   Telloが追従していることを示す段階。この段階が続いている限りTelloは追従を続ける。\nLキーが入力されると、「Land」に移行する。\n  「Land」   Telloが着陸する段階。\nlandのコマンドを送ったのち、「Landing」に移行する。\n  「Landing」   Telloが着陸している段階。\n実質的にシステム終了の段階である。\n</p><p>Tello</p><p>tello</p><p>ドローン</p><p>制御</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/controller\/"
+						},
+						
+						{
+							value: "システム創成2021 CIC担当チーム 引継ぎ資料",
+							label: "<p></p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/"
+						},
+						
+						{
+							value: "TelloSDKについて",
+							label: "<p>TelloSDK 基本的に以下のサイトを見ればわかる。\n ニート翔ぶ～C#でドローンを飛ばす～\n 主なTelloコマンド  command\nSDKモードに入る（1番最初に命令するコマンド） takeoff\nTelloが離陸する land\nTelloが着陸する emergency\n全てのモーターが止まる（緊急着陸） streamon\nビデオストリームをON streamoff\nビデオストリームをOFF up x\nx cm上昇 down x\nx cm下降 left x\nx cm左へ right x\nx cm右へ forward x\nx cm前進 back x\nx cm後退 cw x\nx 度時計回りに旋回 ccw x\nx 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </p><p>tello</p><p>SDK</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/tellosdk\/"
+						},
+						
+						{
+							value: "2.移動距離に関する制御のコード",
+							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/testarticle2\/"
+						},
+						
+						{
 							value: "ARマーカーから追従対象の認識",
 							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \\ldots ]$,\n各ARマーカーから得られる情報を\n ARマーカーの座標 : $AR_i.TX,AR_i.TY,AR_i.TZ$\n ARマーカーの回転 : $AR_i.RX,AR_i.RY,AR_i.RZ$\n ARマーカーのID : $AR_i.ID$\nとしておく。  座標 追従対象の座標$[tx,ty,tz]$は\n $tx = 1\/n \\sum_{n}^{i=0}AR_i.X$\n $ty = 1\/n \\sum_{n}^{i=0}AR_i.Y$\n $tz = 1\/n \\sum_{n}^{i=0}AR_i.Z$\nで求める。    回転 追従対象の回転$[rx,ry,rz]$はおおよそ上記の座標と同じ。\n $rx = 1\/n \\sum_{n}^{i=0}AR_i.X \u002b AR_i.ID \\times 90$\n $ry = 1\/n \\sum_{n}^{i=0}AR_i.Y \u002b AR_i.ID \\times 90$\n $rz = 1\/n \\sum_{n}^{i=0}AR_i.Z \u002b AR_i.ID \\times 90$\nで求める。    方向 得られた座標の値から  左右の方向 : $arctan(tx \/ tz)$  上下の方向 : $arctan(ty \/ tz)$\nで求められる。    距離 座標の値から$d = \\sqrt{tx^2 \u002b ty^2 \u002b tz^2}$ で求められる。  </p><p>画像処理</p><p>ARマーカー</p><p>追従対象</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/description\/"
@@ -346,12 +370,6 @@
 						},
 						
 						{
-							value: "TelloSDKについて",
-							label: "<p>TelloSDK 基本的に以下のサイトを見ればわかる。\n ニート翔ぶ～C#でドローンを飛ばす～\n 主なTelloコマンド  command\nSDKモードに入る（1番最初に命令するコマンド） takeoff\nTelloが離陸する land\nTelloが着陸する emergency\n全てのモーターが止まる（緊急着陸） streamon\nビデオストリームをON streamoff\nビデオストリームをOFF up x\nx cm上昇 down x\nx cm下降 left x\nx cm左へ right x\nx cm右へ forward x\nx cm前進 back x\nx cm後退 cw x\nx 度時計回りに旋回 ccw x\nx 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </p><p>tello</p><p>SDK</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/testarticle\/"
-						},
-						
-						{
 							value: "カメラの特徴に関する前置き",
 							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i カメラで撮影される映像(画像)は、カメラのレンズなどの種類によって様々な歪みが生じる。 この歪みを修正して、ARマーカーの正しい距離や角度を求めるために、カメラキャリブレーション(カメラ行列、歪み)を知っておく必要がある。\n カメラ行列\n$ 3 \\times 3 $の行列\n 歪み係数\n5つの係数を持つ配列 参考  OpenCVでのキャリブレーション カメラパラメータの解説 pythonのコード    </p><p>画像処理</p><p>カメラパラメータ</p><p>カメラキャリブレーション</p><p>歪み</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/parameter\/description\/"
@@ -361,12 +379,6 @@
 							value: "カメラ行列の計測",
 							label: "<p>カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List\u0026lt;Mat\u0026gt; objPoints; private List\u0026lt;Mat\u0026gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; \/\/ Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List\u0026lt;Mat\u0026gt;(); imgPoints = new List\u0026lt;Mat\u0026gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2.0f; crossNum = new Size(7.0, 7.0); Point3[] a = new Point3[7 * 7]; for (h = 0; h \u0026lt; 7; h\u002b\u002b) { for (w = 0; w \u0026lt; 7; w\u002b\u002b) { a[h * 7 \u002b w] = new Point3(w * pattern_size, h * pattern_size, 0); } } MatOfPoint3f b = new MatOfPoint3f(a); b.copyTo(pattern_points); } \/\/ Update is called once per frame  public void DataSampling(Texture2D texture, int calcPoint = 40) { img = new Mat(texture.height, texture.width, CvType.CV_8UC3); Utils.texture2DToMat(texture, img); if (img == null) return; if (!calculating) return; CalcPara(); Debug.Log(\u0026#34;Sampling \u0026lt;=== \u0026#34; \u002b objPoints.Count \u002b \u0026#34; \/ \u0026#34; \u002b calcPoint \u002b \u0026#34; ===\u0026gt; \u0026#34;); System.Threading.Thread.Sleep(200); if (calculating \u0026amp;\u0026amp; objPoints.Count.Equals(calcPoint)) { Debug.Log(\u0026#34;Calculating...\u0026#34;); CaliCamera(); calculating = false; cameraArray = new double[cameraMatrix.rows() * cameraMatrix.cols() * cameraMatrix.channels()]; distArray = new double[distCoeffs.rows() * distCoeffs.cols() * distCoeffs.channels()]; cameraMatrix.get(0, 0, cameraArray); distCoeffs.get(0, 0, distArray); int i, j; Debug.Log(\u0026#34; --- cameraMatrix --- \u0026#34;); for (i = 0; i \u0026lt; 3; i\u002b\u002b) { for (j = 0; j \u0026lt; 3; j\u002b\u002b) { \/\/ Debug.Log(cameraArray.Length);  Debug.Log(String.Format(\u0026#34;{0:00000.00000000}, \u0026#34;, cameraArray[i * 3 \u002b j])); } } Debug.Log(\u0026#34; --- distMatrix --- \u0026#34;); for (i = 0; i \u0026lt; distArray.Length; i\u002b\u002b) { Debug.Log((String.Format(\u0026#34;{0:00000.00000000},\u0026#34;, distArray[i]))); } } } private void CalcPara() { bool patternFound; Imgproc.cvtColor(img, gray, Imgproc.COLOR_BGR2GRAY); MatOfPoint2f corners = new MatOfPoint2f(); patternFound = Calib3d.findChessboardCorners(gray, crossNum, corners); \/* * corners * Channels : 2 * Rows : 49 * Cols : 1 *\/ if (patternFound) { TermCriteria term = new TermCriteria(TermCriteria.EPS | TermCriteria.COUNT, 30, 0.1); Imgproc.cornerSubPix(gray, corners, new Size(5, 5), new Size(-1, -1), term); imgPoints.Add(corners); objPoints.Add(pattern_points); } } private void CaliCamera() { List\u0026lt;Mat\u0026gt; rvecs = new List\u0026lt;Mat\u0026gt;(); List\u0026lt;Mat\u0026gt; tvecs = new List\u0026lt;Mat\u0026gt;(); Calib3d.calibrateCamera(objPoints, imgPoints, gray.size(), cameraMatrix, distCoeffs, rvecs, tvecs); } } } TextureSenderクラスのUpdateメソッドを以下のように書き換える。  public class TextureSender : MonoBehaviour { CameraParaCal cameraPara; \/\/←追加  \/\/ public EstimateTra estimater; \/\/←コメントアウト  Texture2D texture; Texture2D result; RenderTexture rt; Rect source; \/\/ Start is called before the first frame update  void Start() { cameraPara = new CameraParaCal(); \/\/←追加  \/\/ estimater = new EstimateTra(); \/\/←コメントアウト  } \/* * 省略 *\/ void Update() { \/\/ 追加  time \u002b= Time.deltaTime; if (time \u0026gt; 0.2f) { texture = ToTexture2D(GetComponent\u0026lt;Renderer\u0026gt;().material.mainTexture); cameraPara.DataSampling(texture); time = 0.0f; } \/\/ 追加ここまで  \/* コメントアウト texture = ToTexture2D(GetComponent\u0026lt;Renderer\u0026gt;().material.mainTexture); estimater.Estimate(texture); *\/ Destroy(result); Destroy(rt); } </p><p>画像処理</p><p>カメラパラメータ</p><p>カメラキャリブレーション</p><p>歪み</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/parameter\/calculation\/"
-						},
-						
-						{
-							value: "システム創成2021 CIC担当チーム 引継ぎ資料",
-							label: "<p></p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/"
 						},
 						
 						{
@@ -421,12 +433,6 @@
 							value: "テスト記事",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/autotracking\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tello\/testarticle\/"
 						},
 						
 						{
@@ -510,24 +516,6 @@
 						{
 							value: "テスト記事2",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tello\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/video\/testarticle2\/"
 						},
 						
@@ -547,12 +535,6 @@
 							value: "テスト記事2",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/unityproject\/testarticle2\/"
-						},
-						
-						{
-							value: "主となる制御のコード",
-							label: "<p>注意事項 スクリプト内にTelloControllerの名前のファイルが二つ存在する場合、使われているファイルは「TelloController1122.cs」であることに気を付ける。\nファイル内の大まかな説明 ドローンの移動の制御は「TelloController1122.cs」のUpdate内のswitch内で行われる。ドローンが自動で移動するサイクルは「Stop」,「TakeOff」,「TakingOff」,「Detect」,「Follow」,「Land」,「Landing」に分かれる。\n  「Stop」   Telloが受けているコマンドの状態の初期化。\nSキーが入力されると、「TakeOff」に移行する。\n  「TakeOff」   Telloが離陸する段階。\ntakeoffのコマンドを送ったのち、「TakingOff」に移行する。\n  「TakingOff」   Telloが離陸して上昇、旋回してARマーカーを探す段階。\n離陸自体は瞬時に終了するが、ARマーカーを探すために高度を合わせる。\n（waitTimerが3以上4以下の時）今回は追従対象が決まっていたため固定値分上昇させた。\n（waitTimerが4以上の時）ARマーカーを認識するまで旋回を続ける。認識に成功したとき、 「Follow」に移行する。\n  「Detect」   「Follow」に移行する役割。今回は未使用。\n  「Follow」   Telloが追従していることを示す段階。この段階が続いている限りTelloは追従を続ける。\nLキーが入力されると、「Land」に移行する。\n  「Land」   Telloが着陸する段階。\nlandのコマンドを送ったのち、「Landing」に移行する。\n  「Landing」   Telloが着陸している段階。\n実質的にシステム終了の段階である。\n</p><p>Tello</p><p>tello</p><p>ドローン</p><p>制御</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/testarticle\/"
 						},
 						
 						{

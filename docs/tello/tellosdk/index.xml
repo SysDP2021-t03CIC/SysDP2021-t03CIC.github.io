@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 20 Dec 2021 13:54:50 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/tello/tellosdk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TelloSDKについて</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellosdk/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</link>
+      <pubDate>Fri, 18 Feb 2022 16:44:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellosdk/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</guid>
       <description>TelloSDK 基本的に以下のサイトを見ればわかる。
  ニート翔ぶ～C#でドローンを飛ばす～
  主なTelloコマンド  command
@@ -31,15 +31,6 @@ x cm前進 back x
 x cm後退 cw x
 x 度時計回りに旋回 ccw x
 x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellosdk/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellosdk/testarticle2/</guid>
-      <description>これはテストページです。</description>
     </item>
     
   </channel>
