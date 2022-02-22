@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>システム創成2021 CIC担当チーム 引継ぎ資料</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.91.0" />
   <meta name="description" content="システム創成2021 CIC担当チーム 引継ぎ資料 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
@@ -166,6 +166,12 @@
 					var projects = [
 						
 						{
+							value: "OpenCV for Unity",
+							label: "<p>2021年度の開発で最終的に利用したアセット\n  ダウンロード   OpenCV for Unity\n概要欄の「Trail \u0026amp; Demo」に試用版もある\n2021年度の開発で利用したバージョンは2.4.5\n  利用 アセットストアで購入(もしくは試用版) をダウンロードし、インポートする。\nPluginsは使っているPCに合わせる  メソッドの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。   Matクラスのインスタンス生成 new Mat(\/*行数*\/, \/*列数*\/, \/*CvType.CV_[成分の型]C[チャンネル数]*\/) ※成分の型:(例)double型 → 64F, short型 → 32S等\n※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(\/*数値を入れ始める行の目*\/, \/*列の目*\/, \/*具体的な数値の格納された配列*\/)   Matから具体的な数値を取り出す Mat.get(\/*取り出す初める行の目*\/, \/*列の目*\/, \/*取り出した数値を格納する配列*\/)   Mat同士の結合(横に並べる結合) Core.hconcat(\/*結合するMatのList*\/, \/*結合結果を格納するMat*\/)     その他のメソッドの内容もリファレンスで見ることができる。\n  参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    </p><p>画像処理</p><p>OpenCV</p><p>OpenCV for Unity</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/introduction\/opencvforunity\/"
+						},
+						
+						{
 							value: "Unityプロジェクト",
 							label: "<p>SteamVRを用いた開発\nUnityプロジェクト内での開発\nBlenderを用いた3Dモデル製作\n</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/"
@@ -199,6 +205,12 @@
 							value: "初期セットアップ",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/setup\/"
+						},
+						
+						{
+							value: "OpenCVSharp",
+							label: "<p>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー  TextureをMatに変換する関数がない 変換関数を自作したが動作が遅かった これらの理由から利用を断念。OpenCV for Unityの方を利用した。  OpenCVSharpの導入 1. NuGetの導入  NuGetForUnityから「NuGEtForUnity.〇.〇.〇.unitypackage」をダウンロード 「NuGEtForUnity.〇.〇.〇.unitypackage」をUnityEditorのウィンドウにドラッグ\u0026amp;ドロップ 全てチェックを付けたままインポート  2. OpenCVSharpの導入  UnityEditorのヘッダーメニュー「NuGet」→「Manage Nuget Packages」を選択 「OpenCVSharp」を検索しインストール  OpenCVSharp3の場合は、OpenCVSharp3-AnyCPU OpenCVSharp4の場合は、OpenCVSharp4.WindowsやOpenCVSharp4\u002bOpenCVSharp4.runtime.○○   opencvsharpからインストールしたバージョンに近いもののzipファイルをダウンロード ダウンロードしたファイルをにある「OpenCVSharpExtern.dll」を「Assets\/Packages\/OpenCvSharp○-○○\/lib\/netstandard2.0」にコピー  </p><p>画像処理</p><p>OpenCV</p><p>OpenCVSharp</p><p>断念</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/introduction\/opencvsharp\/"
 						},
 						
 						{
@@ -361,18 +373,6 @@
 							value: "ARマーカーの検出",
 							label: "<p>カメラ映像を取り込む OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。\n基のシステムでTelloのカメラ映像をオブジェクトのTextureに変換して表示していたため、\nTexture →(TextureSender)→ Texture2D →(OpenCV for Unity)→ Mat\n という手順で変換している。\n 画像をARマーカーの検出に送る用スクリプトを作成 以下のようにコードを変更  このスクリプトでは、オブジェクトのTextureをTexture2Dに変換し、さらにARマーカー検出するEstimateメソッドを呼び出している。\nusing System.Collections; using System.Collections.Generic; using UnityEngine; \/\/独自の名前空間 using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { \/\/ CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; \/\/ Start is called before the first frame update  void Start() { \/\/ cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.width; var sh = self.height; var format = TextureFormat.RGBA32; result = new Texture2D(sw, sh, format, false); var currentRT = RenderTexture.active; rt = new RenderTexture(sw, sh, 32); Graphics.Blit(self, rt); RenderTexture.active = rt; source = new Rect(0, 0, rt.width, rt.height); result.ReadPixels(source, 0, 0); result.Apply(); RenderTexture.active = currentRT; return result; } \/\/ Update is called once per frame  void Update() { texture = ToTexture2D(GetComponent\u0026lt;Renderer\u0026gt;().material.mainTexture); estimater.Estimate(texture); Destroy(result); Destroy(rt); } } スクリーンとなるオブジェクトにアタッチ  画像からARマーカーの検出 呼び出したEstimateメソッドでは、画像をTexture2DからMatへ変換しARマーカーの検出を行っている\npublic void Estimate(Texture2D texture) { Mat img = new Mat(texture.height, texture.width, CvType.CV_8UC3); Utils.texture2DToMat(texture, img); \/* * ARマーカーの検知 * 6cm四方だと2mぐらいまではっきり検知可能 *\/ Aruco.detectMarkers(img, dictionary, corners, ids, parameters, rejectedImgPoints); \/* 以下略 *\/ }   ARマーカーを検出する Aruco.detectMarkers(\/*画像*\/, \/*ARマーカーの辞書*\/, \/*ARマーカーの角(Out)*\/, \/*ARマーカーのID(Out)*\/, \/*検出のパラメータ*\/, \/*異常検出用(Out)*\/) ※第5,6引数は使っていないため与えなくても問題なく動作するとは思う(試していない)。createメソッドで検出のパラメータを設定しているがリファレンスに何も書いていないため、おそらくデフォルトのまま  </p><p>画像処理</p><p>ARマーカー</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/ar_marker\/detectarmarker\/"
-						},
-						
-						{
-							value: "OpenCV for Unity",
-							label: "<p>2021年度の開発で最終的に利用したアセット\n  ダウンロード   OpenCV for Unity\n概要欄の「Trail \u0026amp; Demo」に試用版もある\n2021年度の開発で利用したバージョンは2.4.5\n  利用 アセットストアで購入(もしくは試用版) をダウンロードし、インポートする。\nPluginsは使っているPCに合わせる  メソッドの説明 正直引き継ぎでアプリ実行するだけなら、見る必要は無いが少しだけメソッドの説明をしておく。   Matクラスのインスタンス生成 new Mat(\/*行数*\/, \/*列数*\/, \/*CvType.CV_[成分の型]C[チャンネル数]*\/) ※成分の型:(例)double型 → 64F, short型 → 32S等\n※チャンネル:行列の成分の表し方(行,列)にもう1つ要素が加わったもの(というイメージ)  Matに具体的な数値を格納する Mat.put(\/*数値を入れ始める行の目*\/, \/*列の目*\/, \/*具体的な数値の格納された配列*\/)   Matから具体的な数値を取り出す Mat.get(\/*取り出す初める行の目*\/, \/*列の目*\/, \/*取り出した数値を格納する配列*\/)   Mat同士の結合(横に並べる結合) Core.hconcat(\/*結合するMatのList*\/, \/*結合結果を格納するMat*\/)     その他のメソッドの内容もリファレンスで見ることができる。\n  参考  OpenCV for Unity 入門 (1) - 事始め pythonでArUcoライブラリを使ってARマーカの位置とか角度とか知る pythonでARマーカーの姿勢推定 OpenCV for Unityのリファレンス    </p><p>画像処理</p><p>OpenCV</p><p>OpenCV for Unity</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/introduction\/opencvforunity\/"
-						},
-						
-						{
-							value: "OpenCVSharp",
-							label: "<p>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー UnityではTelloからのカメラ映像が表示できなかった\n</p><p>画像処理</p><p>OpenCV</p><p>OpenCVSharp</p><p>断念</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/introduction\/opencvsharp\/"
 						},
 						
 						{

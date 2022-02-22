@@ -9,6 +9,8 @@ draft: false
 keywords: ["画像処理","OpenCV","OpenCV for Unity"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "Tsuchiya Koken"
+# 以下は目次において何番目に表示するか決めるタグです。
+weight: 1
 ---
 
 2021年度の開発で最終的に利用したアセット
