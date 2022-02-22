@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
-    <lastBuildDate>Tue, 22 Feb 2022 06:50:26 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Feb 2022 13:08:55 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverb G2を使う時の準備</title>
+      <link>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/</link>
+      <pubDate>Tue, 22 Feb 2022 13:08:55 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/</guid>
+      <description> 配線  ヘッドセットにケーブルを繋ぐ  ヘッドセットのフェイスクッションを外す ヘッドセットにケーブルを接続する。しっかり奥まで差さないと反応しない ヘッドセットにフェイスクッションを取り付ける   電源ケーブルを繋ぐ DisplayPortケーブルをPCに接続する  マザーボードではなくグラフィックボードの端子に繋ぐ   USB Type-CケーブルにType-A変換アダプタを取り付ける Type-A変換アダプタをUSB3.0端子に取り付ける  必ずUSB3.0の端子に差すこと。2.0では動作しない     ケーブルの抜き差し  エラーメッセージが出た場合は、PCに刺さっているケーブルを他の端子に差し替える エラーが無くなり正常動作するまで試す   Mixed Reality ポータルの設定  Mixed Realityポータル アプリにて「部屋の境界線のセットアップ」を選択する PC画面上の指示に従って設定する   前回と同じ部屋で使用するならこの設定は必要無い   装着  ヘッドバンドを緩めに調整する ヘッドバンドを上に上げる ゴーグル部分を顔に当てる ヘッドバンドを下げる ヘッドバンドを締める スピーカーの位置を調整する    </description>
+    </item>
+    
     <item>
       <title>1.主となる制御のコード</title>
       <link>https://sysdp2021-t03cic.github.io/tello/tellolib/controller/</link>
