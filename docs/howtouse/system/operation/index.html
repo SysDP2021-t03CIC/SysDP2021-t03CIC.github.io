@@ -2,10 +2,10 @@
 <html lang="ja-jp">
   <head>
   <meta charset="utf-8">
-  <title>Telloのカメラ映像の取得</title>
+  <title>Bunshin Drone 3 システムの運用方法</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="generator" content="Hugo 0.91.2" />
-  <meta name="description" content="Telloのカメラ映像の取得 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  <meta name="description" content="Bunshin Drone 3 システムの運用方法 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
   
@@ -67,20 +67,22 @@
 
 
 
-<meta name="twitter:title" content="Telloのカメラ映像の取得"/>
-<meta name="twitter:description" content="This is meta description"/>
+<meta name="twitter:title" content="Bunshin Drone 3 システムの運用方法"/>
+<meta name="twitter:description" content=" 必要な人員  ユーザ1（VRヘッドセットを装着する人） ユーザ2（帽子を被り、ドローンに追従される人） システム運用者（PCを操作する）     Unityエディタを起動する。 ユーザ1はVRヘッドセットReverb G2を装着する  参照先   ユーザ2は帽子を被る PCとTelloを接続する  参照先   Telloをユーザ2の後方に置く システム運用者がUnityエディタ上で実行ボタンをクリックする ユーザ1が見ている映像にUIが表示される。右手のコントローラーをUIに当てて操作する  実は左手のコントローラーを対応させるのが間に合わなかった   Telloのカメラ映像が表示されなければ、最初からやり直す 正常動作していれば、Telloが離陸しユーザ2を探す Telloがユーザ2を視認し追従し始めたら、ユーザ2は歩行し始める システム運用終了時は、システム運用者がPCのキーボードの「L」キーを押す  Lは「land」（着陸）のL   システム運用者はUnityエディタ上で実行終了ボタンをクリックする。 速やかにTelloの電源をOFFにする。  "/>
 
 
 
-<meta property="og:title" content="Telloのカメラ映像の取得" />
-<meta property="og:description" content="This is meta description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://sysdp2021-t03cic.github.io/tello/video/" />
+<meta property="og:title" content="Bunshin Drone 3 システムの運用方法" />
+<meta property="og:description" content=" 必要な人員  ユーザ1（VRヘッドセットを装着する人） ユーザ2（帽子を被り、ドローンに追従される人） システム運用者（PCを操作する）     Unityエディタを起動する。 ユーザ1はVRヘッドセットReverb G2を装着する  参照先   ユーザ2は帽子を被る PCとTelloを接続する  参照先   Telloをユーザ2の後方に置く システム運用者がUnityエディタ上で実行ボタンをクリックする ユーザ1が見ている映像にUIが表示される。右手のコントローラーをUIに当てて操作する  実は左手のコントローラーを対応させるのが間に合わなかった   Telloのカメラ映像が表示されなければ、最初からやり直す 正常動作していれば、Telloが離陸しユーザ2を探す Telloがユーザ2を視認し追従し始めたら、ユーザ2は歩行し始める システム運用終了時は、システム運用者がPCのキーボードの「L」キーを押す  Lは「land」（着陸）のL   システム運用者はUnityエディタ上で実行終了ボタンをクリックする。 速やかにTelloの電源をOFFにする。  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/howtouse/system/operation/" /><meta property="article:section" content="HowToUse" />
+<meta property="article:published_time" content="2022-02-25T13:37:54+09:00" />
+<meta property="article:modified_time" content="2022-02-25T13:37:54+09:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Telloのカメラ映像の取得"/>
-<meta name="twitter:description" content="This is meta description"/>
+<meta name="twitter:title" content="Bunshin Drone 3 システムの運用方法"/>
+<meta name="twitter:description" content=" 必要な人員  ユーザ1（VRヘッドセットを装着する人） ユーザ2（帽子を被り、ドローンに追従される人） システム運用者（PCを操作する）     Unityエディタを起動する。 ユーザ1はVRヘッドセットReverb G2を装着する  参照先   ユーザ2は帽子を被る PCとTelloを接続する  参照先   Telloをユーザ2の後方に置く システム運用者がUnityエディタ上で実行ボタンをクリックする ユーザ1が見ている映像にUIが表示される。右手のコントローラーをUIに当てて操作する  実は左手のコントローラーを対応させるのが間に合わなかった   Telloのカメラ映像が表示されなければ、最初からやり直す 正常動作していれば、Telloが離陸しユーザ2を探す Telloがユーザ2を視認し追従し始めたら、ユーザ2は歩行し始める システム運用終了時は、システム運用者がPCのキーボードの「L」キーを押す  Lは「land」（着陸）のL   システム運用者はUnityエディタ上で実行終了ボタンをクリックする。 速やかにTelloの電源をOFFにする。  "/>
 
 
 </head>
@@ -165,6 +167,10 @@
               
             
               
+            
+              
+            
+              
               
 
 
@@ -174,10 +180,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/" title="トイドローンTello" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/" title="システム・機材の使い方" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/">
-    トイドローンTello
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/">
+    システム・機材の使い方
   </a>
   
   
@@ -193,10 +199,29 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/" title="Telloについて" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/pc/" title="デスクトップPCの使い方" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/tello/">
-    Telloについて
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/pc/">
+    デスクトップPCの使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/">
+    テスト記事
   </a>
   
   
@@ -215,29 +240,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellosdk/" title="Tello標準SDKについて" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/" title="テスト記事2" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/tellosdk/">
-    Tello標準SDKについて
-  </a>
-  
-  
-    <ul>
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/" title="TelloSDKについて" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/">
-    TelloSDKについて
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/">
+    テスト記事2
   </a>
   
   
@@ -263,10 +269,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellolib/" title="Telloの制御に使うもの" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/" title="VRヘッドセット HP Reverb G2の使い方" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/tellolib/">
-    Telloの制御に使うもの
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/">
+    VRヘッドセット HP Reverb G2の使い方
   </a>
   
   
@@ -282,10 +288,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellolib/controller/" title="1.主となる制御のコード" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/" title="Reverb G2を使う時の準備" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/tellolib/controller/">
-    1.主となる制御のコード
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/">
+    Reverb G2を使う時の準備
   </a>
   
   
@@ -304,10 +310,32 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/" title="2.移動距離に関する制御のコード" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle/" title="テスト記事" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/">
-    2.移動距離に関する制御のコード
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle2/">
+    テスト記事2
   </a>
   
   
@@ -333,14 +361,128 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/" title="Telloのカメラ映像の取得" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/" title="Telloの使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/">
+    Telloの使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/setup/" title="Telloを使う時の手順" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/setup/">
+    Telloを使う時の手順
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/" title="Bunshin Drone 3システムの使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/">
+    Bunshin Drone 3システムの使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/operation/" title="Bunshin Drone 3 システムの運用方法" class="sidelist
   active">
-  <a href="https://sysdp2021-t03cic.github.io/tello/video/">
-    Telloのカメラ映像の取得
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/operation/">
+    Bunshin Drone 3 システムの運用方法
   </a>
   
   
-    <ul>
+</li>
+
+
+        
       
         
           
@@ -352,9 +494,9 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/testarticle/" title="テスト記事" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle/" title="テスト記事" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/video/testarticle/">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle/">
     テスト記事
   </a>
   
@@ -374,79 +516,9 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/testarticle2/" title="テスト記事2" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle2/" title="テスト記事2" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/video/testarticle2/">
-    テスト記事2
-  </a>
-  
-  
-</li>
-
-
-        
-      
-    </ul>
-  
-</li>
-
-
-        
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/" title="自動追従" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/">
-    自動追従
-  </a>
-  
-  
-    <ul>
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/" title="テスト記事" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/">
-    テスト記事
-  </a>
-  
-  
-</li>
-
-
-        
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/" title="テスト記事2" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle2/">
     テスト記事2
   </a>
   
@@ -476,91 +548,61 @@
             
               
             
-              
             
               
-            
             
           </ul>
         </div>
       </div>
       <div class="col-lg-9">
         <div class="p-lg-5 p-4 bg-white" id="content">
-          <h2 class="mb-5" id="title">Telloのカメラ映像の取得</h2>
+          <h2 class="mb-5" id="title">Bunshin Drone 3 システムの運用方法</h2>
           
-          <div class="bg-light p-4">
-            <ul class="page-list">
-              
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/" title="Telloのカメラ映像の取得" class="sidelist
-  active">
-  <a href="https://sysdp2021-t03cic.github.io/tello/video/">
-    Telloのカメラ映像の取得
-  </a>
-  
-  
-    <ul>
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/testarticle/" title="テスト記事" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/video/testarticle/">
-    テスト記事
-  </a>
-  
-  
+          <div class="content"><ul>
+<li>必要な人員
+<ul>
+<li>ユーザ1（VRヘッドセットを装着する人）</li>
+<li>ユーザ2（帽子を被り、ドローンに追従される人）</li>
+<li>システム運用者（PCを操作する）</li>
+</ul>
 </li>
-
-
-        
-      
-        
-          
-
-
-
-
-
-
-
-
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/testarticle2/" title="テスト記事2" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/video/testarticle2/">
-    テスト記事2
-  </a>
-  
-  
+</ul>
+<ol>
+<li>Unityエディタを起動する。</li>
+<li>ユーザ1はVRヘッドセットReverb G2を装着する
+<ul>
+<li><a href="./../../reverbg2/setup/">参照先</a></li>
+</ul>
 </li>
-
-
-        
-      
-    </ul>
-  
+<li>ユーザ2は帽子を被る</li>
+<li>PCとTelloを接続する
+<ul>
+<li><a href="./../../tello/setup/">参照先</a></li>
+</ul>
 </li>
-
-
-            </ul>
-          </div>
+<li>Telloをユーザ2の後方に置く</li>
+<li>システム運用者がUnityエディタ上で実行ボタンをクリックする</li>
+<li>ユーザ1が見ている映像にUIが表示される。右手のコントローラーをUIに当てて操作する
+<ul>
+<li>実は左手のコントローラーを対応させるのが間に合わなかった</li>
+</ul>
+</li>
+<li>Telloのカメラ映像が表示されなければ、最初からやり直す</li>
+<li>正常動作していれば、Telloが離陸しユーザ2を探す</li>
+<li>Telloがユーザ2を視認し追従し始めたら、ユーザ2は歩行し始める</li>
+<li>システム運用終了時は、システム運用者がPCのキーボードの「L」キーを押す
+<ul>
+<li>Lは「land」（着陸）のL</li>
+</ul>
+</li>
+<li>システム運用者はUnityエディタ上で実行終了ボタンをクリックする。</li>
+<li>速やかにTelloの電源をOFFにする。</li>
+</ol>
+</div>
           
-          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2021 Dec 20</p>
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2022 Feb 25</p>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Written by Tanaka</p>
           
           <nav class="pagination mt-3">
             
@@ -753,7 +795,6 @@
             
             
             
-            
 
             
             
@@ -761,9 +802,6 @@
             
             
 
-            
-            
-            
             
             
             
@@ -868,15 +906,11 @@
             
             
             
-            
 
             
             
             
 
-            
-            
-            
             
             
             
@@ -1181,6 +1215,7 @@
             
             
             
+            
 
             
             
@@ -1188,6 +1223,9 @@
             
             
 
+            
+            
+            
             
             
             
@@ -1372,11 +1410,13 @@
             
             
             
+            
 
             
             
             
 
+            
             
             
             
@@ -1390,6 +1430,9 @@
             
             
 
+            
+            
+            
             
             
             
@@ -1777,10 +1820,10 @@
             
 
             
-            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">2.移動距離に関する制御のコード</span></a>
+            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/howtouse/system/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Bunshin Drone 3システムの使い方</span></a>
             
             
-            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/tello/video/testarticle/" aria-label="Previous page" > <span class="d-none d-md-block">テスト記事</span><i class="ti-arrow-right ml-2"></i></a>
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle/" aria-label="Previous page" > <span class="d-none d-md-block">テスト記事</span><i class="ti-arrow-right ml-2"></i></a>
             
           </nav>
         </div>
