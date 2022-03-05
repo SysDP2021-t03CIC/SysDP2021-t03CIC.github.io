@@ -43,6 +43,16 @@ Pluginsは使っているPCに合わせる  メソッドの説明 正直引き�
     </item>
     
     <item>
+      <title>数式的な解説</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ
+  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$</description>
+    </item>
+    
+    <item>
       <title>OpenCVSharp</title>
       <link>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
@@ -86,6 +96,41 @@ landのコマンドを送ったのち、「Landing」に移行する。
     </item>
     
     <item>
+      <title>1.基本性能</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tello/performance/</link>
+      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tello/performance/</guid>
+      <description>Telloについて dji社の販売しているトイドローン。
+バッテリー駆動のドローンでバッテリーの続く限り飛行する。
+- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km/h 最大飛行時間： 13分（無風、定速15km/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用</description>
+    </item>
+    
+    <item>
+      <title>2.Telloの改造</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tello/remodeling/</link>
+      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tello/remodeling/</guid>
+      <description>注意 改造については公式から出されたものではないため扱いには気を付ける。
+実際に触る部分はカバーのところがメインであるため壊すことはないと思うが、怖いものは怖いため気を付けておく。
+改造箇所 前述のとおり、改造の主な部分は天板の白い部分である。
+目的としてはTello内の風通しを良くして、飛行することでTello自体の熱を冷ますことである。この作業によってTelloのオーバーヒートの発生が少なくなり長時間の飛行が可能になった。
+改造箇所は3か所ある。
+  天板
+側面を覆う様になっている斜めの箇所を爪の部分を避けて切り取る。天板を外す際は、バッテリーの挿入口側から隙間を少しずつ開けていき、天板全体が少し浮いたら少し力を込めることで外すことができる。
+天板を付け直す際は、爪をあわせて軽い力で上から押さえつける。すると「カチッ」という音が鳴るのでそれで終了。
+  底面の棒
+Telloの裏側を見ると6本の棒が縦格子状についている。
+その棒を根元からすべて切り離す。
+  バッテリーの下にある板
+バッテリーを挿入する箇所の底に薄い板状のものが存在する。
+両面テープでくっついているため、なにか薄い物で持ち上げた後に引っこ抜くことでとれる。板が取れたら両端の突起を切断する。
+元に戻す際には向きに気を付けて戻す。
+  </description>
+    </item>
+    
+    <item>
       <title>TelloSDKについて</title>
       <link>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</link>
       <pubDate>Fri, 18 Feb 2022 16:44:39 +0900</pubDate>
@@ -112,20 +157,11 @@ x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が�
     
     <item>
       <title>2.移動距離に関する制御のコード</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>ARマーカーから追従対象の認識</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</guid>
-      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \ldots ]$,</description>
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/</guid>
+      <description>ファイル内の大まかな説明 </description>
     </item>
     
     <item>

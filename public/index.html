@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>システム創成2021 CIC担当チーム 引継ぎ資料</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.91.0" />
   <meta name="description" content="システム創成2021 CIC担当チーム 引継ぎ資料 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
@@ -184,6 +184,12 @@
 						},
 						
 						{
+							value: "数式的な解説",
+							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ\n  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$\n   認識できたARマーカーを$AR = [AR_0, \\ldots , AR_n]$として、各ARマーカーの持つ値を$AR_i.id$のように表す\n追従対象の情報を計算   座標 追従対象の座標$[tx,ty,tz]$は\n$[tx, ty, tz] = [\\frac{\\sum_{n}^{i=0}AR_i.tx}{n}, \\frac{\\sum_{n}^{i=0}AR_i.ty}{n}, \\frac{\\sum_{n}^{i=0}AR_i.tz}{n}]$\nで求める。  回転 追従対象の回転$[rx,ry,rz]$は\n$[rx, ry, rz] = [\\frac{\\sum_{n}^{i=0}AR_i.rx \u002b AR_i.id \\times 90}{n}, \\frac{\\sum_{n}^{i=0}AR_i.ry \u002b AR_i.id \\times 90}{n}, \\frac{\\sum_{n}^{i=0}AR_i.rz \u002b AR_i.id \\times 90}{n}]$\nで求める。\nただし、$AR_i.id$が$0$で、回転の値が負の場合$\u002b360$する。  方向 追従対象の方向はそれぞれ  左右の方向 : $arctan(\\frac{tx}{tz})$ 上下の方向 : $arctan(\\frac{ty}{tz})$\nで求める。    距離 カメラから追従対象の距離は\n$d = \\sqrt{tx^2 \u002b ty^2 \u002b tz^2}$ で求める。  </p><p>画像処理</p><p>ARマーカー</p><p>追従対象</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/description\/"
+						},
+						
+						{
 							value: "Unityプロジェクト",
 							label: "<p>SteamVRを用いた開発\nUnityプロジェクト内での開発\nBlenderを用いた3Dモデル製作\n</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/"
@@ -358,6 +364,18 @@
 						},
 						
 						{
+							value: "1.基本性能",
+							label: "<p>Telloについて dji社の販売しているトイドローン。\nバッテリー駆動のドローンでバッテリーの続く限り飛行する。\n- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km\/h 最大飛行時間： 13分（無風、定速15km\/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用\n- 実際の飛行時間 について Telloの改造（別ページ）により、飛行時間が約10分ほどまで飛び続ける。\nしかし、Tello本体が熱を持ちすぎると動作が止まったり利かなくなったりすることがある。そのため実際に運用するときには、動かす場合は熱を持たないように早いうちに飛ばしたり、複数のドローンやバッテリーを使いまわすことによって冷ましながら運用をすることが重要になる。\n- ライトによる状態の説明 Telloの前方にはLEDのライトがついており、それを見ることでTelloが元現在どのような状況であるかを認識できる。\nよくみたLEDのサインを列挙するが、ここに挙げたものはあくまで一例であるため下記のサイトやその他のサイトを参考にするとよい。\n  パターン  通常時（非飛行時）  カラフルに点滅  Wi-fiと未接続   黄色点滅  Wi-Fiとの接続確認     飛行時  緑色点滅  問題なく飛行   赤色点滅  バッテリー残量が少ない     充電時  青色点滅  充電中   青色点灯  充電完了        参考：Tello　LED点滅パターン（機体のステータス確認）\n注意点 Telloは風に弱く、エアコンの風であおられて移動してしまうこともあり室外では上手く飛ばせない。そのため、室外で運用するような物を作ろうとする際には、Tello以外のドローンを使うようにCICさんに頼むとよい。\n室内で飛ばす場合にも、扇風機やエアコン・換気扇などの影響を考えながら避けたり止めたりして行うと正しい挙動が確認できる。\n</p><p>Tello</p><p>ドローン</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tello\/performance\/"
+						},
+						
+						{
+							value: "2.Telloの改造",
+							label: "<p>注意 改造については公式から出されたものではないため扱いには気を付ける。\n実際に触る部分はカバーのところがメインであるため壊すことはないと思うが、怖いものは怖いため気を付けておく。\n改造箇所 前述のとおり、改造の主な部分は天板の白い部分である。\n目的としてはTello内の風通しを良くして、飛行することでTello自体の熱を冷ますことである。この作業によってTelloのオーバーヒートの発生が少なくなり長時間の飛行が可能になった。\n改造箇所は3か所ある。\n  天板\n側面を覆う様になっている斜めの箇所を爪の部分を避けて切り取る。天板を外す際は、バッテリーの挿入口側から隙間を少しずつ開けていき、天板全体が少し浮いたら少し力を込めることで外すことができる。\n天板を付け直す際は、爪をあわせて軽い力で上から押さえつける。すると「カチッ」という音が鳴るのでそれで終了。\n  底面の棒\nTelloの裏側を見ると6本の棒が縦格子状についている。\nその棒を根元からすべて切り離す。\n  バッテリーの下にある板\nバッテリーを挿入する箇所の底に薄い板状のものが存在する。\n両面テープでくっついているため、なにか薄い物で持ち上げた後に引っこ抜くことでとれる。板が取れたら両端の突起を切断する。\n元に戻す際には向きに気を付けて戻す。\n  </p><p>Tello</p><p>ドローン</p><p>改造</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tello\/remodeling\/"
+						},
+						
+						{
 							value: "TelloSDKについて",
 							label: "<p>TelloSDK 基本的に以下のサイトを見ればわかる。\n ニート翔ぶ～C#でドローンを飛ばす～\n 主なTelloコマンド  command\nSDKモードに入る（1番最初に命令するコマンド） takeoff\nTelloが離陸する land\nTelloが着陸する emergency\n全てのモーターが止まる（緊急着陸） streamon\nビデオストリームをON streamoff\nビデオストリームをOFF up x\nx cm上昇 down x\nx cm下降 left x\nx cm左へ right x\nx cm右へ forward x\nx cm前進 back x\nx cm後退 cw x\nx 度時計回りに旋回 ccw x\nx 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </p><p>tello</p><p>SDK</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/tellosdk\/"
@@ -365,14 +383,8 @@
 						
 						{
 							value: "2.移動距離に関する制御のコード",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/testarticle2\/"
-						},
-						
-						{
-							value: "ARマーカーから追従対象の認識",
-							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \\ldots ]$,\n各ARマーカーから得られる情報を\n ARマーカーの座標 : $AR_i.TX,AR_i.TY,AR_i.TZ$\n ARマーカーの回転 : $AR_i.RX,AR_i.RY,AR_i.RZ$\n ARマーカーのID : $AR_i.ID$\nとしておく。  座標 追従対象の座標$[tx,ty,tz]$は\n $tx = 1\/n \\sum_{n}^{i=0}AR_i.X$\n $ty = 1\/n \\sum_{n}^{i=0}AR_i.Y$\n $tz = 1\/n \\sum_{n}^{i=0}AR_i.Z$\nで求める。    回転 追従対象の回転$[rx,ry,rz]$はおおよそ上記の座標と同じ。\n $rx = 1\/n \\sum_{n}^{i=0}AR_i.X \u002b AR_i.ID \\times 90$\n $ry = 1\/n \\sum_{n}^{i=0}AR_i.Y \u002b AR_i.ID \\times 90$\n $rz = 1\/n \\sum_{n}^{i=0}AR_i.Z \u002b AR_i.ID \\times 90$\nで求める。    方向 得られた座標の値から  左右の方向 : $arctan(tx \/ tz)$  上下の方向 : $arctan(ty \/ tz)$\nで求められる。    距離 座標の値から$d = \\sqrt{tx^2 \u002b ty^2 \u002b tz^2}$ で求められる。  </p><p>画像処理</p><p>ARマーカー</p><p>追従対象</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/description\/"
+							label: "<p>ファイル内の大まかな説明 </p><p>田中</p><p>test</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/move_cal\/"
 						},
 						
 						{

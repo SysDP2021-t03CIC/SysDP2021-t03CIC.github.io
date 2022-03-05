@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+  <meta charset="utf-8">
+  <title>1.基本性能</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="description" content="1.基本性能 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  
+  <!-- ** CSS Plugins Needed for the Project ** -->
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+  
+  <style>
+  :root{
+    --primary-color:#1c7cc5;
+    --body-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --light-color:#f8f9fa;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
+  
+<!-- ** JS Plugins Needed for the Project ** -->
+
+<!-- jquiry -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+
+  
+
+  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="1.基本性能"/>
+<meta name="twitter:description" content="Telloについて dji社の販売しているトイドローン。
+バッテリー駆動のドローンでバッテリーの続く限り飛行する。
+- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km/h 最大飛行時間： 13分（無風、定速15km/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用"/>
+
+
+
+<meta property="og:title" content="1.基本性能" />
+<meta property="og:description" content="Telloについて dji社の販売しているトイドローン。
+バッテリー駆動のドローンでバッテリーの続く限り飛行する。
+- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km/h 最大飛行時間： 13分（無風、定速15km/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/tello/tello/performance/" /><meta property="article:section" content="Tello" />
+<meta property="article:published_time" content="2022-02-22T06:50:26+09:00" />
+<meta property="article:modified_time" content="2022-02-22T06:50:26+09:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1.基本性能"/>
+<meta name="twitter:description" content="Telloについて dji社の販売しているトイドローン。
+バッテリー駆動のドローンでバッテリーの続く限り飛行する。
+- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km/h 最大飛行時間： 13分（無風、定速15km/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用"/>
+
+
+</head>
+
+  
+  <body>
+    
+    <!-- header -->
+    <header class="shadow-bottom sticky-top bg-white">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <div class="container px-2 px-md-0">
+    <a class="navbar-brand px-2" href="/">
+      
+      
+      
+      システム創成2021 CIC担当チーム 引継ぎ資料
+      
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/address">contact</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            docs
+          </a>
+          <div class="dropdown-menu">
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/unity">Unity</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/tello">Tello</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/opencv">OpenCV</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/howtouse">How to use</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/editS">How to edit</a>
+            
+          </div>
+        </li>
+        
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <!-- /header -->
+    
+    
+
+<!-- details page -->
+<section class="single section-sm pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="sidebar">
+        <a class="back-btn" href="/" aria-label="back"></a>
+          <ul class="list-styled">
+            
+            
+              
+            
+              
+              
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/" title="トイドローンTello" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/">
+    トイドローンTello
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/" title="Telloについて" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tello/">
+    Telloについて
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/performance/" title="1.基本性能" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tello/performance/">
+    1.基本性能
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/remodeling/" title="2.Telloの改造" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tello/remodeling/">
+    2.Telloの改造
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellosdk/" title="Tello標準SDKについて" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellosdk/">
+    Tello標準SDKについて
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/" title="TelloSDKについて" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/">
+    TelloSDKについて
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellolib/" title="Telloの制御に使うもの" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellolib/">
+    Telloの制御に使うもの
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellolib/controller/" title="1.主となる制御のコード" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellolib/controller/">
+    1.主となる制御のコード
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/" title="2.移動距離に関する制御のコード" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/">
+    2.移動距離に関する制御のコード
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/" title="Telloのカメラ映像の取得" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/video/">
+    Telloのカメラ映像の取得
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/video/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/video/testarticle2/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/" title="自動追従" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/">
+    自動追従
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-lg-5 p-4 bg-white" id="content">
+          <h2 class="mb-5" id="title">1.基本性能</h2>
+          
+          <div class="content"><h4 id="telloについて">Telloについて</h4>
+<p>dji社の販売しているトイドローン。<br>
+バッテリー駆動のドローンでバッテリーの続く限り飛行する。</p>
+<h5 id="--搭載機能">- 搭載機能</h5>
+<ul>
+<li>
+<h6 id="機体">機体</h6>
+<ul>
+<li>重量（プロペラガード含）： 87g</li>
+<li>最大速度： 28.8km/h</li>
+<li>最大飛行時間： 13分（無風、定速15km/h）</li>
+<li>動作環境温度： 0 ~ 40 ℃</li>
+<li>動作周波数帯： 2.4 ~ 2.4835GHz</li>
+<li>トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）</li>
+</ul>
+</li>
+<li>
+<h6 id="カメラ">カメラ</h6>
+<ul>
+<li>最大静止画面サイズ： 2592 × 1936</li>
+<li>動画記録モード： HD 1280 × 720 30p</li>
+<li>動画フォーマット： MP4</li>
+</ul>
+</li>
+<li>
+<h6 id="フライトバッテリー">フライトバッテリー</h6>
+<ul>
+<li>容量： 1,100mAh</li>
+<li>電圧： 3.8V</li>
+<li>バッテリータイプ： LiPo</li>
+<li>電力量： 4.18Wh</li>
+<li>正味重量： 25 ± 2g</li>
+<li>充電温度範囲： 5 ~ 45 ℃</li>
+<li>最大充電電力： 10W</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://dl-cdn.ryzerobotics.com/downloads/Tello/201806mul/Tello%20User%20Manual%20V1.0_JP.pdf">Telloユーザーマニュアル</a> より引用</p>
+<h5 id="--実際の飛行時間--について">- 実際の飛行時間  について</h5>
+<p>Telloの改造（別ページ）により、飛行時間が約10分ほどまで飛び続ける。<br>
+しかし、Tello本体が熱を持ちすぎると動作が止まったり利かなくなったりすることがある。そのため実際に運用するときには、動かす場合は熱を持たないように早いうちに飛ばしたり、複数のドローンやバッテリーを使いまわすことによって冷ましながら運用をすることが重要になる。</p>
+<h5 id="--ライトによる状態の説明">- ライトによる状態の説明</h5>
+<p>Telloの前方にはLEDのライトがついており、それを見ることでTelloが元現在どのような状況であるかを認識できる。<br>
+よくみたLEDのサインを列挙するが、ここに挙げたものはあくまで一例であるため下記のサイトやその他のサイトを参考にするとよい。</p>
+<ul>
+<li>
+<h6 id="パターン">パターン</h6>
+<ul>
+<li>通常時（非飛行時）
+<ul>
+<li>カラフルに点滅
+<ul>
+<li>Wi-fiと未接続</li>
+</ul>
+</li>
+<li>黄色点滅
+<ul>
+<li>Wi-Fiとの接続確認</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>飛行時
+<ul>
+<li>緑色点滅
+<ul>
+<li>問題なく飛行</li>
+</ul>
+</li>
+<li>赤色点滅
+<ul>
+<li>バッテリー残量が少ない</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>充電時
+<ul>
+<li>青色点滅
+<ul>
+<li>充電中</li>
+</ul>
+</li>
+<li>青色点灯
+<ul>
+<li>充電完了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>参考：<a href="https://sekido-rc.com/blog/technical/faq_180321_001/">Tello　 LED点滅パターン（機体のステータス確認）</a></p>
+<h5 id="注意点">注意点</h5>
+<p>Telloは風に弱く、エアコンの風であおられて移動してしまうこともあり室外では上手く飛ばせない。そのため、室外で運用するような物を作ろうとする際には、Tello以外のドローンを使うようにCICさんに頼むとよい。<br>
+室内で飛ばす場合にも、扇風機やエアコン・換気扇などの影響を考えながら避けたり止めたりして行うと正しい挙動が確認できる。</p>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2022 Feb 22</p>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Written by ban</p>
+          
+          <nav class="pagination mt-3">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/tello/tello/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Telloについて</span></a>
+            
+            
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/tello/tello/remodeling/" aria-label="Previous page" > <span class="d-none d-md-block">2.Telloの改造</span><i class="ti-arrow-right ml-2"></i></a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+    <!-- footer -->
+<footer class="section pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 text-md-left text-center">
+       <p class="mb-md-0 mb-4">Copyright © 2021 a Hugo theme by <a href="https://gethugothemes.com/">Gethugothemes</a></p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://twitter.com/JetJaguar_PSX" aria-label="Twitter"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io" aria-label="Github"><i class="ti-github"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://sysdp2021-t03cic.github.io/js/script.min.js"></script>
+  </body>
+
+</html>

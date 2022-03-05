@@ -35,11 +35,11 @@ landのコマンドを送ったのち、「Landing」に移行する。
     
     <item>
       <title>2.移動距離に関する制御のコード</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellolib/testarticle2/</guid>
-      <description>これはテストページです。</description>
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/</guid>
+      <description>ファイル内の大まかな説明 </description>
     </item>
     
   </channel>

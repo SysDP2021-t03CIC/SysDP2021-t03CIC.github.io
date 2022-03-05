@@ -2,10 +2,10 @@
 <html lang="ja-jp">
   <head>
   <meta charset="utf-8">
-  <title>ARマーカーから追従対象の認識</title>
+  <title>数式的な解説</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="generator" content="Hugo 0.91.2" />
-  <meta name="description" content="ARマーカーから追従対象の認識 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="description" content="数式的な解説 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
   
@@ -67,13 +67,15 @@
 
 
 
-<meta name="twitter:title" content="ARマーカーから追従対象の認識"/>
-<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \ldots ]$,"/>
+<meta name="twitter:title" content="数式的な解説"/>
+<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ
+  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$"/>
 
 
 
-<meta property="og:title" content="ARマーカーから追従対象の認識" />
-<meta property="og:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \ldots ]$," />
+<meta property="og:title" content="数式的な解説" />
+<meta property="og:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ
+  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/recognition/description/" /><meta property="article:section" content="OpenCV" />
 <meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
@@ -81,8 +83,9 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ARマーカーから追従対象の認識"/>
-<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの認識から追従対象の距離・角度の推定についての解説 認識できたARマーカーを$AR = [ AR_0, AR_1, \ldots ]$,"/>
+<meta name="twitter:title" content="数式的な解説"/>
+<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ
+  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$"/>
 
 
 </head>
@@ -426,10 +429,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/description/" title="ARマーカーから追従対象の認識" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/opencv/recognition/description/" title="数式的な解説" class="sidelist
   active">
   <a href="https://sysdp2021-t03cic.github.io/opencv/recognition/description/">
-    ARマーカーから追従対象の認識
+    数式的な解説
   </a>
   
   
@@ -490,7 +493,7 @@
       </div>
       <div class="col-lg-9">
         <div class="p-lg-5 p-4 bg-white" id="content">
-          <h2 class="mb-5" id="title">ARマーカーから追従対象の認識</h2>
+          <h2 class="mb-5" id="title">数式的な解説</h2>
           
           <div class="content"><script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -520,46 +523,51 @@
   TeX: { equationNumbers: { autoNumber: "AMS" } }
   });
 </script> 
-<h4 id="arマーカーの認識から追従対象の距離角度の推定についての解説">ARマーカーの認識から追従対象の距離・角度の推定についての解説</h4>
-<p>認識できたARマーカーを$AR = [ AR_0, AR_1, \ldots ]$,<br>
-各ARマーカーから得られる情報を<br></p>
+<h4 id="arマーカーの持つ値">ARマーカーの持つ値</h4>
+<p>各ARマーカーから得られる値は以下の3つ<br></p>
 <ul>
-<li>ARマーカーの座標 : $AR_i.TX,AR_i.TY,AR_i.TZ$<br></li>
-<li>ARマーカーの回転 : $AR_i.RX,AR_i.RY,AR_i.RZ$<br></li>
-<li>ARマーカーのID : $AR_i.ID$<br>
-としておく。</li>
+<li>
+<h6 id="座標の値tx-ty-tz">座標の値:$[tx, ty, tz]$</h6>
+</li>
+<li>
+<h6 id="回転の値rx-ry-rz">回転の値:$[rx, ry, rz]$</h6>
+</li>
+<li>
+<h6 id="id------idbr">ID      :$id$<br></h6>
+</li>
+</ul>
+<p>認識できたARマーカーを$AR = [AR_0, \ldots , AR_n]$として、各ARマーカーの持つ値を$AR_i.id$のように表す<br></p>
+<h5 id="追従対象の情報を計算">追従対象の情報を計算</h5>
+<ul>
 <li>
 <h5 id="座標">座標</h5>
 追従対象の座標$[tx,ty,tz]$は<br>
-<ul>
-<li>$tx = 1/n \sum_{n}^{i=0}AR_i.X$<br></li>
-<li>$ty = 1/n \sum_{n}^{i=0}AR_i.Y$<br></li>
-<li>$tz = 1/n \sum_{n}^{i=0}AR_i.Z$<br>
+$[tx, ty, tz] = [\frac{\sum_{n}^{i=0}AR_i.tx}{n},
+\frac{\sum_{n}^{i=0}AR_i.ty}{n},
+\frac{\sum_{n}^{i=0}AR_i.tz}{n}]$<br>
 で求める。</li>
-</ul>
-</li>
 <li>
 <h5 id="回転">回転</h5>
-追従対象の回転$[rx,ry,rz]$はおおよそ上記の座標と同じ。<br>
-<ul>
-<li>$rx = 1/n \sum_{n}^{i=0}AR_i.X + AR_i.ID \times 90$<br></li>
-<li>$ry = 1/n \sum_{n}^{i=0}AR_i.Y + AR_i.ID \times 90$<br></li>
-<li>$rz = 1/n \sum_{n}^{i=0}AR_i.Z + AR_i.ID \times 90$<br>
-で求める。</li>
-</ul>
-</li>
+追従対象の回転$[rx,ry,rz]$は<br><br>
+$[rx, ry, rz] = [\frac{\sum_{n}^{i=0}AR_i.rx + AR_i.id \times 90}{n},
+\frac{\sum_{n}^{i=0}AR_i.ry + AR_i.id \times 90}{n},
+\frac{\sum_{n}^{i=0}AR_i.rz + AR_i.id \times 90}{n}]$<br>
+で求める。<br>
+ただし、$AR_i.id$が$0$で、回転の値が負の場合$+360$する。</li>
 <li>
 <h5 id="方向">方向</h5>
-得られた座標の値から
+追従対象の方向はそれぞれ
 <ul>
-<li>左右の方向 : $arctan(tx / tz)$ <br></li>
-<li>上下の方向 : $arctan(ty / tz)$<br>
-で求められる。</li>
+<li>左右の方向 : $arctan(\frac{tx}{tz})$</li>
+<li>上下の方向 : $arctan(\frac{ty}{tz})$<br>
+で求める。</li>
 </ul>
 </li>
 <li>
 <h5 id="距離">距離</h5>
-座標の値から$d = \sqrt{tx^2 + ty^2 + tz^2}$ で求められる。</li>
+カメラから追従対象の距離は<br>
+$d = \sqrt{tx^2 + ty^2 + tz^2}$
+で求める。</li>
 </ul>
 </div>
           
@@ -778,6 +786,38 @@
             
             
 
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
             
             
             
