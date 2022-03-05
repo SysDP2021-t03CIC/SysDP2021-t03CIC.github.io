@@ -8,10 +8,10 @@
     <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/setup/</loc>
     <lastmod>2022-02-25T13:16:26+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</loc>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvforunity/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/unity/</loc>
@@ -33,6 +33,9 @@
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</loc>
+    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/</loc>
@@ -183,9 +186,6 @@
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/</loc>
-    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
-  </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/</loc>
