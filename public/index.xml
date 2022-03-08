@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
-    <lastBuildDate>Fri, 25 Feb 2022 13:37:54 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Mar 2022 13:57:54 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>デスクトップPCを使う時の準備</title>
+      <link>https://sysdp2021-t03cic.github.io/howtouse/pc/setup/</link>
+      <pubDate>Tue, 08 Mar 2022 13:57:54 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/howtouse/pc/setup/</guid>
+      <description> 予め電源タップを用意しておく  コンセントが足りない場合が多い   使用後に元通りに収納できるように、箱の中の状態を覚えておく ケーブルの長さを考慮し、機材の配置を考える  電源ケーブルが最も短いので、それを最優先に   プロジェクターを使用する場合は、表示域を考慮して配置する 機材を配置したら適宜配線する PCを起動したら、steamにログインする  ログインしないとsteamVRが正常に動作しない    </description>
+    </item>
+    
     <item>
       <title>Bunshin Drone 3 システムの運用方法</title>
       <link>https://sysdp2021-t03cic.github.io/howtouse/system/operation/</link>
@@ -23,7 +32,7 @@
       <pubDate>Fri, 25 Feb 2022 13:16:26 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/setup/</guid>
-      <description> Telloを起動後速やかに離陸させるため、予めUnityなどは起動しておく。  Telloは電源がONになっている間、自動的に発熱してオーバーヒートする。 Telloが飛ぶときプロペラが発する風でTello自体を冷却する。   Telloの中を覗き、SSIDを確認する。 Telloにバッテリーを取り付け、電源ボタンを押す。 PCのWi-Fi設定を開き、TelloのSSIDを選択する。  Telloに接続している間、PCはインターネットに繋がらない。   Wi-Fi接続が完了したら、速やかにシステムを開始しTelloを離陸させる。  </description>
+      <description> Telloを起動後速やかに離陸させるため、予めUnityなどは起動しておく。  Telloは電源がONになっている間、自動的に発熱してオーバーヒートする。 Telloが飛ぶときプロペラが発する風でTello自体を冷却する。   Telloの中を覗き、SSIDを確認する。 Telloにバッテリーを取り付け、電源ボタンを押す。  使っていないバッテリーは必ず充電しておく。   PCのWi-Fi設定を開き、TelloのSSIDを選択する。  Telloに接続している間、PCはインターネットに繋がらない。   Wi-Fi接続が完了したら、速やかにシステムを開始しTelloを離陸させる。  </description>
     </item>
     
     <item>
