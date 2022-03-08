@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>Windows Mixed Realityの使い方</title>
+      <link>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/</link>
+      <pubDate>Tue, 08 Mar 2022 14:17:34 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/</guid>
+      <description>基本操作  トリガーボタン 選択。マウスでいう左クリック Aボタン, Xボタン 決定 Bボタン, Yボタン キャンセル, 戻る グリップボタン VRアプリケーションでは物を掴む操作に使われる事が一般的 メニューボタン VRアプリケーション内でメニューを開く時に使う Windowsボタン スタートメニューを開く Windowsボタン + グリップボタン ヘッドセットのカメラで撮影した現実世界の映像を表示   ホームメニュー（クリフハウス）での操作  アナログスティックを前に倒す ポイントした場所へ移動 アナログスティックを左右に倒す 方向転換 アナログスティックを後方に倒す 後方へ移動   スクリーンショットや録画 スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。 録画の終了は開始と同じ操作。 音声操作 使い道は無いが音声操作にも対応している。誤爆に注意。 Steam VRとWindows Mixed Realityを組み合わせた場合の操作 アナログスティックを押し込むとsteam VRのメニューが開く。</description>
+    </item>
+    
+    <item>
       <title>テスト記事</title>
       <link>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>

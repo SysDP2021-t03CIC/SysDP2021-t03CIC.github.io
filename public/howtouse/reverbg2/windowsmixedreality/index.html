@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+  <meta charset="utf-8">
+  <title>Windows Mixed Realityの使い方</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="description" content="Windows Mixed Realityの使い方 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  
+  <!-- ** CSS Plugins Needed for the Project ** -->
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+  
+  <style>
+  :root{
+    --primary-color:#1c7cc5;
+    --body-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --light-color:#f8f9fa;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
+  
+<!-- ** JS Plugins Needed for the Project ** -->
+
+<!-- jquiry -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+
+  
+
+  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Windows Mixed Realityの使い方"/>
+<meta name="twitter:description" content="基本操作  トリガーボタン 選択。マウスでいう左クリック Aボタン, Xボタン 決定 Bボタン, Yボタン キャンセル, 戻る グリップボタン VRアプリケーションでは物を掴む操作に使われる事が一般的 メニューボタン VRアプリケーション内でメニューを開く時に使う Windowsボタン スタートメニューを開く Windowsボタン &#43; グリップボタン ヘッドセットのカメラで撮影した現実世界の映像を表示   ホームメニュー（クリフハウス）での操作  アナログスティックを前に倒す ポイントした場所へ移動 アナログスティックを左右に倒す 方向転換 アナログスティックを後方に倒す 後方へ移動   スクリーンショットや録画 スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。 録画の終了は開始と同じ操作。 音声操作 使い道は無いが音声操作にも対応している。誤爆に注意。 Steam VRとWindows Mixed Realityを組み合わせた場合の操作 アナログスティックを押し込むとsteam VRのメニューが開く。"/>
+
+
+
+<meta property="og:title" content="Windows Mixed Realityの使い方" />
+<meta property="og:description" content="基本操作  トリガーボタン 選択。マウスでいう左クリック Aボタン, Xボタン 決定 Bボタン, Yボタン キャンセル, 戻る グリップボタン VRアプリケーションでは物を掴む操作に使われる事が一般的 メニューボタン VRアプリケーション内でメニューを開く時に使う Windowsボタン スタートメニューを開く Windowsボタン &#43; グリップボタン ヘッドセットのカメラで撮影した現実世界の映像を表示   ホームメニュー（クリフハウス）での操作  アナログスティックを前に倒す ポイントした場所へ移動 アナログスティックを左右に倒す 方向転換 アナログスティックを後方に倒す 後方へ移動   スクリーンショットや録画 スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。 録画の終了は開始と同じ操作。 音声操作 使い道は無いが音声操作にも対応している。誤爆に注意。 Steam VRとWindows Mixed Realityを組み合わせた場合の操作 アナログスティックを押し込むとsteam VRのメニューが開く。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/" /><meta property="article:section" content="HowToUse" />
+<meta property="article:published_time" content="2022-03-08T14:17:34+09:00" />
+<meta property="article:modified_time" content="2022-03-08T14:17:34+09:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows Mixed Realityの使い方"/>
+<meta name="twitter:description" content="基本操作  トリガーボタン 選択。マウスでいう左クリック Aボタン, Xボタン 決定 Bボタン, Yボタン キャンセル, 戻る グリップボタン VRアプリケーションでは物を掴む操作に使われる事が一般的 メニューボタン VRアプリケーション内でメニューを開く時に使う Windowsボタン スタートメニューを開く Windowsボタン &#43; グリップボタン ヘッドセットのカメラで撮影した現実世界の映像を表示   ホームメニュー（クリフハウス）での操作  アナログスティックを前に倒す ポイントした場所へ移動 アナログスティックを左右に倒す 方向転換 アナログスティックを後方に倒す 後方へ移動   スクリーンショットや録画 スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。 録画の終了は開始と同じ操作。 音声操作 使い道は無いが音声操作にも対応している。誤爆に注意。 Steam VRとWindows Mixed Realityを組み合わせた場合の操作 アナログスティックを押し込むとsteam VRのメニューが開く。"/>
+
+
+</head>
+
+  
+  <body>
+    
+    <!-- header -->
+    <header class="shadow-bottom sticky-top bg-white">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <div class="container px-2 px-md-0">
+    <a class="navbar-brand px-2" href="/">
+      
+      
+      
+      システム創成2021 CIC担当チーム 引継ぎ資料
+      
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/address">contact</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            docs
+          </a>
+          <div class="dropdown-menu">
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/unity">Unity</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/tello">Tello</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/opencv">OpenCV</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/howtouse">How to use</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/editS">How to edit</a>
+            
+          </div>
+        </li>
+        
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <!-- /header -->
+    
+    
+
+<!-- details page -->
+<section class="single section-sm pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="sidebar">
+        <a class="back-btn" href="/" aria-label="back"></a>
+          <ul class="list-styled">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+              
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/" title="システム・機材の使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/">
+    システム・機材の使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/pc/" title="デスクトップPCの使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/pc/">
+    デスクトップPCの使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/pc/setup/" title="デスクトップPCを使う時の準備" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/pc/setup/">
+    デスクトップPCを使う時の準備
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/" title="VRヘッドセット HP Reverb G2の使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/">
+    VRヘッドセット HP Reverb G2の使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/" title="Reverb G2を使う時の準備" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/">
+    Reverb G2を使う時の準備
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/" title="Windows Mixed Realityの使い方" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/">
+    Windows Mixed Realityの使い方
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle2/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/" title="Telloの使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/">
+    Telloの使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/setup/" title="Telloを使う時の手順" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/setup/">
+    Telloを使う時の手順
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/" title="Bunshin Drone 3システムの使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/">
+    Bunshin Drone 3システムの使い方
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/operation/" title="Bunshin Drone 3 システムの運用方法" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/operation/">
+    Bunshin Drone 3 システムの運用方法
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle/" title="テスト記事" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle/">
+    テスト記事
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle2/" title="テスト記事2" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/howtouse/system/testarticle2/">
+    テスト記事2
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+              
+            
+              
+            
+              
+            
+              
+            
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-lg-5 p-4 bg-white" id="content">
+          <h2 class="mb-5" id="title">Windows Mixed Realityの使い方</h2>
+          
+          <div class="content"><h4 id="基本操作">基本操作</h4>
+<ul>
+<li>トリガーボタン
+<br>    選択。マウスでいう左クリック</li>
+<li>Aボタン, Xボタン
+<br>    決定</li>
+<li>Bボタン, Yボタン
+<br>    キャンセル, 戻る</li>
+<li>グリップボタン
+<br>    VRアプリケーションでは物を掴む操作に使われる事が一般的</li>
+<li>メニューボタン
+<br>    VRアプリケーション内でメニューを開く時に使う</li>
+<li>Windowsボタン
+<br>    スタートメニューを開く</li>
+<li>Windowsボタン + グリップボタン
+<br>    ヘッドセットのカメラで撮影した現実世界の映像を表示
+<br><br></li>
+</ul>
+<h4 id="ホームメニュークリフハウスでの操作">ホームメニュー（クリフハウス）での操作</h4>
+<ul>
+<li>アナログスティックを前に倒す
+<br>    ポイントした場所へ移動</li>
+<li>アナログスティックを左右に倒す
+<br>    方向転換</li>
+<li>アナログスティックを後方に倒す
+<br>    後方へ移動
+<br><br></li>
+</ul>
+<h4 id="スクリーンショットや録画">スクリーンショットや録画</h4>
+<p>スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。
+録画の終了は開始と同じ操作。
+<br><br></p>
+<h4 id="音声操作">音声操作</h4>
+<p>使い道は無いが音声操作にも対応している。誤爆に注意。
+<br><br></p>
+<h4 id="steam-vrとwindows-mixed-realityを組み合わせた場合の操作">Steam VRとWindows Mixed Realityを組み合わせた場合の操作</h4>
+<p>アナログスティックを押し込むとsteam VRのメニューが開く。</p>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2022 Mar 08</p>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Written by Tanaka</p>
+          
+          <nav class="pagination mt-3">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">Reverb G2を使う時の準備</span></a>
+            
+            
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/howtouse/reverbg2/testarticle/" aria-label="Previous page" > <span class="d-none d-md-block">テスト記事</span><i class="ti-arrow-right ml-2"></i></a>
+            
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+    <!-- footer -->
+<footer class="section pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 text-md-left text-center">
+       <p class="mb-md-0 mb-4">Copyright © 2021 a Hugo theme by <a href="https://gethugothemes.com/">Gethugothemes</a></p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://twitter.com/JetJaguar_PSX" aria-label="Twitter"><i class="ti-twitter-alt"></i></a></li>
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io" aria-label="Github"><i class="ti-github"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://sysdp2021-t03cic.github.io/js/script.min.js"></script>
+  </body>
+
+</html>

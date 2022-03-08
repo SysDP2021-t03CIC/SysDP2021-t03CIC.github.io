@@ -9,6 +9,8 @@ draft: false
 keywords: ["VR","Reverb G2","使い方"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "Tanaka"
+# 以下は目次において何番目に表示するか決めるタグです。
+weight: 1
 ---
 
 1. 配線

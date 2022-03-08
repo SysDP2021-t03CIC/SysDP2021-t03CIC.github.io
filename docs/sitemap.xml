@@ -2,11 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://sysdp2021-t03cic.github.io/howtouse/pc/setup/</loc>
+    <lastmod>2022-03-08T13:57:54+09:00</lastmod>
+  </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/system/operation/</loc>
     <lastmod>2022-02-25T13:37:54+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/howtouse/tello/setup/</loc>
     <lastmod>2022-02-25T13:16:26+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/</loc>
+    <lastmod>2022-02-22T13:08:55+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
@@ -31,6 +37,9 @@
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/edit/setup/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/</loc>
+    <lastmod>2022-03-08T14:17:34+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
@@ -96,10 +105,7 @@
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/</loc>
-    <lastmod>2022-02-25T13:37:54+09:00</lastmod>
-  </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/setup/</loc>
-    <lastmod>2022-02-22T13:08:55+09:00</lastmod>
+    <lastmod>2022-03-08T14:17:34+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/controller/</loc>
     <lastmod>2022-02-22T06:50:26+09:00</lastmod>
