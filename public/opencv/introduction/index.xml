@@ -30,7 +30,8 @@ Pluginsは使っているPCに合わせる  メソッドの説明 正直引き�
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</guid>
-      <description>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー  TextureをMatに変換する関数がない 変換関数を自作したが動作が遅かった これらの理由から利用を断念。OpenCV for Unityの方を利用した。  OpenCVSharpの導入 1. NuGetの導入  NuGetForUnityから「NuGEtForUnity.〇.〇.〇.unitypackage」をダウンロード 「NuGEtForUnity.〇.〇.〇.unitypackage」をUnityEditorのウィンドウにドラッグ&amp;amp;ドロップ 全てチェックを付けたままインポート  2. OpenCVSharpの導入  UnityEditorのヘッダーメニュー「NuGet」→「Manage Nuget Packages」を選択 「OpenCVSharp」を検索しインストール  OpenCVSharp3の場合は、OpenCVSharp3-AnyCPU OpenCVSharp4の場合は、OpenCVSharp4.WindowsやOpenCVSharp4+OpenCVSharp4.runtime.○○   opencvsharpからインストールしたバージョンに近いもののzipファイルをダウンロード ダウンロードしたファイルをにある「OpenCVSharpExtern.dll」を「Assets/Packages/OpenCvSharp○-○○/lib/netstandard2.0」にコピー  </description>
+      <description>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー 1. TextureをMatに変換する関数がない 2. 変換関数を自作したが動作が遅かった これらの理由から利用を断念。OpenCV for Unityの方を利用した。
+OpenCVSharpの導入 1. NuGetの導入  NuGetForUnityから「NuGEtForUnity.〇.〇.〇.unitypackage」をダウンロード 「NuGEtForUnity.〇.〇.〇.unitypackage」をUnityEditorのウィンドウにドラッグ&amp;amp;ドロップ 全てチェックを付けたままインポート  2. OpenCVSharpの導入  UnityEditorのヘッダーメニュー「NuGet」→「Manage Nuget Packages」を選択 「OpenCVSharp」を検索しインストール  OpenCVSharp3の場合は、OpenCVSharp3-AnyCPU OpenCVSharp4の場合は、OpenCVSharp4.WindowsやOpenCVSharp4+OpenCVSharp4.runtime.○○   opencvsharpからインストールしたバージョンに近いもののzipファイルをダウンロード ダウンロードしたファイルをにある「OpenCVSharpExtern.dll」を「Assets/Packages/OpenCvSharp○-○○/lib/netstandard2.0」にコピー  </description>
     </item>
     
   </channel>

@@ -68,16 +68,20 @@
 
 
 <meta name="twitter:title" content="ARマーカーの値の取得"/>
-<meta name="twitter:description" content="IDの取得 ids.rows() で検出できたIDの個数を取得
-// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); detected = true; EstiamtePoseMarkers(); } 各ARマーカーの座標・回転を取得 Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs) で取得できるrVecs,tVecsを計算しやすい配列に変換している
-public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec.get(0, 0, tArr); } public void Set_rArr(Mat rVec) { rArr = new double[3]; rVec."/>
+<meta name="twitter:description" content="1. IDの取得 ids.rows() で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得
+// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); // ← ここで検出したARマーカーのIDを配列に  detected = true; EstiamtePoseMarkers(); } 2. 各ARマーカーの座標・回転を取得   検出した各ARマーカーの平行移動・回転ベクトルを計算   Aruco.estimatePoseSingleMarkers(/*各ARマーカーの角の画像座標*/, /*ARマーカー1辺の長さ(m)*/, /*内部行列*/, /*歪み係数*/, /*各ARマーカーの回転ベクトル(Out)*/, /*各ARマーカーの平行移動ベクトル(Out)*/) で平行移動・回転ベクトルを取得。
+その後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。
+また、追従対象の情報を計算しやすいように構造体を定義している。
+public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec."/>
 
 
 
 <meta property="og:title" content="ARマーカーの値の取得" />
-<meta property="og:description" content="IDの取得 ids.rows() で検出できたIDの個数を取得
-// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); detected = true; EstiamtePoseMarkers(); } 各ARマーカーの座標・回転を取得 Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs) で取得できるrVecs,tVecsを計算しやすい配列に変換している
-public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec.get(0, 0, tArr); } public void Set_rArr(Mat rVec) { rArr = new double[3]; rVec." />
+<meta property="og:description" content="1. IDの取得 ids.rows() で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得
+// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); // ← ここで検出したARマーカーのIDを配列に  detected = true; EstiamtePoseMarkers(); } 2. 各ARマーカーの座標・回転を取得   検出した各ARマーカーの平行移動・回転ベクトルを計算   Aruco.estimatePoseSingleMarkers(/*各ARマーカーの角の画像座標*/, /*ARマーカー1辺の長さ(m)*/, /*内部行列*/, /*歪み係数*/, /*各ARマーカーの回転ベクトル(Out)*/, /*各ARマーカーの平行移動ベクトル(Out)*/) で平行移動・回転ベクトルを取得。
+その後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。
+また、追従対象の情報を計算しやすいように構造体を定義している。
+public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/" /><meta property="article:section" content="OpenCV" />
 <meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
@@ -86,9 +90,11 @@ public struct ARMarker { public int ID; public double[] tArr; public double[] rA
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ARマーカーの値の取得"/>
-<meta name="twitter:description" content="IDの取得 ids.rows() で検出できたIDの個数を取得
-// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); detected = true; EstiamtePoseMarkers(); } 各ARマーカーの座標・回転を取得 Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs) で取得できるrVecs,tVecsを計算しやすい配列に変換している
-public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec.get(0, 0, tArr); } public void Set_rArr(Mat rVec) { rArr = new double[3]; rVec."/>
+<meta name="twitter:description" content="1. IDの取得 ids.rows() で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得
+// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); // ← ここで検出したARマーカーのIDを配列に  detected = true; EstiamtePoseMarkers(); } 2. 各ARマーカーの座標・回転を取得   検出した各ARマーカーの平行移動・回転ベクトルを計算   Aruco.estimatePoseSingleMarkers(/*各ARマーカーの角の画像座標*/, /*ARマーカー1辺の長さ(m)*/, /*内部行列*/, /*歪み係数*/, /*各ARマーカーの回転ベクトル(Out)*/, /*各ARマーカーの平行移動ベクトル(Out)*/) で平行移動・回転ベクトルを取得。
+その後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。
+また、追従対象の情報を計算しやすいように構造体を定義している。
+public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec."/>
 
 
 </head>
@@ -498,22 +504,34 @@ public struct ARMarker { public int ID; public double[] tArr; public double[] rA
         <div class="p-lg-5 p-4 bg-white" id="content">
           <h2 class="mb-5" id="title">ARマーカーの値の取得</h2>
           
-          <div class="content"><h4 id="idの取得">IDの取得</h4>
+          <div class="content"><h4 id="1-idの取得">1. IDの取得</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">ids.rows()
-</code></pre></div><p>で検出できたIDの個数を取得</p>
+</code></pre></div><p>で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">// IDの数が検出できたARマーカーの数
 </span><span style="color:#75715e"></span>idsNum = ids.rows();
 <span style="color:#66d9ef">if</span> (idsNum &gt; <span style="color:#ae81ff">0</span>)
 {
     <span style="color:#75715e">// 各ARマーカーのIDを格納
 </span><span style="color:#75715e"></span>    idsArr = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[idsNum];
-    ids.<span style="color:#66d9ef">get</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, idsArr);
-    detected = <span style="color:#66d9ef">true</span>;
+    ids.<span style="color:#66d9ef">get</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, idsArr);  <span style="color:#75715e">// ← ここで検出したARマーカーのIDを配列に
+</span><span style="color:#75715e"></span>    detected = <span style="color:#66d9ef">true</span>;
     EstiamtePoseMarkers();
 }
-</code></pre></div><h4 id="各arマーカーの座標回転を取得">各ARマーカーの座標・回転を取得</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs)
-</code></pre></div><p>で取得できるrVecs,tVecsを計算しやすい配列に変換している</p>
+</code></pre></div><h4 id="2-各arマーカーの座標回転を取得">2. 各ARマーカーの座標・回転を取得</h4>
+<ul>
+<li>
+<h5 id="検出した各arマーカーの平行移動回転ベクトルを計算">検出した各ARマーカーの平行移動・回転ベクトルを計算</h5>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">Aruco.estimatePoseSingleMarkers(<span style="color:#75715e">/*各ARマーカーの角の画像座標*/</span>,
+                                <span style="color:#75715e">/*ARマーカー1辺の長さ(m)*/</span>,
+                                <span style="color:#75715e">/*内部行列*/</span>,
+                                <span style="color:#75715e">/*歪み係数*/</span>,
+                                <span style="color:#75715e">/*各ARマーカーの回転ベクトル(Out)*/</span>,
+                                <span style="color:#75715e">/*各ARマーカーの平行移動ベクトル(Out)*/</span>)
+</code></pre></div><p>で平行移動・回転ベクトルを取得。<br>
+その後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。<br>
+また、追従対象の情報を計算しやすいように構造体を定義している。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ARMarker</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ID;

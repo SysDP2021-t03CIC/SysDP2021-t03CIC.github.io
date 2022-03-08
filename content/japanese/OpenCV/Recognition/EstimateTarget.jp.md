@@ -12,12 +12,14 @@ Author: "Tsuchiya Koken"
 # 以下は目次において何番目に表示するか決めるタグです。
 weight: 1
 ---
-#### IDの取得
+#### 1. IDの取得
 
 ```C#
 ids.rows()
 ```
-で検出できたIDの個数を取得
+
+で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得
+
 ```C#
 // IDの数が検出できたARマーカーの数
 idsNum = ids.rows();
@@ -25,17 +27,25 @@ if (idsNum > 0)
 {
     // 各ARマーカーのIDを格納
     idsArr = new int[idsNum];
-    ids.get(0, 0, idsArr);
+    ids.get(0, 0, idsArr);  // ← ここで検出したARマーカーのIDを配列に
     detected = true;
     EstiamtePoseMarkers();
 }
 ```
 
-#### 各ARマーカーの座標・回転を取得
+#### 2. 各ARマーカーの座標・回転を取得
+- ##### 検出した各ARマーカーの平行移動・回転ベクトルを計算
 ```C#
-Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs)
+Aruco.estimatePoseSingleMarkers(/*各ARマーカーの角の画像座標*/,
+                                /*ARマーカー1辺の長さ(m)*/,
+                                /*内部行列*/,
+                                /*歪み係数*/,
+                                /*各ARマーカーの回転ベクトル(Out)*/,
+                                /*各ARマーカーの平行移動ベクトル(Out)*/)
 ```
-で取得できるrVecs,tVecsを計算しやすい配列に変換している
+で平行移動・回転ベクトルを取得。<br>
+その後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。<br>
+また、追従対象の情報を計算しやすいように構造体を定義している。
 ```C#
 public struct ARMarker
 {

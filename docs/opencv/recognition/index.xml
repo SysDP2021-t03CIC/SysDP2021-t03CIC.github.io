@@ -14,9 +14,11 @@
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/</guid>
-      <description>IDの取得 ids.rows() で検出できたIDの個数を取得
-// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &amp;gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); detected = true; EstiamtePoseMarkers(); } 各ARマーカーの座標・回転を取得 Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs) で取得できるrVecs,tVecsを計算しやすい配列に変換している
-public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec.get(0, 0, tArr); } public void Set_rArr(Mat rVec) { rArr = new double[3]; rVec.</description>
+      <description>1. IDの取得 ids.rows() で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得
+// IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum &amp;gt; 0) { // 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); // ← ここで検出したARマーカーのIDを配列に  detected = true; EstiamtePoseMarkers(); } 2. 各ARマーカーの座標・回転を取得   検出した各ARマーカーの平行移動・回転ベクトルを計算   Aruco.estimatePoseSingleMarkers(/*各ARマーカーの角の画像座標*/, /*ARマーカー1辺の長さ(m)*/, /*内部行列*/, /*歪み係数*/, /*各ARマーカーの回転ベクトル(Out)*/, /*各ARマーカーの平行移動ベクトル(Out)*/) で平行移動・回転ベクトルを取得。
+その後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。
+また、追従対象の情報を計算しやすいように構造体を定義している。
+public struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec.</description>
     </item>
     
     <item>

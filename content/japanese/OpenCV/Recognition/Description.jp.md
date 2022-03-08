@@ -48,7 +48,7 @@ weight: 2
 - ###### ID      :$id$<br>
 
 認識できたARマーカーを$AR = [AR_0, \ldots , AR_n]$として、各ARマーカーの持つ値を$AR_i.id$のように表す<br>
-##### 追従対象の情報を計算
+#### 追従対象の情報を計算
 - ##### 座標
   追従対象の座標$[tx,ty,tz]$は<br>
   $[tx, ty, tz] = [\frac{\sum_{n}^{i=0}AR_i.tx}{n},
@@ -71,3 +71,37 @@ weight: 2
   カメラから追従対象の距離は<br>
   $d = \sqrt{tx^2 + ty^2 + tz^2}$
   で求める。
+
+#### コード
+```C#
+private void CalcTargetRotation(ARMarker[] markers)
+{
+  if (markers.Length < 1) return;
+
+  Array.Clear(position, 0, position.Length);
+  Array.Clear(rotation, 0, rotation.Length);
+
+  int i, j;
+  for (i = 0; i < markers.Length; i++)
+  {
+      for (j = 0; j < markers[i].rArr.Length; j++)
+      {
+          if (markers[i].ID == 0 && markers[i].rArr[j] < 0) markers[i].rArr[j] += 360;
+          rotation[j] += markers[i].ID * 90 + markers[i].rArr[j];
+      }
+      for (j = 0; j < markers[i].tArr.Length; j++)
+      {
+          position[j] += markers[i].tArr[j];
+      }
+  }
+
+  for (j = 0; j < position.Length; j++) position[j] /= markers.Length;
+  for (j = 0; j < rotation.Length; j++) rotation[j] /= markers.Length;
+
+  if (position[2] == 0) return;
+  angle[0] = Math.Atan2(position[0], position[2]) * (180 / Math.PI);
+  angle[1] = Math.Atan2(position[1], position[2]) * (180 / Math.PI);
+
+  distance = Math.Sqrt(Math.Pow(position[0], 2) + Math.Pow(position[1], 2) + Math.Pow(position[2], 2));
+}
+```
