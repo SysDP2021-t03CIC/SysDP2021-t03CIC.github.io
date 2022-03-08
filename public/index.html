@@ -184,6 +184,12 @@
 						},
 						
 						{
+							value: "Reverb G2を使う時の準備",
+							label: "<p> 配線  ヘッドセットにケーブルを繋ぐ  ヘッドセットのフェイスクッションを外す ヘッドセットにケーブルを接続する。しっかり奥まで差さないと反応しない ヘッドセットにフェイスクッションを取り付ける   電源ケーブルを繋ぐ DisplayPortケーブルをPCに接続する  マザーボードではなくグラフィックボードの端子に繋ぐ   USB Type-CケーブルにType-A変換アダプタを取り付ける Type-A変換アダプタをUSB3.0端子に取り付ける  必ずUSB3.0の端子に差すこと。2.0では動作しない     ケーブルの抜き差し  エラーメッセージが出た場合は、PCに刺さっているケーブルを他の端子に差し替える エラーが無くなり正常動作するまで試す   Mixed Reality ポータルの設定  Mixed Realityポータル アプリにて「部屋の境界線のセットアップ」を選択する PC画面上の指示に従って設定する   前回と同じ部屋で使用するならこの設定は必要無い   装着  ヘッドバンドを緩めに調整する ヘッドバンドを上に上げる ゴーグル部分を顔に当てる ヘッドバンドを下げる ヘッドバンドを締める スピーカーの位置を調整する    </p><p>VR</p><p>Reverb G2</p><p>使い方</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/reverbg2\/setup\/"
+						},
+						
+						{
 							value: "ARマーカーの値の取得",
 							label: "<p>1. IDの取得 ids.rows() で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得\n\/\/ IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum \u0026gt; 0) { \/\/ 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); \/\/ ← ここで検出したARマーカーのIDを配列に  detected = true; EstiamtePoseMarkers(); } 2. 各ARマーカーの座標・回転を取得   検出した各ARマーカーの平行移動・回転ベクトルを計算   Aruco.estimatePoseSingleMarkers(\/*各ARマーカーの角の画像座標*\/, \/*ARマーカー1辺の長さ(m)*\/, \/*内部行列*\/, \/*歪み係数*\/, \/*各ARマーカーの回転ベクトル(Out)*\/, \/*各ARマーカーの平行移動ベクトル(Out)*\/) で平行移動・回転ベクトルを取得。\nその後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。\nまた、追従対象の情報を計算しやすいように構造体を定義している。\npublic struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec.get(0, 0, tArr); } public void Set_rArr(Mat rVec) { rArr = new double[3]; rVec.get(0, 0, rArr); } } \/\/ 省略  private void EstiamtePoseMarkers(float markerLength = 0.06F) { if (idsArr.Length \u0026lt; 1) return; Mat rVecs = new Mat(), tVecs = new Mat(); \/\/ tVecs は 要素数が1、チャンネル数が3で得られる  \/\/ rVecs も同様に 要素数が1、チャンネル数が3で得られる  Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs); \/* * rVecs : CV_64FC3 * channels : 3 * rows : 検知したARマーカーの数 * cols : 1 *\/ \/* * tVecs : CV_64FC3 * channels : 3 * rows : 検知したARマーカーの数 * cols : 1 *\/ ARMarker[] markers = new ARMarker[idsArr.Length]; int i; for (i = 0; i \u0026lt; idsArr.Length; i\u002b\u002b) { \/\/ IDを格納  markers[i].ID = idsArr[i]; \/\/ i番目のARマーカーの位置ベクトルを格納  markers[i].Set_tArr(tVecs.row(i)); \/\/ i番目のARマーカーの位置ベクトルを取り出してベクトルの形にする  Mat _tVec = new Mat(3, 1, CvType.CV_64FC1); _tVec.put(0, 0, markers[i].tArr); \/\/ 一旦i番目のARマーカーの回転ベクトルを格納  markers[i].Set_rArr(rVecs.row(i)); \/\/ i番目のARマーカーの回転ベクトルを取り出してベクトルの形にする  Mat _rVec = new Mat(3, 1, CvType.CV_64FC1); _rVec.put(0, 0, markers[i].rArr); \/\/ 回転ベクトルから回転行列への変換を行う  \/\/ rmatrix 3×3の回転行列  Mat rMat = new Mat(); Calib3d.Rodrigues(_rVec, rMat); \/* * rMat * channels : 1 * rows : 3 * cols : 3 *\/ \/\/ 行列の拡大  Mat projMat = new Mat(); List\u0026lt;Mat\u0026gt; src = new List\u0026lt;Mat\u0026gt; { rMat, new Mat(3,1,CvType.CV_64FC1,new Scalar(0)) }; \/\/ rMat(3×3) → projMat(3×4)へ変換  Core.hconcat(src, projMat); \/\/ オイラー角以外で必要のない値も受け取る必要があるので宣言しておく  Mat cameraMatrix = new Mat(), rotMatrixX = new Mat(), rotMatrixY = new Mat(), rotMatrixZ = new Mat(), eulerAngles = new Mat(); \/* オイラー角への変換 * projMatrix : input : 3×4 Mat * cameraMatrix : output : 3×3 Mat * rotMatrix : output : 3×3 Mat * transVect : output : 4×1 Mat * eulerAngles : output : 3×1 Mat ← この出力だけ必要 *\/ Calib3d.decomposeProjectionMatrix(projMat, cameraMatrix, rMat, _tVec, rotMatrixX, rotMatrixY, rotMatrixZ, eulerAngles); \/* * eulerAngles * channels : 1 * rows : 3 * cols : 1 *\/ \/\/ i番目のARマーカーの回転ベクトルを格納  markers[i].Set_rArr(eulerAngles); } CalcTargetRotation(markers); } </p><p>画像処理</p><p>推定</p><p>追従対象</p><p>認識</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/estimatetarget\/"
@@ -229,6 +235,12 @@
 							value: "初期セットアップ",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/setup\/"
+						},
+						
+						{
+							value: "Windows Mixed Realityの使い方",
+							label: "<p>基本操作  トリガーボタン 選択。マウスでいう左クリック Aボタン, Xボタン 決定 Bボタン, Yボタン キャンセル, 戻る グリップボタン VRアプリケーションでは物を掴む操作に使われる事が一般的 メニューボタン VRアプリケーション内でメニューを開く時に使う Windowsボタン スタートメニューを開く Windowsボタン \u002b グリップボタン ヘッドセットのカメラで撮影した現実世界の映像を表示   ホームメニュー（クリフハウス）での操作  アナログスティックを前に倒す ポイントした場所へ移動 アナログスティックを左右に倒す 方向転換 アナログスティックを後方に倒す 後方へ移動   スクリーンショットや録画 スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。 録画の終了は開始と同じ操作。 音声操作 使い道は無いが音声操作にも対応している。誤爆に注意。 Steam VRとWindows Mixed Realityを組み合わせた場合の操作 アナログスティックを押し込むとsteam VRのメニューが開く。\n</p><p>VR</p><p>使い方</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/reverbg2\/windowsmixedreality\/"
 						},
 						
 						{
@@ -361,12 +373,6 @@
 							value: "システム創成2021 CIC担当チーム 引継ぎ資料",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/"
-						},
-						
-						{
-							value: "Reverb G2を使う時の準備",
-							label: "<p> 配線  ヘッドセットにケーブルを繋ぐ  ヘッドセットのフェイスクッションを外す ヘッドセットにケーブルを接続する。しっかり奥まで差さないと反応しない ヘッドセットにフェイスクッションを取り付ける   電源ケーブルを繋ぐ DisplayPortケーブルをPCに接続する  マザーボードではなくグラフィックボードの端子に繋ぐ   USB Type-CケーブルにType-A変換アダプタを取り付ける Type-A変換アダプタをUSB3.0端子に取り付ける  必ずUSB3.0の端子に差すこと。2.0では動作しない     ケーブルの抜き差し  エラーメッセージが出た場合は、PCに刺さっているケーブルを他の端子に差し替える エラーが無くなり正常動作するまで試す   Mixed Reality ポータルの設定  Mixed Realityポータル アプリにて「部屋の境界線のセットアップ」を選択する PC画面上の指示に従って設定する   前回と同じ部屋で使用するならこの設定は必要無い   装着  ヘッドバンドを緩めに調整する ヘッドバンドを上に上げる ゴーグル部分を顔に当てる ヘッドバンドを下げる ヘッドバンドを締める スピーカーの位置を調整する    </p><p>VR</p><p>Reverb G2</p><p>使い方</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/reverbg2\/setup\/"
 						},
 						
 						{
