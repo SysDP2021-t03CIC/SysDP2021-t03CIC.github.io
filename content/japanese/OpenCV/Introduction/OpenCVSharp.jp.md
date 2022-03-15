@@ -22,13 +22,19 @@ weight: 2
 #### OpenCVSharpの導入
 ##### 1. NuGetの導入
 1. [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity/releases)から「NuGEtForUnity.〇.〇.〇.unitypackage」をダウンロード
-2. 「NuGEtForUnity.〇.〇.〇.unitypackage」をUnityEditorのウィンドウにドラッグ&ドロップ
+![NuGetダウンロード](/images/OpenCV/Introduction/OpenCVSharp/OpenCVSharp01.jpg "NuGetダウンロード")
+2. 「NuGEtForUnity.〇.〇.〇.unitypackage」をAssetsフォルダにドラッグ&ドロップ
+![D&D](/images/OpenCV/Introduction/OpenCVSharp/OpenCVSharp02a.jpg "D&D")
 3. 全てチェックを付けたままインポート
+![インポート](/images/OpenCV/Introduction/OpenCVSharp/OpenCVSharp03.jpg "インポート")
 
 ##### 2. OpenCVSharpの導入
 1. UnityEditorのヘッダーメニュー「NuGet」→「Manage Nuget Packages」を選択
+![MNP](/images/OpenCV/Introduction/OpenCVSharp/OpenCVSharp04.jpg "MNP")
 2. 「OpenCVSharp」を検索しインストール
     - OpenCVSharp3の場合は、OpenCVSharp3-AnyCPU
     - OpenCVSharp4の場合は、OpenCVSharp4.WindowsやOpenCVSharp4+OpenCVSharp4.runtime.○○
+![検索](/images/OpenCV/Introduction/OpenCVSharp/OpenCVSharp05.jpg "検索")
 3. [opencvsharp](https://github.com/shimat/opencvsharp/releases)からインストールしたバージョンに近いもののzipファイルをダウンロード
-4. ダウンロードしたファイルをにある「OpenCVSharpExtern.dll」を「Assets/Packages/OpenCvSharp○-○○/lib/netstandard2.0」にコピー
+4. ダウンロードしたファイルにある「OpenCvSharp.../Native/Lib/.../OpenCVSharpExtern.dll」を「Assets/Packages/OpenCvSharp.../lib/netstandard2.0」にコピー
+![コピー](/images/OpenCV/Introduction/OpenCVSharp/OpenCVSharp07a.jpg "コピー")

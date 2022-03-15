@@ -198,7 +198,7 @@ public class TextureSender : MonoBehaviour
 }
 ```
 3. プログラムを実行し、カメラに以下の画像を向ける
-(画像)
+![チェス盤](/images/OpenCV/Parameter/Calculation/ParaCalc.png "チェス盤")
 4. 指定した回数(上記プログラムだと40回)サンプリングできたらパラメータの計算が始まる<br>
     (かなり時間がかかる)。
 5. 計算が終わるとパラメータの情報を出力するのでメモする。
