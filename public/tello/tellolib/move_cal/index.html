@@ -68,12 +68,28 @@
 
 
 <meta name="twitter:title" content="2.移動距離に関する制御のコード"/>
-<meta name="twitter:description" content="ファイル内の大まかな説明 "/>
+<meta name="twitter:description" content="ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。
+1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。
+段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。
+しかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。
+段階Ⅰ「(理想の)移動する距離を求める段階」 「TelloController1122.cs」内の219～227行目が該当する。
+220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。
+段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。
+段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。
+重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。"/>
 
 
 
 <meta property="og:title" content="2.移動距離に関する制御のコード" />
-<meta property="og:description" content="ファイル内の大まかな説明 " />
+<meta property="og:description" content="ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。
+1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。
+段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。
+しかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。
+段階Ⅰ「(理想の)移動する距離を求める段階」 「TelloController1122.cs」内の219～227行目が該当する。
+220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。
+段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。
+段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。
+重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/" /><meta property="article:section" content="Tello" />
 <meta property="article:published_time" content="2021-12-25T08:59:39+09:00" />
@@ -82,7 +98,15 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2.移動距離に関する制御のコード"/>
-<meta name="twitter:description" content="ファイル内の大まかな説明 "/>
+<meta name="twitter:description" content="ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。
+1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。
+段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。
+しかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。
+段階Ⅰ「(理想の)移動する距離を求める段階」 「TelloController1122.cs」内の219～227行目が該当する。
+220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。
+段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。
+段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。
+重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。"/>
 
 
 </head>
@@ -472,10 +496,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/" title="テスト記事" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/" title="1.移動距離の計算について" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle/">
-    テスト記事
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/">
+    1.移動距離の計算について
   </a>
   
   
@@ -494,10 +518,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/" title="テスト記事2" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" title="2.重みづけをした実際の移動距離の計算" class="sidelist
   ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/testarticle2/">
-    テスト記事2
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/">
+    2.重みづけをした実際の移動距離の計算
   </a>
   
   
@@ -541,9 +565,22 @@
           <h2 class="mb-5" id="title">2.移動距離に関する制御のコード</h2>
           
           <div class="content"><h4 id="ファイル内の大まかな説明">ファイル内の大まかな説明</h4>
+<p>移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。<br>
+1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。<br>
+段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、<u>実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点</u>があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。<br>
+しかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。</p>
+<h5 id="段階理想の移動する距離を求める段階">段階Ⅰ「(理想の)移動する距離を求める段階」</h5>
+<p>「TelloController1122.cs」内の219～227行目が該当する。<br>
+220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。</p>
+<h5 id="段階実際の移動距離を求める段階">段階Ⅱ「実際の移動距離を求める段階」</h5>
+<p>「TelloController1122.cs」内の183～213行目が該当する。<br>
+段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。<br>
+重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。</p>
 </div>
           
           <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2021 Dec 25</p>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Written by ban</p>
           
           <nav class="pagination mt-3">
             

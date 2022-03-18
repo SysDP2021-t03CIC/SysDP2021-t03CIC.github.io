@@ -536,19 +536,22 @@
 <h6 id="id------idbr">ID      :$id$<br></h6>
 </li>
 </ul>
-<p>認識できたARマーカーを$AR = [AR_0, \ldots , AR_n]$として、各ARマーカーの持つ値を$AR_i.id$のように表す<br></p>
+<p>認識できたARマーカーを$AR = [AR_0, \ldots , AR_n]$として、各ARマーカーの持つ値を$AR_i.id$のように表す。<br></p>
 <h4 id="追従対象の情報を計算">追従対象の情報を計算</h4>
+<p>追従対象の情報を得る式を説明する。図の灰色の部分は自動追従で使わない情報。</p>
 <ul>
 <li>
 <h5 id="座標">座標</h5>
 追従対象の座標$[tx,ty,tz]$は<br>
+<img src="/images/OpenCV/Recognition/Description/RecoDesc01.jpg" alt="座標" title="座標"><br>
 $[tx, ty, tz] = [\frac{\sum_{n}^{i=0}AR_i.tx}{n},
 \frac{\sum_{n}^{i=0}AR_i.ty}{n},
 \frac{\sum_{n}^{i=0}AR_i.tz}{n}]$<br>
-で求める。</li>
+で求める。<br></li>
 <li>
 <h5 id="回転">回転</h5>
-追従対象の回転$[rx,ry,rz]$は<br><br>
+追従対象の回転$[rx,ry,rz]$は<br>
+<img src="/images/OpenCV/Recognition/Description/RecoDesc02.jpg" alt="回転" title="回転">
 $[rx, ry, rz] = [\frac{\sum_{n}^{i=0}AR_i.rx + AR_i.id \times 90}{n},
 \frac{\sum_{n}^{i=0}AR_i.ry + AR_i.id \times 90}{n},
 \frac{\sum_{n}^{i=0}AR_i.rz + AR_i.id \times 90}{n}]$<br>
@@ -557,6 +560,7 @@ $[rx, ry, rz] = [\frac{\sum_{n}^{i=0}AR_i.rx + AR_i.id \times 90}{n},
 <li>
 <h5 id="方向">方向</h5>
 追従対象の方向はそれぞれ
+<img src="/images/OpenCV/Recognition/Description/RecoDesc03.jpg" alt="方向" title="方向">
 <ul>
 <li>左右の方向 : $arctan(\frac{tx}{tz})$</li>
 <li>上下の方向 : $arctan(\frac{ty}{tz})$<br>
@@ -566,6 +570,7 @@ $[rx, ry, rz] = [\frac{\sum_{n}^{i=0}AR_i.rx + AR_i.id \times 90}{n},
 <li>
 <h5 id="距離">距離</h5>
 カメラから追従対象の距離は<br>
+<img src="/images/OpenCV/Recognition/Description/RecoDesc04.jpg" alt="距離" title="距離">
 $d = \sqrt{tx^2 + ty^2 + tz^2}$
 で求める。</li>
 </ul>

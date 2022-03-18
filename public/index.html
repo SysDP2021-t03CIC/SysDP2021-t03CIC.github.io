@@ -251,7 +251,7 @@
 						
 						{
 							value: "数式的な解説",
-							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ\n  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$\n   認識できたARマーカーを$AR = [AR_0, \\ldots , AR_n]$として、各ARマーカーの持つ値を$AR_i.id$のように表す\n追従対象の情報を計算   座標 追従対象の座標$[tx,ty,tz]$は\n$[tx, ty, tz] = [\\frac{\\sum_{n}^{i=0}AR_i.tx}{n}, \\frac{\\sum_{n}^{i=0}AR_i.ty}{n}, \\frac{\\sum_{n}^{i=0}AR_i.tz}{n}]$\nで求める。  回転 追従対象の回転$[rx,ry,rz]$は\n$[rx, ry, rz] = [\\frac{\\sum_{n}^{i=0}AR_i.rx \u002b AR_i.id \\times 90}{n}, \\frac{\\sum_{n}^{i=0}AR_i.ry \u002b AR_i.id \\times 90}{n}, \\frac{\\sum_{n}^{i=0}AR_i.rz \u002b AR_i.id \\times 90}{n}]$\nで求める。\nただし、$AR_i.id$が$0$で、回転の値が負の場合$\u002b360$する。  方向 追従対象の方向はそれぞれ  左右の方向 : $arctan(\\frac{tx}{tz})$ 上下の方向 : $arctan(\\frac{ty}{tz})$\nで求める。    距離 カメラから追従対象の距離は\n$d = \\sqrt{tx^2 \u002b ty^2 \u002b tz^2}$ で求める。  コード private void CalcTargetRotation(ARMarker[] markers) { if (markers.Length \u0026lt; 1) return; Array.Clear(position, 0, position.Length); Array.Clear(rotation, 0, rotation.Length); int i, j; for (i = 0; i \u0026lt; markers.Length; i\u002b\u002b) { for (j = 0; j \u0026lt; markers[i].rArr.Length; j\u002b\u002b) { if (markers[i].ID == 0 \u0026amp;\u0026amp; markers[i].rArr[j] \u0026lt; 0) markers[i].rArr[j] \u002b= 360; rotation[j] \u002b= markers[i].ID * 90 \u002b markers[i].rArr[j]; } for (j = 0; j \u0026lt; markers[i].tArr.Length; j\u002b\u002b) { position[j] \u002b= markers[i].tArr[j]; } } for (j = 0; j \u0026lt; position.Length; j\u002b\u002b) position[j] \/= markers.Length; for (j = 0; j \u0026lt; rotation.Length; j\u002b\u002b) rotation[j] \/= markers.Length; if (position[2] == 0) return; angle[0] = Math.Atan2(position[0], position[2]) * (180 \/ Math.PI); angle[1] = Math.Atan2(position[1], position[2]) * (180 \/ Math.PI); distance = Math.Sqrt(Math.Pow(position[0], 2) \u002b Math.Pow(position[1], 2) \u002b Math.Pow(position[2], 2)); } </p><p>画像処理</p><p>ARマーカー</p><p>追従対象</p>",
+							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ\n  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$\n   認識できたARマーカーを$AR = [AR_0, \\ldots , AR_n]$として、各ARマーカーの持つ値を$AR_i.id$のように表す。\n追従対象の情報を計算 追従対象の情報を得る式を説明する。図の灰色の部分は自動追従で使わない情報。\n  座標 追従対象の座標$[tx,ty,tz]$は\n$[tx, ty, tz] = [\\frac{\\sum_{n}^{i=0}AR_i.tx}{n}, \\frac{\\sum_{n}^{i=0}AR_i.ty}{n}, \\frac{\\sum_{n}^{i=0}AR_i.tz}{n}]$\nで求める。\n  回転 追従対象の回転$[rx,ry,rz]$は\n$[rx, ry, rz] = [\\frac{\\sum_{n}^{i=0}AR_i.rx \u002b AR_i.id \\times 90}{n}, \\frac{\\sum_{n}^{i=0}AR_i.ry \u002b AR_i.id \\times 90}{n}, \\frac{\\sum_{n}^{i=0}AR_i.rz \u002b AR_i.id \\times 90}{n}]$\nで求める。\nただし、$AR_i.id$が$0$で、回転の値が負の場合$\u002b360$する。  方向 追従対象の方向はそれぞれ  左右の方向 : $arctan(\\frac{tx}{tz})$ 上下の方向 : $arctan(\\frac{ty}{tz})$\nで求める。    距離 カメラから追従対象の距離は\n$d = \\sqrt{tx^2 \u002b ty^2 \u002b tz^2}$ で求める。  コード private void CalcTargetRotation(ARMarker[] markers) { if (markers.Length \u0026lt; 1) return; Array.Clear(position, 0, position.Length); Array.Clear(rotation, 0, rotation.Length); int i, j; for (i = 0; i \u0026lt; markers.Length; i\u002b\u002b) { for (j = 0; j \u0026lt; markers[i].rArr.Length; j\u002b\u002b) { if (markers[i].ID == 0 \u0026amp;\u0026amp; markers[i].rArr[j] \u0026lt; 0) markers[i].rArr[j] \u002b= 360; rotation[j] \u002b= markers[i].ID * 90 \u002b markers[i].rArr[j]; } for (j = 0; j \u0026lt; markers[i].tArr.Length; j\u002b\u002b) { position[j] \u002b= markers[i].tArr[j]; } } for (j = 0; j \u0026lt; position.Length; j\u002b\u002b) position[j] \/= markers.Length; for (j = 0; j \u0026lt; rotation.Length; j\u002b\u002b) rotation[j] \/= markers.Length; if (position[2] == 0) return; angle[0] = Math.Atan2(position[0], position[2]) * (180 \/ Math.PI); angle[1] = Math.Atan2(position[1], position[2]) * (180 \/ Math.PI); distance = Math.Sqrt(Math.Pow(position[0], 2) \u002b Math.Pow(position[1], 2) \u002b Math.Pow(position[2], 2)); } </p><p>画像処理</p><p>ARマーカー</p><p>追従対象</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/description\/"
 						},
 						
@@ -370,6 +370,12 @@
 						},
 						
 						{
+							value: "1.移動距離の計算について",
+							label: "<p>MathJax.Hub.Config({\rtex2jax: {\rinlineMath: [[\u0027$\u0027,\u0027$\u0027], [\u0027\\\\(\u0027,\u0027\\\\)\u0027]],\rdisplayMath: [[\u0027$$\u0027,\u0027$$\u0027], [\u0027\\\\[\u0027,\u0027\\\\]\u0027]],\rprocessEscapes: true,\rprocessEnvironments: true,\rskipTags: [\u0027script\u0027, \u0027noscript\u0027, \u0027style\u0027, \u0027textarea\u0027, \u0027pre\u0027],\rTeX: { equationNumbers: { autoNumber: \u0022AMS\u0022 },\rextensions: [\u0022AMSmath.js\u0022, \u0022AMSsymbols.js\u0022] }\r}\r});\rMathJax.Hub.Queue(function() {\r\/\/ Fix  tags after MathJax finishes running. This is a\r\/\/ hack to overcome a shortcoming of Markdown. Discussion at\r\/\/ https:\/\/github.com\/mojombo\/jekyll\/issues\/199\rvar all = MathJax.Hub.getAllJax(), i;\rfor(i = 0; i 『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。\n移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。\n前提の説明 「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。\n円中心の三角形がARマーカーを付けた追従対象で、左下にあるものがドローンとする。この時、下のコードから3つのパラメーターを受け取る。\ndouble targetPosX = textureSender.estimater.position[0]; \/\/ 左右方向の距離 double targetPosZ = textureSender.estimater.position[2]; \/\/ 前後方向の距離 double targetRotY = textureSender.estimater.rotation[1]; \/\/ ARマーカーとの角度 targetPosX → ドローンとARマーカーまでの横方向の距離\ntargetPosZ → ドローンとARマーカーまでの前方向の距離\ntargetRotY → ドローンから見たARマーカーの角度(右方向に\u002b、左方向に-)\nこの時、取得できる単位は X,Y は[m]、 Y は[°]であることに気を付ける。\n「TelloRequestCalculation02.cs」内の説明 まず、TelloとARマーカーがどれだけ離れて追従するかを設定する。\n\/\/ 単位は[cm] private static double targetDistance = 2; この場合2m離れて追従する設定となり、この値が基準値となって以下の計算を行う。\n単位は[cm] と書いてあるが本当は 単位は[m]であることに気を付けて下さい！\nなお、これより以下の計算では、角度はラジアンで扱う点に注意する。\n  x軸方向(左右)の計算   式：$MoveX=targetPosX-targetDistance×\\sin(targetRotY)$\n\/\/x軸方向(左右)の計算 public static double CalculateRequestMoveX(double targetPosX, double targetRotY) { \/\/ 引数は単位が[m]  return targetPosX - targetDistance * Math.Sin(targetRotY * Mathf.Deg2Rad); }   y軸方向(前後)の計算   式：$MoveZ=targetPosZ-targetDistance×\\sin(targetRotY)$\n\/\/y軸方向(前後)の計算 public static double CalculateRequestMoveY(double targetPosZ, double targetRotY) { \/\/ 引数は単位が[m]  return targetPosZ - targetDistance * Math.Cos(targetRotY * Mathf.Deg2Rad); }   旋回の計算   Yの大きさによって旋回の向きを変える\npublic static double CalculateRequestRoteY(double targetRotY) { return (targetRotY \u0026lt;= 180) ? targetRotY * Mathf.Deg2Rad : (targetRotY - 360) * Mathf.Deg2Rad; } </p><p>Tello</p><p>追従</p><p>計算式</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/autotracking\/calculation\/"
+						},
+						
+						{
 							value: "システム創成2021 CIC担当チーム 引継ぎ資料",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/"
@@ -383,7 +389,7 @@
 						
 						{
 							value: "1.基本性能",
-							label: "<p>Telloについて dji社の販売しているトイドローン。\nバッテリー駆動のドローンでバッテリーの続く限り飛行する。\n- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km\/h 最大飛行時間： 13分（無風、定速15km\/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用\n- 実際の飛行時間 について Telloの改造（別ページ）により、飛行時間が約10分ほどまで飛び続ける。\nしかし、Tello本体が熱を持ちすぎると動作が止まったり利かなくなったりすることがある。そのため実際に運用するときには、動かす場合は熱を持たないように早いうちに飛ばしたり、複数のドローンやバッテリーを使いまわすことによって冷ましながら運用をすることが重要になる。\n- ライトによる状態の説明 Telloの前方にはLEDのライトがついており、それを見ることでTelloが元現在どのような状況であるかを認識できる。\nよくみたLEDのサインを列挙するが、ここに挙げたものはあくまで一例であるため下記のサイトやその他のサイトを参考にするとよい。\n  パターン  通常時（非飛行時）  カラフルに点滅  Wi-fiと未接続   黄色点滅  Wi-Fiとの接続確認     飛行時  緑色点滅  問題なく飛行   赤色点滅  バッテリー残量が少ない     充電時  青色点滅  充電中   青色点灯  充電完了        参考：Tello　LED点滅パターン（機体のステータス確認）\n注意点 Telloは風に弱く、エアコンの風であおられて移動してしまうこともあり室外では上手く飛ばせない。そのため、室外で運用するような物を作ろうとする際には、Tello以外のドローンを使うようにCICさんに頼むとよい。\n室内で飛ばす場合にも、扇風機やエアコン・換気扇などの影響を考えながら避けたり止めたりして行うと正しい挙動が確認できる。\n</p><p>Tello</p><p>ドローン</p>",
+							label: "<p>Telloについて dji社の販売しているトイドローン。\nバッテリー駆動のドローンでバッテリーの続く限り飛行する。\n- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km\/h 最大飛行時間： 13分（無風、定速15km\/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用\n- 実際の飛行時間 について Telloの改造（別ページ）により、飛行時間が約10分ほどまで飛び続ける。\nしかし、Tello本体が熱を持ちすぎると動作が止まったり利かなくなったりすることがある。そのため実際に運用するときには、動かす場合は熱を持たないように早いうちに飛ばしたり、複数のドローンやバッテリーを使いまわすことによって冷ましながら運用をすることが重要になる。\n- ライトによる状態の説明 Telloの前方にはLEDのライトがついており、それを見ることでTelloが元現在どのような状況であるかを認識できる。\nよくみたLEDのサインを列挙するが、ここに挙げたものはあくまで一例であるため下記のサイトやその他のサイトを参考にするとよい。\n  パターン  通常時（非飛行時）  カラフルに点滅  Wi-fiと未接続   黄色点滅  Wi-Fiとの接続確認     飛行時  緑色点滅  問題なく飛行   赤色点滅  バッテリー残量が少ない     充電時  青色点滅  充電中   青色点灯  充電完了        参考：Tello　LED点滅パターン（機体のステータス確認）\n注意点 Telloは風に弱く、エアコンの風であおられて移動してしまうこともあり室外では上手く飛ばせない。そのため、室外で運用するような物を作ろうとする際には、Tello以外のドローンを使うようにCICさんに頼むとよい。\n室内で飛ばす場合にも、扇風機やエアコン・換気扇などの影響を考えながら避けたり止めたりして行うと正しい挙動が確認できる。\n</p><p>坂</p><p>Tello</p><p>ドローン</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tello\/performance\/"
 						},
 						
@@ -401,8 +407,14 @@
 						
 						{
 							value: "2.移動距離に関する制御のコード",
-							label: "<p>ファイル内の大まかな説明 </p><p>田中</p><p>test</p>",
+							label: "<p>ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。\n1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。\n段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。\nしかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。\n段階Ⅰ「(理想の)移動する距離を求める段階」 「TelloController1122.cs」内の219～227行目が該当する。\n220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。\n段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。\n段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。\n重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。\n</p><p>Tello</p><p>自動追従</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/move_cal\/"
+						},
+						
+						{
+							value: "2.重みづけをした実際の移動距離の計算",
+							label: "<p>これはテストページです。\n</p><p>Tello</p><p>追従</p><p>計算式</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/autotracking\/weighting\/"
 						},
 						
 						{
@@ -480,12 +492,6 @@
 						{
 							value: "テスト記事",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/autotracking\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/video\/testarticle\/"
 						},
 						
@@ -547,12 +553,6 @@
 							value: "テスト記事2",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/tello\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/autotracking\/testarticle2\/"
 						},
 						
 						{
