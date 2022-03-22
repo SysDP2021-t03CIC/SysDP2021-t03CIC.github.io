@@ -104,10 +104,13 @@
     <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/</loc>
     <lastmod>2021-12-20T13:54:50+09:00</lastmod>
   </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</loc>
-    <lastmod>2022-03-15T14:34:00+09:00</lastmod>
+    <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</loc>
+    <lastmod>2022-03-22T15:02:35+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/</loc>
+    <lastmod>2022-03-22T15:02:35+09:00</lastmod>
+  </url><url>
+    <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</loc>
     <lastmod>2022-03-15T14:34:00+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/controller/</loc>
@@ -123,9 +126,6 @@
     <lastmod>2022-02-18T16:44:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/</loc>
-    <lastmod>2021-12-25T08:59:39+09:00</lastmod>
-  </url><url>
-    <loc>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</loc>
     <lastmod>2021-12-25T08:59:39+09:00</lastmod>
   </url><url>
     <loc>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</loc>

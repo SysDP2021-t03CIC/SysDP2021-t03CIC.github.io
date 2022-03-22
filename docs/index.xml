@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
-    <lastBuildDate>Tue, 15 Mar 2022 14:34:00 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Mar 2022 15:02:35 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>デスクトップPCを使う時の準備</title>
       <link>https://sysdp2021-t03cic.github.io/howtouse/pc/setup/</link>
@@ -100,6 +100,17 @@ OpenCVSharpの導入 1. NuGetの導入  NuGetForUnityから「NuGEtForUnity.〇.
       <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</guid>
       <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ
   座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$</description>
+    </item>
+    
+    <item>
+      <title>2.重みづけをした実際の移動距離の計算</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</link>
+      <pubDate>Tue, 22 Mar 2022 15:02:35 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『1.移動距離の計算について』で算出した値を用いて実際に移動する距離を求める。
+重みづけを行うことによって過度な移動を防いだり、ドローン視点の映像を安定させることを目的とした。実際、安定した映像の取得は実現できたが、それと両立したドローンの安定した追従がまだ完璧に出来ていないため、改善の余地があることに留意する。
+「TelloRequestCalculation02.cs」内の説明 if (textureSender.</description>
     </item>
     
     <item>
@@ -213,15 +224,6 @@ x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が�
 段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。
 段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。
 重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。</description>
-    </item>
-    
-    <item>
-      <title>2.重みづけをした実際の移動距離の計算</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</guid>
-      <description>これはテストページです。</description>
     </item>
     
     <item>

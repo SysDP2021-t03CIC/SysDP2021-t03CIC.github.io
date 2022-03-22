@@ -83,7 +83,7 @@ public static double CalculateRequestMoveX(double targetPosX, double targetRotY)
 ```
 
 - #### y軸方向(前後)の計算  
-**式：$MoveZ=targetPosZ-targetDistance×\sin\(targetRotY)$**  
+**式：$MoveZ=targetPosZ-targetDistance×\cos\(targetRotY)$**  
 ![移動経路計算](/images/Tello/AutoTracking/Calculation/figure3.png "移動経路計算")  
 ```C#
 //y軸方向(前後)の計算

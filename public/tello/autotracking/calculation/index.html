@@ -478,10 +478,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/" title="1.移動距離の計算について" class="sidelist
-  active">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/">
-    1.移動距離の計算について
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" title="2.重みづけをした実際の移動距離の計算" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/">
+    2.重みづけをした実際の移動距離の計算
   </a>
   
   
@@ -500,10 +500,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" title="2.重みづけをした実際の移動距離の計算" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/">
-    2.重みづけをした実際の移動距離の計算
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/" title="1.移動距離の計算について" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/">
+    1.移動距離の計算について
   </a>
   
   
@@ -612,7 +612,7 @@ targetRotY → ドローンから見たARマーカーの角度(右方向に+、�
 <h4 id="y軸方向前後の計算">y軸方向(前後)の計算</h4>
 </li>
 </ul>
-<p><strong>式：$MoveZ=targetPosZ-targetDistance×\sin(targetRotY)$</strong><br>
+<p><strong>式：$MoveZ=targetPosZ-targetDistance×\cos(targetRotY)$</strong><br>
 <img src="/images/Tello/AutoTracking/Calculation/figure3.png" alt="移動経路計算" title="移動経路計算"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#75715e">//y軸方向(前後)の計算
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> CalculateRequestMoveY(<span style="color:#66d9ef">double</span> targetPosZ, <span style="color:#66d9ef">double</span> targetRotY)
@@ -1037,6 +1037,8 @@ targetRotY → ドローンから見たARマーカーの角度(右方向に+、�
             
             
             
+            
+            
 
             
             
@@ -1054,13 +1056,14 @@ targetRotY → ドローンから見たARマーカーの角度(右方向に+、�
             
             
             
+
             
             
+            
 
             
             
             
-
             
             
             
@@ -1916,10 +1919,10 @@ targetRotY → ドローンから見たARマーカーの角度(右方向に+、�
             
 
             
-            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/tello/autotracking/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">自動追従</span></a>
+            <a class="nav nav-prev" href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" aria-label="Previous page" ><i class="ti-arrow-left mr-2"></i> <span class="d-none d-md-block">2.重みづけをした実際の移動距離の計算</span></a>
             
             
-            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" aria-label="Previous page" > <span class="d-none d-md-block">2.重みづけをした実際の移動距離の計算</span><i class="ti-arrow-right ml-2"></i></a>
+            <a class="nav nav-next" href="https://sysdp2021-t03cic.github.io/opencv/" aria-label="Previous page" > <span class="d-none d-md-block">画像処理</span><i class="ti-arrow-right ml-2"></i></a>
             
           </nav>
         </div>
