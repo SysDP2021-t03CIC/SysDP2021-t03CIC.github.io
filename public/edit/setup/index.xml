@@ -8,23 +8,5 @@
     <language>ja-jp</language>
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
     <lastBuildDate>Mon, 20 Dec 2021 13:54:50 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/edit/setup/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/setup/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/setup/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/setup/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/setup/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
   </channel>
 </rss>

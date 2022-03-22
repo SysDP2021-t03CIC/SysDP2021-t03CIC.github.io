@@ -9,9 +9,9 @@ type : "docs"
 
 [Telloについて](tello)
 
-[Tello標準SDKについて](tellosdk)
+[TelloのSDKについて](tellosdk)
 
-[Telloの制御に使ったもの](tellolib)
+[Telloの制御に使ったもの](tellocode)
 
 [Telloのカメラ映像の取得](video)
 

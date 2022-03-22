@@ -38,8 +38,7 @@
           {{ if .Params.Author }}
           <p class="post-meta border-bottom pb-3 mb-0 mt-3">Written by {{ .Params.Author }}</p>
           {{ end }}
-          <nav class="pagination mt-3">
-            <!-- Next prev page -->
+          <!-- <nav class="pagination mt-3">
             {{ $currentNode := . }}
             {{ template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode }}
             {{ define "menu-nextprev" }}
@@ -76,7 +75,7 @@
             {{with ($.Scratch.Get "nextPage")}}
             <a class="nav nav-next" href="{{.Permalink }}" aria-label="Previous page" > <span class="d-none d-md-block">{{.Title}}</span><i class="ti-arrow-right ml-2"></i></a>
             {{end}}
-          </nav>
+          </nav> -->
         </div>
       </div>
     </div>

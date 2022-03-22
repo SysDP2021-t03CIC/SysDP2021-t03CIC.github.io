@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>システム創成2021 CIC担当チーム 引継ぎ資料</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="description" content="システム創成2021 CIC担当チーム 引継ぎ資料 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
@@ -110,12 +110,6 @@
         
         <li class="nav-item">
           <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
-        </li>
-        
-        
-        
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/address">contact</a>
         </li>
         
         
@@ -263,7 +257,7 @@
 						
 						{
 							value: "トイドローンTello",
-							label: "<p>Telloについて\nTello標準SDKについて\nTelloの制御に使ったもの\nTelloのカメラ映像の取得\n自動追従\nTelloの使い方\n</p>",
+							label: "<p>Telloについて\nTelloのSDKについて\nTelloの制御に使ったもの\nTelloのカメラ映像の取得\n自動追従\nTelloの使い方\n</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/"
 						},
 						
@@ -280,7 +274,7 @@
 						},
 						
 						{
-							value: "Tello標準SDKについて",
+							value: "TelloのSDKについて",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/"
 						},
@@ -318,7 +312,7 @@
 						{
 							value: "Telloの制御に使うもの",
 							label: "<p></p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/"
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellocode\/"
 						},
 						
 						{
@@ -365,7 +359,7 @@
 						
 						{
 							value: "引継ぎ資料の編集方法",
-							label: "<p>初期セットアップ\nGitHubの使い方\n記事の書き方\nこのウェブサイトが出来るまで\n</p>",
+							label: "<p>このカテゴリは必要に応じて書きます。必要な場合は田中までご連絡ください。\n</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/"
 						},
 						
@@ -396,7 +390,7 @@
 						{
 							value: "1.主となる制御のコード",
 							label: "<p>注意事項 スクリプト内にTelloControllerの名前のファイルが二つ存在する場合、使われているファイルは「TelloController1122.cs」であることに気を付ける。\nファイル内の大まかな説明 ドローンの移動の制御は「TelloController1122.cs」のUpdate内のswitch内で行われる。ドローンが自動で移動するサイクルは「Stop」,「TakeOff」,「TakingOff」,「Detect」,「Follow」,「Land」,「Landing」に分かれる。\n  「Stop」   Telloが受けているコマンドの状態の初期化。\nSキーが入力されると、「TakeOff」に移行する。\n  「TakeOff」   Telloが離陸する段階。\ntakeoffのコマンドを送ったのち、「TakingOff」に移行する。\n  「TakingOff」   Telloが離陸して上昇、旋回してARマーカーを探す段階。\n離陸自体は瞬時に終了するが、ARマーカーを探すために高度を合わせる。\n（waitTimerが3以上4以下の時）今回は追従対象が決まっていたため固定値分上昇させた。\n（waitTimerが4以上の時）ARマーカーを認識するまで旋回を続ける。認識に成功したとき、 「Follow」に移行する。\n  「Detect」   「Follow」に移行する役割。今回は未使用。\n  「Follow」   Telloが追従していることを示す段階。この段階が続いている限りTelloは追従を続ける。\nLキーが入力されると、「Land」に移行する。\n  「Land」   Telloが着陸する段階。\nlandのコマンドを送ったのち、「Landing」に移行する。\n  「Landing」   Telloが着陸している段階。\n実質的にシステム終了の段階である。\n</p><p>Tello</p><p>tello</p><p>ドローン</p><p>制御</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/controller\/"
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellocode\/controller\/"
 						},
 						
 						{
@@ -420,7 +414,7 @@
 						{
 							value: "2.移動距離に関する制御のコード",
 							label: "<p>ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。\n1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。\n段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。\nしかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。\n段階Ⅰ「(理想の)移動する距離を求める段階」 「TelloController1122.cs」内の219～227行目が該当する。\n220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。\n段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。\n段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。\n重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。\n</p><p>Tello</p><p>自動追従</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellolib\/move_cal\/"
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellocode\/move_cal\/"
 						},
 						
 						{
@@ -450,30 +444,6 @@
 						{
 							value: "テスト記事",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/article\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/github\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/howtomake\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/setup\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/pc\/testarticle\/"
 						},
 						
@@ -493,42 +463,6 @@
 							value: "テスト記事",
 							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/howtouse\/tello\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/video\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/unityproject\/testarticle\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/article\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/github\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/howtomake\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/edit\/setup\/testarticle2\/"
 						},
 						
 						{
@@ -556,81 +490,21 @@
 						},
 						
 						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/video\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/steamvr\/testarticle2\/"
-						},
-						
-						{
-							value: "テスト記事2",
-							label: "<p>これはテストページです。\n</p><p>田中</p><p>test</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/unityproject\/testarticle2\/"
-						},
-						
-						{
-							value: "Test_by_tsuchiya",
-							label: "<p>Hello World このファイルは1回目のテストです。 箇条書きの練習\n リアルタイム映像 プロジェクト 画像認識  ARマーカー   ドローン  </p><p>著者名</p><p>Unity</p><p>ドローン</p><p>使い方</p><p>不具合</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/a\/test_by_tsuchiya\/"
-						},
-						
-						{
-							value: "Test_by_ban",
-							label: "<p>とりあえず使ってみた テストを兼ねて作成。実際にページを作成し、\n使った機能  ドローン パソコン VR やる気 根気 努力 友情 勝利  丸罰ゲーム    ここに うって いく。     ○ 罰 ○    罰    ○ 罰     まとめ いかがでしたでしょうか？もしよければチャンネル登録、高評価、Twitterのフォローなどなどをお願いします。\n</p><p>著者名</p><p>Unity</p><p>ドローン</p><p>使い方</p><p>不具合</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/a\/test_by_ban\/"
-						},
-						
-						{
-							value: "TestCategory1",
-							label: "<p>ここはテストページです。\ncatA\ncatB\n</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/"
-						},
-						
-						{
 							value: "連絡先",
 							label: "<p></p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/address\/"
 						},
 						
 						{
-							value: "Test1",
-							label: "<p></p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/a\/"
-						},
-						
-						{
-							value: "Test2",
-							label: "<p>first This is a test page\u0026hellip;\n</p><p>testtag</p><p>something</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/a\/test\/"
-						},
-						
-						{
-							value: "Test2",
-							label: "<p>first This is a test page\u0026hellip;\n</p><p>testtag</p><p>something</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/b\/test\/"
-						},
-						
-						{
-							value: "Test3",
-							label: "<p></p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/alpha\/b\/"
-						},
-						
-						{
 							value: "Blenderの使い方",
 							label: "<p>1.Blenderの基本操作\n大前提として私が触っていたBlenderは2.93.1時点のものです。これからアップデートで変わる可能性もあるので最新の資料を調べて参考にしていただければ幸いです。 また、私もBlender歴が長いわけではなくまだまだ分からないことのほうが多いので調べていただいた方が分かりやすい記事が多いかと思うのでそちらを参考になさっても構いません。(分かりやすいもの、好きなものでお勉強するのが一番だと思います。)\n全ての機能を説明するのは難しいので今回説明するのは簡単な基本操作やよく使うモードなどに留めておきます。\n2.動かし方\n最初にマウスの動かし方などの説明をします。\n3.モード\nオブジェクトを操作するにあたってモードというものを選択して操作を行います。 よく使われるものは「オブジェクトモード」と「編集モード」です。 画像の上から1番目がオブジェクトモードで2番目が編集モードです。これらのモードの切り替えはBlenderを開いたときの左上にあります。 最初にオブジェクトモードの操作の説明を行います。 オブジェクトモードは基本的にオブジェクトの移動や大きさの変更などが可能です。\n上の二つは、クリックしたときのモードを切り替えられるものになっています。 マウスカーソルのようなアイコンの方はボックス選択といって\n最後に参考にしたサイトを載せておきます。\n</p><p>Blender</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/blender\/testarticle2\/"
+							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/blender\/howtouse\/"
 						},
 						
 						{
 							value: "Blenderの導入",
 							label: "<p>0.最初に\nBlenderとは無償で提供されている統合3DCGソフトです。 3Dモデルなどなどを自在に作ることはできますが、Steamには「Unity Asset Store」がありますのでそちらにどうしてもないものを作るのが良いと思います。 Unity Asset Storeとは他のクリエイターさんが作った3Dモデル、アニメーション制作のための素材、オーディオ、テクスチャなどがダウンロードできるサイトです。 最初からすべてのモデルを作るのもいいですが時間がかかってしまうのでもしもUnity Asset Storeで揃うのでしたらそちらを使うのをお勧めします。 詳しくはUnity Asset Storeの使い方の記事をご覧ください。\n1.Blenderをインストールする\nBlenderはこちらのサイトからインストールすることができます。\nBlenderのダウンロードサイト\nリンク先に飛んだら青い「Download Blender バージョン名」というボタンがあるのでクリックしてください。 ダウンロードされたインストーラーを流れに沿って進みBlenderをインストールしてください。 これでBlenderのインストールは終了です。\n2.Blenderの日本語化\nまず最初に日本語化について説明します。 英語のままでよい人はスルーしてください。\n左上のメニューに「Edit \u0026gt; Preferences」でBlender Preferencesウィンドウを開きます。 「Interface」の中に「Translation」というチェックボックスがあるのでそこをクリックしてください。 TranslationのLanguageを「Japanese(日本語)」と選択し、「Tooltips」と「Interface」というチェックボックスにもチェックを付けてください。 これで日本語化は終了です。\n最後に参考にしたサイトを載せておきます。\n参考サイト\n</p><p>Blender</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/blender\/testarticle\/"
+							url:"https:\/\/sysdp2021-t03cic.github.io\/unity\/blender\/installation\/"
 						},
 						
 						{
@@ -739,10 +613,6 @@
       </div>
       <div class="col-md-4 text-md-right text-center">
         <ul class="list-inline">
-          
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://twitter.com/JetJaguar_PSX" aria-label="Twitter"><i class="ti-twitter-alt"></i></a></li>
-          
-          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io" aria-label="Github"><i class="ti-github"></i></a></li>
           
         </ul>
       </div>

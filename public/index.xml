@@ -139,10 +139,10 @@ OpenCVSharpの導入 1. NuGetの導入  NuGetForUnityから「NuGEtForUnity.〇.
     
     <item>
       <title>1.主となる制御のコード</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellolib/controller/</link>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellocode/controller/</link>
       <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellolib/controller/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellocode/controller/</guid>
       <description>注意事項 スクリプト内にTelloControllerの名前のファイルが二つ存在する場合、使われているファイルは「TelloController1122.cs」であることに気を付ける。
 ファイル内の大まかな説明 ドローンの移動の制御は「TelloController1122.cs」のUpdate内のswitch内で行われる。ドローンが自動で移動するサイクルは「Stop」,「TakeOff」,「TakingOff」,「Detect」,「Follow」,「Land」,「Landing」に分かれる。
   「Stop」   Telloが受けているコマンドの状態の初期化。
@@ -224,10 +224,10 @@ x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が�
     
     <item>
       <title>2.移動距離に関する制御のコード</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/</link>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellolib/move_cal/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/</guid>
       <description>ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。
 1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。
 段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。
@@ -283,42 +283,6 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; /
     
     <item>
       <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/article/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/article/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/github/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/github/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/setup/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/setup/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
       <link>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
@@ -350,60 +314,6 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; /
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/video/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/video/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/unity/unityproject/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/unity/unityproject/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/article/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/article/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/github/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/github/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/howtomake/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/edit/setup/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/edit/setup/testarticle2/</guid>
       <description>これはテストページです。</description>
     </item>
     
@@ -444,76 +354,11 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; /
     </item>
     
     <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/video/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/video/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/unity/steamvr/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/unity/steamvr/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/unity/unityproject/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/unity/unityproject/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>Test_by_tsuchiya</title>
-      <link>https://sysdp2021-t03cic.github.io/alpha/a/test_by_tsuchiya/</link>
-      <pubDate>Tue, 21 Dec 2021 15:15:59 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/alpha/a/test_by_tsuchiya/</guid>
-      <description>Hello World このファイルは1回目のテストです。 箇条書きの練習
- リアルタイム映像 プロジェクト 画像認識  ARマーカー   ドローン  </description>
-    </item>
-    
-    <item>
-      <title>Test_by_ban</title>
-      <link>https://sysdp2021-t03cic.github.io/alpha/a/test_by_ban/</link>
-      <pubDate>Tue, 21 Dec 2021 15:14:55 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/alpha/a/test_by_ban/</guid>
-      <description>とりあえず使ってみた テストを兼ねて作成。実際にページを作成し、
-使った機能  ドローン パソコン VR やる気 根気 努力 友情 勝利  丸罰ゲーム    ここに うって いく。     ○ 罰 ○    罰    ○ 罰     まとめ いかがでしたでしょうか？もしよければチャンネル登録、高評価、Twitterのフォローなどなどをお願いします。</description>
-    </item>
-    
-    <item>
-      <title>Test2</title>
-      <link>https://sysdp2021-t03cic.github.io/alpha/a/test/</link>
-      <pubDate>Mon, 20 Dec 2021 13:54:50 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/alpha/a/test/</guid>
-      <description>first This is a test page&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Test2</title>
-      <link>https://sysdp2021-t03cic.github.io/alpha/b/test/</link>
-      <pubDate>Mon, 20 Dec 2021 13:54:50 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/alpha/b/test/</guid>
-      <description>first This is a test page&amp;hellip;</description>
-    </item>
-    
-    <item>
       <title>Blenderの使い方</title>
-      <link>https://sysdp2021-t03cic.github.io/unity/blender/testarticle2/</link>
+      <link>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</link>
       <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/unity/blender/testarticle2/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</guid>
       <description>1.Blenderの基本操作
 大前提として私が触っていたBlenderは2.93.1時点のものです。これからアップデートで変わる可能性もあるので最新の資料を調べて参考にしていただければ幸いです。 また、私もBlender歴が長いわけではなくまだまだ分からないことのほうが多いので調べていただいた方が分かりやすい記事が多いかと思うのでそちらを参考になさっても構いません。(分かりやすいもの、好きなものでお勉強するのが一番だと思います。)
 全ての機能を説明するのは難しいので今回説明するのは簡単な基本操作やよく使うモードなどに留めておきます。
@@ -527,10 +372,10 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; /
     
     <item>
       <title>Blenderの導入</title>
-      <link>https://sysdp2021-t03cic.github.io/unity/blender/testarticle/</link>
+      <link>https://sysdp2021-t03cic.github.io/unity/blender/installation/</link>
       <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://sysdp2021-t03cic.github.io/unity/blender/testarticle/</guid>
+      <guid>https://sysdp2021-t03cic.github.io/unity/blender/installation/</guid>
       <description>0.最初に
 Blenderとは無償で提供されている統合3DCGソフトです。 3Dモデルなどなどを自在に作ることはできますが、Steamには「Unity Asset Store」がありますのでそちらにどうしてもないものを作るのが良いと思います。 Unity Asset Storeとは他のクリエイターさんが作った3Dモデル、アニメーション制作のための素材、オーディオ、テクスチャなどがダウンロードできるサイトです。 最初からすべてのモデルを作るのもいいですが時間がかかってしまうのでもしもUnity Asset Storeで揃うのでしたらそちらを使うのをお勧めします。 詳しくはUnity Asset Storeの使い方の記事をご覧ください。
 1.Blenderをインストールする

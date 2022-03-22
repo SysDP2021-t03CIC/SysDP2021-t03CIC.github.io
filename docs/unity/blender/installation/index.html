@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+  <meta charset="utf-8">
+  <title>Blenderの導入</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="description" content="Blenderの導入 - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  
+  <!-- ** CSS Plugins Needed for the Project ** -->
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+  
+  <style>
+  :root{
+    --primary-color:#1c7cc5;
+    --body-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --light-color:#f8f9fa;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
+  
+<!-- ** JS Plugins Needed for the Project ** -->
+
+<!-- jquiry -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+
+  
+
+  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Blenderの導入"/>
+<meta name="twitter:description" content="0.最初に
+Blenderとは無償で提供されている統合3DCGソフトです。 3Dモデルなどなどを自在に作ることはできますが、Steamには「Unity Asset Store」がありますのでそちらにどうしてもないものを作るのが良いと思います。 Unity Asset Storeとは他のクリエイターさんが作った3Dモデル、アニメーション制作のための素材、オーディオ、テクスチャなどがダウンロードできるサイトです。 最初からすべてのモデルを作るのもいいですが時間がかかってしまうのでもしもUnity Asset Storeで揃うのでしたらそちらを使うのをお勧めします。 詳しくはUnity Asset Storeの使い方の記事をご覧ください。
+1.Blenderをインストールする
+Blenderはこちらのサイトからインストールすることができます。
+Blenderのダウンロードサイト
+リンク先に飛んだら青い「Download Blender バージョン名」というボタンがあるのでクリックしてください。 ダウンロードされたインストーラーを流れに沿って進みBlenderをインストールしてください。 これでBlenderのインストールは終了です。
+2.Blenderの日本語化
+まず最初に日本語化について説明します。 英語のままでよい人はスルーしてください。
+左上のメニューに「Edit &gt; Preferences」でBlender Preferencesウィンドウを開きます。 「Interface」の中に「Translation」というチェックボックスがあるのでそこをクリックしてください。 TranslationのLanguageを「Japanese(日本語)」と選択し、「Tooltips」と「Interface」というチェックボックスにもチェックを付けてください。 これで日本語化は終了です。
+最後に参考にしたサイトを載せておきます。
+参考サイト"/>
+
+
+
+<meta property="og:title" content="Blenderの導入" />
+<meta property="og:description" content="0.最初に
+Blenderとは無償で提供されている統合3DCGソフトです。 3Dモデルなどなどを自在に作ることはできますが、Steamには「Unity Asset Store」がありますのでそちらにどうしてもないものを作るのが良いと思います。 Unity Asset Storeとは他のクリエイターさんが作った3Dモデル、アニメーション制作のための素材、オーディオ、テクスチャなどがダウンロードできるサイトです。 最初からすべてのモデルを作るのもいいですが時間がかかってしまうのでもしもUnity Asset Storeで揃うのでしたらそちらを使うのをお勧めします。 詳しくはUnity Asset Storeの使い方の記事をご覧ください。
+1.Blenderをインストールする
+Blenderはこちらのサイトからインストールすることができます。
+Blenderのダウンロードサイト
+リンク先に飛んだら青い「Download Blender バージョン名」というボタンがあるのでクリックしてください。 ダウンロードされたインストーラーを流れに沿って進みBlenderをインストールしてください。 これでBlenderのインストールは終了です。
+2.Blenderの日本語化
+まず最初に日本語化について説明します。 英語のままでよい人はスルーしてください。
+左上のメニューに「Edit &gt; Preferences」でBlender Preferencesウィンドウを開きます。 「Interface」の中に「Translation」というチェックボックスがあるのでそこをクリックしてください。 TranslationのLanguageを「Japanese(日本語)」と選択し、「Tooltips」と「Interface」というチェックボックスにもチェックを付けてください。 これで日本語化は終了です。
+最後に参考にしたサイトを載せておきます。
+参考サイト" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/unity/blender/installation/" /><meta property="article:section" content="Unity" />
+<meta property="article:published_time" content="2021-03-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-22T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blenderの導入"/>
+<meta name="twitter:description" content="0.最初に
+Blenderとは無償で提供されている統合3DCGソフトです。 3Dモデルなどなどを自在に作ることはできますが、Steamには「Unity Asset Store」がありますのでそちらにどうしてもないものを作るのが良いと思います。 Unity Asset Storeとは他のクリエイターさんが作った3Dモデル、アニメーション制作のための素材、オーディオ、テクスチャなどがダウンロードできるサイトです。 最初からすべてのモデルを作るのもいいですが時間がかかってしまうのでもしもUnity Asset Storeで揃うのでしたらそちらを使うのをお勧めします。 詳しくはUnity Asset Storeの使い方の記事をご覧ください。
+1.Blenderをインストールする
+Blenderはこちらのサイトからインストールすることができます。
+Blenderのダウンロードサイト
+リンク先に飛んだら青い「Download Blender バージョン名」というボタンがあるのでクリックしてください。 ダウンロードされたインストーラーを流れに沿って進みBlenderをインストールしてください。 これでBlenderのインストールは終了です。
+2.Blenderの日本語化
+まず最初に日本語化について説明します。 英語のままでよい人はスルーしてください。
+左上のメニューに「Edit &gt; Preferences」でBlender Preferencesウィンドウを開きます。 「Interface」の中に「Translation」というチェックボックスがあるのでそこをクリックしてください。 TranslationのLanguageを「Japanese(日本語)」と選択し、「Tooltips」と「Interface」というチェックボックスにもチェックを付けてください。 これで日本語化は終了です。
+最後に参考にしたサイトを載せておきます。
+参考サイト"/>
+
+
+</head>
+
+  
+  <body>
+    
+    <!-- header -->
+    <header class="shadow-bottom sticky-top bg-white">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <div class="container px-2 px-md-0">
+    <a class="navbar-brand px-2" href="/">
+      
+      
+      
+      システム創成2021 CIC担当チーム 引継ぎ資料
+      
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            docs
+          </a>
+          <div class="dropdown-menu">
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/unity">Unity</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/tello">Tello</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/opencv">OpenCV</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/howtouse">How to use</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/editS">How to edit</a>
+            
+          </div>
+        </li>
+        
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <!-- /header -->
+    
+    
+
+<!-- details page -->
+<section class="single section-sm pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="sidebar">
+        <a class="back-btn" href="/" aria-label="back"></a>
+          <ul class="list-styled">
+            
+            
+              
+              
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/" title="Unityプロジェクト" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/unity/">
+    Unityプロジェクト
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/steamvr/" title="SteamVRを用いた開発" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/unity/steamvr/">
+    SteamVRを用いた開発
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/steamvr/installation/" title="SteamVRの導入" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/unity/steamvr/installation/">
+    SteamVRの導入
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/unityproject/" title="Unityプロジェクト内での開発" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/unity/unityproject/">
+    Unityプロジェクト内での開発
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/unityproject/install/" title="インストール" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/unity/unityproject/install/">
+    インストール
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/blender/" title="Blenderを用いた3Dモデルの作成" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/unity/blender/">
+    Blenderを用いた3Dモデルの作成
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/blender/howtouse/" title="Blenderの使い方" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/unity/blender/howtouse/">
+    Blenderの使い方
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/unity/blender/installation/" title="Blenderの導入" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/unity/blender/installation/">
+    Blenderの導入
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-lg-5 p-4 bg-white" id="content">
+          <h2 class="mb-5" id="title">Blenderの導入</h2>
+          
+          <div class="content"><p><span style="font-size: 150%; color: red;">0.最初に</span></n></p>
+<p>Blenderとは無償で提供されている統合3DCGソフトです。
+3Dモデルなどなどを自在に作ることはできますが、Steamには「Unity Asset Store」がありますのでそちらにどうしてもないものを作るのが良いと思います。
+Unity Asset Storeとは他のクリエイターさんが作った3Dモデル、アニメーション制作のための素材、オーディオ、テクスチャなどがダウンロードできるサイトです。
+最初からすべてのモデルを作るのもいいですが時間がかかってしまうのでもしもUnity Asset Storeで揃うのでしたらそちらを使うのをお勧めします。
+詳しくはUnity Asset Storeの使い方の記事をご覧ください。</p>
+<p><span style="font-size: 150%; color: red;">1.Blenderをインストールする</span></n></p>
+<p>Blenderはこちらのサイトからインストールすることができます。<br>
+<a href="https://www.blender.org/download/">Blenderのダウンロードサイト</a><br>
+リンク先に飛んだら青い「Download Blender バージョン名」というボタンがあるのでクリックしてください。
+ダウンロードされたインストーラーを流れに沿って進みBlenderをインストールしてください。
+これでBlenderのインストールは終了です。</p>
+<p><span style="font-size: 150%; color: red;">2.Blenderの日本語化</span></n></p>
+<p>まず最初に日本語化について説明します。
+英語のままでよい人はスルーしてください。</p>
+<p>左上のメニューに「Edit &gt; Preferences」でBlender Preferencesウィンドウを開きます。
+「Interface」の中に「Translation」というチェックボックスがあるのでそこをクリックしてください。
+TranslationのLanguageを「Japanese(日本語)」と選択し、「Tooltips」と「Interface」というチェックボックスにもチェックを付けてください。
+これで日本語化は終了です。</p>
+<p>最後に参考にしたサイトを載せておきます。<br>
+<a href="https://udemy.benesse.co.jp/design/3d/blender.html">参考サイト</a></p>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2021 Mar 22</p>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Written by Nakai</p>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+    <!-- footer -->
+<footer class="section pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 text-md-left text-center">
+       <p class="mb-md-0 mb-4">Copyright © 2021 a Hugo theme by <a href="https://gethugothemes.com/">Gethugothemes</a></p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://sysdp2021-t03cic.github.io/js/script.min.js"></script>
+  </body>
+
+</html>
