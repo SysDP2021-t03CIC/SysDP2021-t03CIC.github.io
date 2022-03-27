@@ -17,23 +17,5 @@
       <description> Telloを起動後速やかに離陸させるため、予めUnityなどは起動しておく。  Telloは電源がONになっている間、自動的に発熱してオーバーヒートする。 Telloが飛ぶときプロペラが発する風でTello自体を冷却する。   Telloの中を覗き、SSIDを確認する。 Telloにバッテリーを取り付け、電源ボタンを押す。  使っていないバッテリーは必ず充電しておく。   PCのWi-Fi設定を開き、TelloのSSIDを選択する。  Telloに接続している間、PCはインターネットに繋がらない。   Wi-Fi接続が完了したら、速やかにシステムを開始しTelloを離陸させる。  </description>
     </item>
     
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/howtouse/tello/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
   </channel>
 </rss>

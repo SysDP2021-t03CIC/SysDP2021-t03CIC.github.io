@@ -17,23 +17,5 @@
       <description> 予め電源タップを用意しておく  コンセントが足りない場合が多い   使用後に元通りに収納できるように、箱の中の状態を覚えておく ケーブルの長さを考慮し、機材の配置を考える  電源ケーブルが最も短いので、それを最優先に   プロジェクターを使用する場合は、表示域を考慮して配置する 機材を配置したら適宜配線する PCを起動したら、steamにログインする  ログインしないとsteamVRが正常に動作しない    </description>
     </item>
     
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/howtouse/pc/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
   </channel>
 </rss>

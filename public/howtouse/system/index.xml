@@ -17,23 +17,5 @@
       <description> 必要な人員  ユーザ1（VRヘッドセットを装着する人） ユーザ2（帽子を被り、ドローンに追従される人） システム運用者（PCを操作する）     Unityエディタを起動する。 ユーザ1はVRヘッドセットReverb G2を装着する  参照先   ユーザ2は帽子を被る PCとTelloを接続する  参照先   Telloをユーザ2の後方に置く システム運用者がUnityエディタ上で実行ボタンをクリックする ユーザ1が見ている映像にUIが表示される。右手のコントローラーをUIに当てて操作する  実は左手のコントローラーを対応させるのが間に合わなかった   Telloのカメラ映像が表示されなければ、最初からやり直す 正常動作していれば、Telloが離陸しユーザ2を探す Telloがユーザ2を視認し追従し始めたら、ユーザ2は歩行し始める システム運用終了時は、システム運用者がPCのキーボードの「L」キーを押す  Lは「land」（着陸）のL   システム運用者はUnityエディタ上で実行終了ボタンをクリックする。 速やかにTelloの電源をOFFにする。  </description>
     </item>
     
-    <item>
-      <title>テスト記事</title>
-      <link>https://sysdp2021-t03cic.github.io/howtouse/system/testarticle/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/howtouse/system/testarticle/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
-    <item>
-      <title>テスト記事2</title>
-      <link>https://sysdp2021-t03cic.github.io/howtouse/system/testarticle2/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/howtouse/system/testarticle2/</guid>
-      <description>これはテストページです。</description>
-    </item>
-    
   </channel>
 </rss>
