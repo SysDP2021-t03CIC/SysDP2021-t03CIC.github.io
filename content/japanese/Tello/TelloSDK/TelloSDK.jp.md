@@ -9,6 +9,8 @@ draft: false
 keywords: ["tello","SDK"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "ban"
+# 以下は目次において何番目に表示するか決めるタグです。
+weight: 1
 ---
 
 #### TelloSDK

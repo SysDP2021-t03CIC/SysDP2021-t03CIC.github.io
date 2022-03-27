@@ -58,6 +58,31 @@ Windowsの場合アクセスの許可を求められる。各々チェックを�
     </item>
     
     <item>
+      <title>TelloSDKについて</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</link>
+      <pubDate>Fri, 18 Feb 2022 16:44:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</guid>
+      <description>TelloSDK 基本的に以下のサイトを見ればわかる。
+ ニート翔ぶ～C#でドローンを飛ばす～
+ 主なTelloコマンド  command
+SDKモードに入る（1番最初に命令するコマンド） takeoff
+Telloが離陸する land
+Telloが着陸する emergency
+全てのモーターが止まる（緊急着陸） streamon
+ビデオストリームをON streamoff
+ビデオストリームをOFF up x
+x cm上昇 down x
+x cm下降 left x
+x cm左へ right x
+x cm右へ forward x
+x cm前進 back x
+x cm後退 cw x
+x 度時計回りに旋回 ccw x
+x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </description>
+    </item>
+    
+    <item>
       <title>ARマーカーの値の取得</title>
       <link>https://sysdp2021-t03cic.github.io/opencv/recognition/estimatetarget/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
@@ -92,8 +117,10 @@ Pluginsは使っているPCに合わせる  メソッドの説明 正直引き�
       <pubDate>Sun, 27 Mar 2022 19:59:10 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/tello/tellosdk/t4u/</guid>
-      <description>Tello Libとは その名の通り、Telloを制御するためのライブラリ。公式SDKよりも細かな制御を行う事ができる。 Tello Lib
-Tello for Unity とは Unity専用のTello開発キット。公式ではなく有志が開発。 Tello for Unity
+      <description>Tello Libとは その名の通り、Telloを制御するためのライブラリ。公式SDKよりも細かな制御を行う事ができる。
+Tello Lib
+Tello for Unity とは Unity専用のTello開発キット。公式ではなく有志が開発。
+Tello for Unity
 Tello Video Decoder Tello for Unity独自の映像変換用ライブラリ。
 インストール 適当なディレクトリで以下のコマンドを使用
 $ git clone --recursive https://github.com/comoc/TelloForUnity.git&amp;ndash;recursiveを付ける理由は、Tello for Unityの使用に別途Tello Libが必須であるため。付ける事でsubmoduleも併せてcloneできる。
@@ -209,31 +236,6 @@ Telloの裏側を見ると6本の棒が縦格子状についている。
 両面テープでくっついているため、なにか薄い物で持ち上げた後に引っこ抜くことでとれる。板が取れたら両端の突起を切断する。
 元に戻す際には向きに気を付けて戻す。
   </description>
-    </item>
-    
-    <item>
-      <title>TelloSDKについて</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</link>
-      <pubDate>Fri, 18 Feb 2022 16:44:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</guid>
-      <description>TelloSDK 基本的に以下のサイトを見ればわかる。
- ニート翔ぶ～C#でドローンを飛ばす～
- 主なTelloコマンド  command
-SDKモードに入る（1番最初に命令するコマンド） takeoff
-Telloが離陸する land
-Telloが着陸する emergency
-全てのモーターが止まる（緊急着陸） streamon
-ビデオストリームをON streamoff
-ビデオストリームをOFF up x
-x cm上昇 down x
-x cm下降 left x
-x cm左へ right x
-x cm右へ forward x
-x cm前進 back x
-x cm後退 cw x
-x 度時計回りに旋回 ccw x
-x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </description>
     </item>
     
     <item>

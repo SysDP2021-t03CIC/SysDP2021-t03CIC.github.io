@@ -190,6 +190,12 @@
 						},
 						
 						{
+							value: "TelloSDKについて",
+							label: "<p>TelloSDK 基本的に以下のサイトを見ればわかる。\n ニート翔ぶ～C#でドローンを飛ばす～\n 主なTelloコマンド  command\nSDKモードに入る（1番最初に命令するコマンド） takeoff\nTelloが離陸する land\nTelloが着陸する emergency\n全てのモーターが止まる（緊急着陸） streamon\nビデオストリームをON streamoff\nビデオストリームをOFF up x\nx cm上昇 down x\nx cm下降 left x\nx cm左へ right x\nx cm右へ forward x\nx cm前進 back x\nx cm後退 cw x\nx 度時計回りに旋回 ccw x\nx 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </p><p>tello</p><p>SDK</p>",
+							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/tellosdk\/"
+						},
+						
+						{
 							value: "ARマーカーの値の取得",
 							label: "<p>1. IDの取得 ids.rows() で検出できたIDの個数を取得。個数が0個より多いとき、各ARマーカーの座標・回転を取得\n\/\/ IDの数が検出できたARマーカーの数 idsNum = ids.rows(); if (idsNum \u0026gt; 0) { \/\/ 各ARマーカーのIDを格納  idsArr = new int[idsNum]; ids.get(0, 0, idsArr); \/\/ ← ここで検出したARマーカーのIDを配列に  detected = true; EstiamtePoseMarkers(); } 2. 各ARマーカーの座標・回転を取得   検出した各ARマーカーの平行移動・回転ベクトルを計算   Aruco.estimatePoseSingleMarkers(\/*各ARマーカーの角の画像座標*\/, \/*ARマーカー1辺の長さ(m)*\/, \/*内部行列*\/, \/*歪み係数*\/, \/*各ARマーカーの回転ベクトル(Out)*\/, \/*各ARマーカーの平行移動ベクトル(Out)*\/) で平行移動・回転ベクトルを取得。\nその後、rVecs,tVecsを計算しやすい配列にし、回転ベクトルをオイラー角に変換している。\nまた、追従対象の情報を計算しやすいように構造体を定義している。\npublic struct ARMarker { public int ID; public double[] tArr; public double[] rArr; public void Set_tArr(Mat tVec) { tArr = new double[3]; tVec.get(0, 0, tArr); } public void Set_rArr(Mat rVec) { rArr = new double[3]; rVec.get(0, 0, rArr); } } \/\/ 省略  private void EstiamtePoseMarkers(float markerLength = 0.06F) { if (idsArr.Length \u0026lt; 1) return; Mat rVecs = new Mat(), tVecs = new Mat(); \/\/ tVecs は 要素数が1、チャンネル数が3で得られる  \/\/ rVecs も同様に 要素数が1、チャンネル数が3で得られる  Aruco.estimatePoseSingleMarkers(corners, markerLength, cameraMat, distMat, rVecs, tVecs); \/* * rVecs : CV_64FC3 * channels : 3 * rows : 検知したARマーカーの数 * cols : 1 *\/ \/* * tVecs : CV_64FC3 * channels : 3 * rows : 検知したARマーカーの数 * cols : 1 *\/ ARMarker[] markers = new ARMarker[idsArr.Length]; int i; for (i = 0; i \u0026lt; idsArr.Length; i\u002b\u002b) { \/\/ IDを格納  markers[i].ID = idsArr[i]; \/\/ i番目のARマーカーの位置ベクトルを格納  markers[i].Set_tArr(tVecs.row(i)); \/\/ i番目のARマーカーの位置ベクトルを取り出してベクトルの形にする  Mat _tVec = new Mat(3, 1, CvType.CV_64FC1); _tVec.put(0, 0, markers[i].tArr); \/\/ 一旦i番目のARマーカーの回転ベクトルを格納  markers[i].Set_rArr(rVecs.row(i)); \/\/ i番目のARマーカーの回転ベクトルを取り出してベクトルの形にする  Mat _rVec = new Mat(3, 1, CvType.CV_64FC1); _rVec.put(0, 0, markers[i].rArr); \/\/ 回転ベクトルから回転行列への変換を行う  \/\/ rmatrix 3×3の回転行列  Mat rMat = new Mat(); Calib3d.Rodrigues(_rVec, rMat); \/* * rMat * channels : 1 * rows : 3 * cols : 3 *\/ \/\/ 行列の拡大  Mat projMat = new Mat(); List\u0026lt;Mat\u0026gt; src = new List\u0026lt;Mat\u0026gt; { rMat, new Mat(3,1,CvType.CV_64FC1,new Scalar(0)) }; \/\/ rMat(3×3) → projMat(3×4)へ変換  Core.hconcat(src, projMat); \/\/ オイラー角以外で必要のない値も受け取る必要があるので宣言しておく  Mat cameraMatrix = new Mat(), rotMatrixX = new Mat(), rotMatrixY = new Mat(), rotMatrixZ = new Mat(), eulerAngles = new Mat(); \/* オイラー角への変換 * projMatrix : input : 3×4 Mat * cameraMatrix : output : 3×3 Mat * rotMatrix : output : 3×3 Mat * transVect : output : 4×1 Mat * eulerAngles : output : 3×1 Mat ← この出力だけ必要 *\/ Calib3d.decomposeProjectionMatrix(projMat, cameraMatrix, rMat, _tVec, rotMatrixX, rotMatrixY, rotMatrixZ, eulerAngles); \/* * eulerAngles * channels : 1 * rows : 3 * cols : 1 *\/ \/\/ i番目のARマーカーの回転ベクトルを格納  markers[i].Set_rArr(eulerAngles); } CalcTargetRotation(markers); } </p><p>画像処理</p><p>推定</p><p>追従対象</p><p>認識</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/opencv\/recognition\/estimatetarget\/"
@@ -239,7 +245,7 @@
 						
 						{
 							value: "Tello for Unity",
-							label: "<p>Tello Libとは その名の通り、Telloを制御するためのライブラリ。公式SDKよりも細かな制御を行う事ができる。 Tello Lib\nTello for Unity とは Unity専用のTello開発キット。公式ではなく有志が開発。 Tello for Unity\nTello Video Decoder Tello for Unity独自の映像変換用ライブラリ。\nインストール 適当なディレクトリで以下のコマンドを使用\n$ git clone --recursive https:\/\/github.com\/comoc\/TelloForUnity.git\r\u0026ndash;recursiveを付ける理由は、Tello for Unityの使用に別途Tello Libが必須であるため。付ける事でsubmoduleも併せてcloneできる。\n使い方  cloneしたリポジトリをUnityプロジェクトとしてUnity Hubで選択する。 Unityプロジェクトの設定で、Runtime Versionを.NET 4.xにする。 Assets\/Scripts内にある「TelloController.cs」を適当なオブジェクトに付ける。 映像を表示したいオブジェクトに「TelloVideoTexture.cs」を付ける  </p><p>Unity</p><p>ドローン</p><p>Tello</p>",
+							label: "<p>Tello Libとは その名の通り、Telloを制御するためのライブラリ。公式SDKよりも細かな制御を行う事ができる。\nTello Lib\nTello for Unity とは Unity専用のTello開発キット。公式ではなく有志が開発。\nTello for Unity\nTello Video Decoder Tello for Unity独自の映像変換用ライブラリ。\nインストール 適当なディレクトリで以下のコマンドを使用\n$ git clone --recursive https:\/\/github.com\/comoc\/TelloForUnity.git\r\u0026ndash;recursiveを付ける理由は、Tello for Unityの使用に別途Tello Libが必須であるため。付ける事でsubmoduleも併せてcloneできる。\n使い方  cloneしたリポジトリをUnityプロジェクトとしてUnity Hubで選択する。 Unityプロジェクトの設定で、Runtime Versionを.NET 4.xにする。 Assets\/Scripts内にある「TelloController.cs」を適当なオブジェクトに付ける。 映像を表示したいオブジェクトに「TelloVideoTexture.cs」を付ける  </p><p>Unity</p><p>ドローン</p><p>Tello</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/t4u\/"
 						},
 						
@@ -409,12 +415,6 @@
 							value: "2.Telloの改造",
 							label: "<p>注意 改造については公式から出されたものではないため扱いには気を付ける。\n実際に触る部分はカバーのところがメインであるため壊すことはないと思うが、怖いものは怖いため気を付けておく。\n改造箇所 前述のとおり、改造の主な部分は天板の白い部分である。\n目的としてはTello内の風通しを良くして、飛行することでTello自体の熱を冷ますことである。この作業によってTelloのオーバーヒートの発生が少なくなり長時間の飛行が可能になった。\n改造箇所は3か所ある。\n  天板\n側面を覆う様になっている斜めの箇所を爪の部分を避けて切り取る。天板を外す際は、バッテリーの挿入口側から隙間を少しずつ開けていき、天板全体が少し浮いたら少し力を込めることで外すことができる。\n天板を付け直す際は、爪をあわせて軽い力で上から押さえつける。すると「カチッ」という音が鳴るのでそれで終了。\n  底面の棒\nTelloの裏側を見ると6本の棒が縦格子状についている。\nその棒を根元からすべて切り離す。\n  バッテリーの下にある板\nバッテリーを挿入する箇所の底に薄い板状のものが存在する。\n両面テープでくっついているため、なにか薄い物で持ち上げた後に引っこ抜くことでとれる。板が取れたら両端の突起を切断する。\n元に戻す際には向きに気を付けて戻す。\n  </p><p>Tello</p><p>ドローン</p><p>改造</p>",
 							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tello\/remodeling\/"
-						},
-						
-						{
-							value: "TelloSDKについて",
-							label: "<p>TelloSDK 基本的に以下のサイトを見ればわかる。\n ニート翔ぶ～C#でドローンを飛ばす～\n 主なTelloコマンド  command\nSDKモードに入る（1番最初に命令するコマンド） takeoff\nTelloが離陸する land\nTelloが着陸する emergency\n全てのモーターが止まる（緊急着陸） streamon\nビデオストリームをON streamoff\nビデオストリームをOFF up x\nx cm上昇 down x\nx cm下降 left x\nx cm左へ right x\nx cm右へ forward x\nx cm前進 back x\nx cm後退 cw x\nx 度時計回りに旋回 ccw x\nx 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </p><p>tello</p><p>SDK</p>",
-							url:"https:\/\/sysdp2021-t03cic.github.io\/tello\/tellosdk\/tellosdk\/"
 						},
 						
 						{
