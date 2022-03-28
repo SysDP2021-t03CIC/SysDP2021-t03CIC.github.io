@@ -9,25 +9,25 @@
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
     <lastBuildDate>Mon, 20 Dec 2021 13:54:50 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/tello/autotracking/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2.重みづけをした実際の移動距離の計算</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</link>
-      <pubDate>Tue, 22 Mar 2022 15:02:35 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</guid>
-      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『1.移動距離の計算について』で算出した値を用いて実際に移動する距離を求める。
-重みづけを行うことによって過度な移動を防いだり、ドローン視点の映像を安定させることを目的とした。実際、安定した映像の取得は実現できたが、それと両立したドローンの安定した追従がまだ完璧に出来ていないため、改善の余地があることに留意する。
-「TelloRequestCalculation02.cs」内の説明 if (textureSender.</description>
-    </item>
-    
-    <item>
-      <title>1.移動距離の計算について</title>
+      <title>移動距離の計算について</title>
       <link>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</link>
       <pubDate>Tue, 15 Mar 2022 14:34:00 +0900</pubDate>
       
       <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</guid>
-      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
 移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。
 前提の説明 「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。</description>
+    </item>
+    
+    <item>
+      <title>重みづけをした実際の移動距離の計算</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</link>
+      <pubDate>Tue, 22 Mar 2022 15:02:35 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『移動距離の計算について』で算出した値を用いて実際に移動する距離を求める。
+重みづけを行うことによって過度な移動を防いだり、ドローン視点の映像を安定させることを目的とした。実際、安定した映像の取得は実現できたが、それと両立したドローンの安定した追従がまだ完璧に出来ていないため、改善の余地があることに留意する。
+「TelloRequestCalculation02.cs」内の説明 if (textureSender.</description>
     </item>
     
   </channel>

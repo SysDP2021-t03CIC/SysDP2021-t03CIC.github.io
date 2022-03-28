@@ -2,10 +2,10 @@
 <html lang="ja-jp">
   <head>
   <meta charset="utf-8">
-  <title>1.移動距離の計算について</title>
+  <title>移動距離の計算について</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="generator" content="Hugo 0.91.2" />
-  <meta name="description" content="1.移動距離の計算について - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="description" content="移動距離の計算について - システム創成2021 CIC担当チーム 引継ぎ資料 ">
   
   <!-- ** CSS Plugins Needed for the Project ** -->
   
@@ -67,15 +67,15 @@
 
 
 
-<meta name="twitter:title" content="1.移動距離の計算について"/>
-<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
+<meta name="twitter:title" content="移動距離の計算について"/>
+<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
 移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。
 前提の説明 「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。"/>
 
 
 
-<meta property="og:title" content="1.移動距離の計算について" />
-<meta property="og:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
+<meta property="og:title" content="移動距離の計算について" />
+<meta property="og:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
 移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。
 前提の説明 「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。" />
 <meta property="og:type" content="article" />
@@ -85,8 +85,8 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1.移動距離の計算について"/>
-<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
+<meta name="twitter:title" content="移動距離の計算について"/>
+<meta name="twitter:description" content="MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
 移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。
 前提の説明 「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。"/>
 
@@ -214,10 +214,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/specification/" title="1.基本性能" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/specification/" title="基本性能" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/tello/tello/specification/">
-    1.基本性能
+    基本性能
   </a>
   
   
@@ -236,10 +236,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/modding/" title="2.Telloの改造" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/modding/" title="Telloの改造" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/tello/tello/modding/">
-    2.Telloの改造
+    Telloの改造
   </a>
   
   
@@ -332,10 +332,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellocode/controller/" title="1.主となる制御のコード" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellocode/controller/" title="主となる制御のコード" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/tello/tellocode/controller/">
-    1.主となる制御のコード
+    主となる制御のコード
   </a>
   
   
@@ -354,10 +354,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/" title="2.移動距離に関する制御のコード" class="sidelist
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/" title="移動距離に関する制御のコード" class="sidelist
   ">
   <a href="https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/">
-    2.移動距離に関する制御のコード
+    移動距離に関する制御のコード
   </a>
   
   
@@ -450,10 +450,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" title="2.重みづけをした実際の移動距離の計算" class="sidelist
-  ">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/">
-    2.重みづけをした実際の移動距離の計算
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/" title="移動距離の計算について" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/">
+    移動距離の計算について
   </a>
   
   
@@ -472,10 +472,10 @@
 
 
 
-<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/" title="1.移動距離の計算について" class="sidelist
-  active">
-  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/">
-    1.移動距離の計算について
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" title="重みづけをした実際の移動距離の計算" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/">
+    重みづけをした実際の移動距離の計算
   </a>
   
   
@@ -512,7 +512,7 @@
       </div>
       <div class="col-lg-9">
         <div class="p-lg-5 p-4 bg-white" id="content">
-          <h2 class="mb-5" id="title">1.移動距離の計算について</h2>
+          <h2 class="mb-5" id="title">移動距離の計算について</h2>
           
           <div class="content"><script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -542,7 +542,7 @@
   TeX: { equationNumbers: { autoNumber: "AMS" } }
   });
 </script> 
-<p>『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。<br>
+<p>『移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。<br>
 移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。</p>
 <h4 id="前提の説明">前提の説明</h4>
 <p>「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。<br>
