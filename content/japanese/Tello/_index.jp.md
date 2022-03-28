@@ -9,7 +9,7 @@ type : "docs"
 
 [Telloについて](tello)
 
-[TelloのSDKについて](tellosdk)
+[Tello公式SDKについて](tellosdk)
 
 [Telloの制御に使ったもの](tellocode)
 
