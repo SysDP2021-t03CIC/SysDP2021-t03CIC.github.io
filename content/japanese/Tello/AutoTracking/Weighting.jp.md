@@ -1,6 +1,6 @@
 ---
 # 記事タイトルはこちら
-title: "2.重みづけをした実際の移動距離の計算"
+title: "重みづけをした実際の移動距離の計算"
 # 投稿日時をご記入ください
 date: 2022-03-22T15:02:35+09:00
 # trueにすると下書きとして非表示。falseにすると記事が表示されます。
@@ -9,6 +9,7 @@ draft: false
 keywords: ["Tello","追従","計算式"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "ban"
+weight: 2
 ---
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -39,7 +40,7 @@ Author: "ban"
   });
 </script> 
 
-『1.移動距離の計算について』で算出した値を用いて実際に移動する距離を求める。  
+『移動距離の計算について』で算出した値を用いて実際に移動する距離を求める。  
 重みづけを行うことによって**過度な移動を防いだり、ドローン視点の映像を安定させること**を目的とした。実際、**安定した映像の取得は実現できたが、それと両立したドローンの安定した追従がまだ完璧に出来ていない**ため、改善の余地があることに留意する。  
 
 ### 「TelloRequestCalculation02.cs」内の説明  

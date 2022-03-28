@@ -1,6 +1,6 @@
 ---
 # 記事タイトルはこちら
-title: "1.移動距離の計算について"
+title: "移動距離の計算について"
 # 投稿日時をご記入ください
 date: 2022-03-15T14:34:00+09:00
 # trueにすると下書きとして非表示。falseにすると記事が表示されます。
@@ -9,6 +9,7 @@ draft: false
 keywords: ["Tello","追従","計算式"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "ban"
+weight: 1
 ---
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -39,7 +40,7 @@ Author: "ban"
   });
 </script> 
 
-『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。  
+『移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。  
 移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。
 
 #### 前提の説明  
