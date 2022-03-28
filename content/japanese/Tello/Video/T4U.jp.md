@@ -6,11 +6,11 @@ date: 2022-03-27T19:59:10+09:00
 # trueにすると下書きとして非表示。falseにすると記事が表示されます。
 draft: false
 # 以下は検索用のタグです。適宜書き換えてください
-keywords: ["Unity","ドローン","Tello"]
+keywords: ["Unity","ドローン","Tello","カメラ映像"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "Tanaka"
 # 以下は目次において何番目に表示するか決めるタグです。
-weight: 2
+weight: 1
 ---
 
 ### Tello Libとは
