@@ -72,9 +72,14 @@ name = "Home"
 url = "/"
 weight = 1
 
+[[Languages.jp.menu.main]]
+name = "Home"
+url = "https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io"
+weight = 2
+
 # Dropdown menu
 [[Languages.jp.menu.main]]
-weight = 2
+weight = 3
 name = "docs"
 hasChildren = true
 
