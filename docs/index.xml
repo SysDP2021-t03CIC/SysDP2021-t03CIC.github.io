@@ -74,6 +74,42 @@ Windowsの場合アクセスの許可を求められる。各々チェックを�
     </item>
     
     <item>
+      <title>1.主となる制御のコード</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellocode/controller/</link>
+      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellocode/controller/</guid>
+      <description>注意事項 スクリプト内にTelloControllerの名前のファイルが二つ存在する場合、使われているファイルは「TelloController1122.cs」であることに気を付ける。
+ファイル内の大まかな説明 ドローンの移動の制御は「TelloController1122.cs」のUpdate内のswitch内で行われる。ドローンが自動で移動するサイクルは「Stop」,「TakeOff」,「TakingOff」,「Detect」,「Follow」,「Land」,「Landing」に分かれる。
+  「Stop」   Telloが受けているコマンドの状態の初期化。
+Sキーが入力されると、「TakeOff」に移行する。
+  「TakeOff」   Telloが離陸する段階。
+takeoffのコマンドを送ったのち、「TakingOff」に移行する。
+  「TakingOff」   Telloが離陸して上昇、旋回してARマーカーを探す段階。
+離陸自体は瞬時に終了するが、ARマーカーを探すために高度を合わせる。
+（waitTimerが3以上4以下の時）今回は追従対象が決まっていたため固定値分上昇させた。
+（waitTimerが4以上の時）ARマーカーを認識するまで旋回を続ける。認識に成功したとき、 「Follow」に移行する。
+  「Detect」   「Follow」に移行する役割。今回は未使用。
+  「Follow」   Telloが追従していることを示す段階。この段階が続いている限りTelloは追従を続ける。
+Lキーが入力されると、「Land」に移行する。
+  「Land」   Telloが着陸する段階。
+landのコマンドを送ったのち、「Landing」に移行する。
+  「Landing」   Telloが着陸している段階。
+実質的にシステム終了の段階である。</description>
+    </item>
+    
+    <item>
+      <title>1.基本性能</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tello/specification/</link>
+      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tello/specification/</guid>
+      <description>Telloについて dji社の販売しているトイドローン。
+バッテリー駆動のドローンでバッテリーの続く限り飛行する。
+- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km/h 最大飛行時間： 13分（無風、定速15km/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用</description>
+    </item>
+    
+    <item>
       <title>TelloSDKについて</title>
       <link>https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/</link>
       <pubDate>Fri, 18 Feb 2022 16:44:39 +0900</pubDate>
@@ -96,6 +132,15 @@ x cm前進 back x
 x cm後退 cw x
 x 度時計回りに旋回 ccw x
 x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  </description>
+    </item>
+    
+    <item>
+      <title>ARマーカーの作成</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</guid>
+      <description>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &amp;lt; n; i++) { // ARマーカーの画像情報をARmatに格納  Aruco.</description>
     </item>
     
     <item>
@@ -128,157 +173,6 @@ Pluginsは使っているPCに合わせる  メソッドの説明 正直引き�
     </item>
     
     <item>
-      <title>Windows Mixed Realityの使い方</title>
-      <link>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/</link>
-      <pubDate>Tue, 08 Mar 2022 14:17:34 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/</guid>
-      <description>基本操作  トリガーボタン 選択。マウスでいう左クリック Aボタン, Xボタン 決定 Bボタン, Yボタン キャンセル, 戻る グリップボタン VRアプリケーションでは物を掴む操作に使われる事が一般的 メニューボタン VRアプリケーション内でメニューを開く時に使う Windowsボタン スタートメニューを開く Windowsボタン + グリップボタン ヘッドセットのカメラで撮影した現実世界の映像を表示   ホームメニュー（クリフハウス）での操作  アナログスティックを前に倒す ポイントした場所へ移動 アナログスティックを左右に倒す 方向転換 アナログスティックを後方に倒す 後方へ移動   スクリーンショットや録画 スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。 録画の終了は開始と同じ操作。 音声操作 使い道は無いが音声操作にも対応している。誤爆に注意。 Steam VRとWindows Mixed Realityを組み合わせた場合の操作 アナログスティックを押し込むとsteam VRのメニューが開く。</description>
-    </item>
-    
-    <item>
-      <title>OpenCVSharp</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</guid>
-      <description>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー 1. TextureをMatに変換する関数がない 2. 変換関数を自作したが動作が遅かった これらの理由から利用を断念。OpenCV for Unityの方を利用した。
-OpenCVSharpの導入 1. NuGetの導入  NuGetForUnityから「NuGEtForUnity.〇.〇.〇.unitypackage」をダウンロード  「NuGEtForUnity.〇.〇.〇.unitypackage」をAssetsフォルダにドラッグ&amp;amp;ドロップ  全てチェックを付けたままインポート   2. OpenCVSharpの導入  UnityEditorのヘッダーメニュー「NuGet」→「Manage Nuget Packages」を選択  「OpenCVSharp」を検索しインストール  OpenCVSharp3の場合は、OpenCVSharp3-AnyCPU OpenCVSharp4の場合は、OpenCVSharp4.WindowsやOpenCVSharp4+OpenCVSharp4.runtime.○○    opencvsharpからインストールしたバージョンに近いもののzipファイルをダウンロード ダウンロードしたファイルにある「OpenCvSharp&amp;hellip;/Native/Lib/&amp;hellip;/OpenCVSharpExtern.dll」を「Assets/Packages/OpenCvSharp&amp;hellip;/lib/netstandard2.0」にコピー   </description>
-    </item>
-    
-    <item>
-      <title>数式的な解説</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</guid>
-      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ
-  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$</description>
-    </item>
-    
-    <item>
-      <title>2.重みづけをした実際の移動距離の計算</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</link>
-      <pubDate>Tue, 22 Mar 2022 15:02:35 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</guid>
-      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『1.移動距離の計算について』で算出した値を用いて実際に移動する距離を求める。
-重みづけを行うことによって過度な移動を防いだり、ドローン視点の映像を安定させることを目的とした。実際、安定した映像の取得は実現できたが、それと両立したドローンの安定した追従がまだ完璧に出来ていないため、改善の余地があることに留意する。
-「TelloRequestCalculation02.cs」内の説明 if (textureSender.</description>
-    </item>
-    
-    <item>
-      <title>1.移動距離の計算について</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</link>
-      <pubDate>Tue, 15 Mar 2022 14:34:00 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</guid>
-      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
-移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。
-前提の説明 「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。</description>
-    </item>
-    
-    <item>
-      <title>1.主となる制御のコード</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellocode/controller/</link>
-      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellocode/controller/</guid>
-      <description>注意事項 スクリプト内にTelloControllerの名前のファイルが二つ存在する場合、使われているファイルは「TelloController1122.cs」であることに気を付ける。
-ファイル内の大まかな説明 ドローンの移動の制御は「TelloController1122.cs」のUpdate内のswitch内で行われる。ドローンが自動で移動するサイクルは「Stop」,「TakeOff」,「TakingOff」,「Detect」,「Follow」,「Land」,「Landing」に分かれる。
-  「Stop」   Telloが受けているコマンドの状態の初期化。
-Sキーが入力されると、「TakeOff」に移行する。
-  「TakeOff」   Telloが離陸する段階。
-takeoffのコマンドを送ったのち、「TakingOff」に移行する。
-  「TakingOff」   Telloが離陸して上昇、旋回してARマーカーを探す段階。
-離陸自体は瞬時に終了するが、ARマーカーを探すために高度を合わせる。
-（waitTimerが3以上4以下の時）今回は追従対象が決まっていたため固定値分上昇させた。
-（waitTimerが4以上の時）ARマーカーを認識するまで旋回を続ける。認識に成功したとき、 「Follow」に移行する。
-  「Detect」   「Follow」に移行する役割。今回は未使用。
-  「Follow」   Telloが追従していることを示す段階。この段階が続いている限りTelloは追従を続ける。
-Lキーが入力されると、「Land」に移行する。
-  「Land」   Telloが着陸する段階。
-landのコマンドを送ったのち、「Landing」に移行する。
-  「Landing」   Telloが着陸している段階。
-実質的にシステム終了の段階である。</description>
-    </item>
-    
-    <item>
-      <title>1.基本性能</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tello/performance/</link>
-      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/tello/performance/</guid>
-      <description>Telloについて dji社の販売しているトイドローン。
-バッテリー駆動のドローンでバッテリーの続く限り飛行する。
-- 搭載機能   機体  重量（プロペラガード含）： 87g 最大速度： 28.8km/h 最大飛行時間： 13分（無風、定速15km/h） 動作環境温度： 0 ~ 40 ℃ 動作周波数帯： 2.4 ~ 2.4835GHz トランスミッター（EIRP）： 20dBm（FCC）, 19dBm（CE,SRRC,MIC）    カメラ  最大静止画面サイズ： 2592 × 1936 動画記録モード： HD 1280 × 720 30p 動画フォーマット： MP4    フライトバッテリー  容量： 1,100mAh 電圧： 3.8V バッテリータイプ： LiPo 電力量： 4.18Wh 正味重量： 25 ± 2g 充電温度範囲： 5 ~ 45 ℃ 最大充電電力： 10W    Telloユーザーマニュアル より引用</description>
-    </item>
-    
-    <item>
-      <title>2.Telloの改造</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tello/remodeling/</link>
-      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/tello/remodeling/</guid>
-      <description>注意 改造については公式から出されたものではないため扱いには気を付ける。
-実際に触る部分はカバーのところがメインであるため壊すことはないと思うが、怖いものは怖いため気を付けておく。
-改造箇所 前述のとおり、改造の主な部分は天板の白い部分である。
-目的としてはTello内の風通しを良くして、飛行することでTello自体の熱を冷ますことである。この作業によってTelloのオーバーヒートの発生が少なくなり長時間の飛行が可能になった。
-改造箇所は3か所ある。
-  天板
-側面を覆う様になっている斜めの箇所を爪の部分を避けて切り取る。天板を外す際は、バッテリーの挿入口側から隙間を少しずつ開けていき、天板全体が少し浮いたら少し力を込めることで外すことができる。
-天板を付け直す際は、爪をあわせて軽い力で上から押さえつける。すると「カチッ」という音が鳴るのでそれで終了。
-  底面の棒
-Telloの裏側を見ると6本の棒が縦格子状についている。
-その棒を根元からすべて切り離す。
-  バッテリーの下にある板
-バッテリーを挿入する箇所の底に薄い板状のものが存在する。
-両面テープでくっついているため、なにか薄い物で持ち上げた後に引っこ抜くことでとれる。板が取れたら両端の突起を切断する。
-元に戻す際には向きに気を付けて戻す。
-  </description>
-    </item>
-    
-    <item>
-      <title>2.移動距離に関する制御のコード</title>
-      <link>https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/</guid>
-      <description>ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。
-1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。
-段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。
-しかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。
-段階Ⅰ「(理想の)移動する距離を求める段階」 「TelloController1122.cs」内の219～227行目が該当する。
-220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。
-段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。
-段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。
-重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。</description>
-    </item>
-    
-    <item>
-      <title>ARマーカーの作成</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/createarmarker/</guid>
-      <description>ARマーカーの作成方法(C#, Unity)  新しいUnityプロジェクトを作成 OpenCVforUnityをインポート ARマーカー作成用のスクリプトを作成 以下のようにコードを変更 //ここから using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.ImgcodecsModule; //ここまでが追加する名前空間 using UnityEngine; public class CreateARmarker : MonoBehaviour { Dictionary ARdict; Mat ARmat; bool isCreated; // Start is called before the first frame update  void Start() { ARdict = Aruco.getPredefinedDictionary(Aruco.DICT_4X4_50); ARmat = new Mat(); // nの値が作成するARマーカーの枚数  // iの値が作成するARマーカーのID  int n = 4, i; for (i = 0; i &amp;lt; n; i++) { // ARマーカーの画像情報をARmatに格納  Aruco.</description>
-    </item>
-    
-    <item>
-      <title>ARマーカーの検出</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</guid>
-      <description>カメラ映像を取り込む OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。
-基のシステムでTelloのカメラ映像をオブジェクトのTextureに変換して表示していたため、
-Texture →(TextureSender)→ Texture2D →(OpenCV for Unity)→ Mat
- という手順で変換している。
- 画像をARマーカーの検出に送る用スクリプトを作成 以下のようにコードを変更  このスクリプトでは、オブジェクトのTextureをTexture2Dに変換し、さらにARマーカー検出するEstimateメソッドを呼び出している。
-using System.Collections; using System.Collections.Generic; using UnityEngine; //独自の名前空間 using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.</description>
-    </item>
-    
-    <item>
       <title>カメラの特徴に関する前置き</title>
       <link>https://sysdp2021-t03cic.github.io/opencv/parameter/description/</link>
       <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
@@ -286,32 +180,6 @@ using System.Collections; using System.Collections.Generic; using UnityEngine; /
       <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/description/</guid>
       <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i カメラで撮影される映像(画像)は、カメラのレンズなどの種類によって写し方、歪みが様々である。 ARマーカーの正しい距離や回転を求めるために、カメラの内部行列と歪み係数を計算しておく必要がある。
   内部行列</description>
-    </item>
-    
-    <item>
-      <title>カメラ行列の計測</title>
-      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/</link>
-      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/</guid>
-      <description>カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List&amp;lt;Mat&amp;gt; objPoints; private List&amp;lt;Mat&amp;gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; // Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List&amp;lt;Mat&amp;gt;(); imgPoints = new List&amp;lt;Mat&amp;gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2.</description>
-    </item>
-    
-    <item>
-      <title>Blenderの使い方</title>
-      <link>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</link>
-      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</guid>
-      <description>1.Blenderの基本操作
-大前提として私が触っていたBlenderは2.93.1時点のものです。これからアップデートで変わる可能性もあるので最新の資料を調べて参考にしていただければ幸いです。 また、私もBlender歴が長いわけではなくまだまだ分からないことのほうが多いので調べていただいた方が分かりやすい記事が多いかと思うのでそちらを参考になさっても構いません。(分かりやすいもの、好きなものでお勉強するのが一番だと思います。)
-全ての機能を説明するのは難しいので今回説明するのは簡単な基本操作やよく使うモードなどに留めておきます。
-2.動かし方
-最初にマウスの動かし方などの説明をします。
-3.モード
-オブジェクトを操作するにあたってモードというものを選択して操作を行います。 よく使われるものは「オブジェクトモード」と「編集モード」です。 画像の上から1番目がオブジェクトモードで2番目が編集モードです。これらのモードの切り替えはBlenderを開いたときの左上にあります。 最初にオブジェクトモードの操作の説明を行います。 オブジェクトモードは基本的にオブジェクトの移動や大きさの変更などが可能です。
-上の二つは、クリックしたときのモードを切り替えられるものになっています。 マウスカーソルのようなアイコンの方はボックス選択といって
-最後に参考にしたサイトを載せておきます。</description>
     </item>
     
     <item>
@@ -353,6 +221,138 @@ SteamVRが起動出来たら以下のような小さなウィンドウが開か�
 こちらは実際に私が参考にしたURLです。もし見れなくなってしまっていたらごめんなさいね。大体の流れは今回書いた記事とほぼ同じです。
 これはSteamVRをインストールするやりかたを書いてあるサイトです。 このサイトではUE4というゲームを作るときに使われるものでの利用ですがインストール自体はこれの通りで行いました。
 参考サイト</description>
+    </item>
+    
+    <item>
+      <title>Windows Mixed Realityの使い方</title>
+      <link>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/</link>
+      <pubDate>Tue, 08 Mar 2022 14:17:34 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/howtouse/reverbg2/windowsmixedreality/</guid>
+      <description>基本操作  トリガーボタン 選択。マウスでいう左クリック Aボタン, Xボタン 決定 Bボタン, Yボタン キャンセル, 戻る グリップボタン VRアプリケーションでは物を掴む操作に使われる事が一般的 メニューボタン VRアプリケーション内でメニューを開く時に使う Windowsボタン スタートメニューを開く Windowsボタン + グリップボタン ヘッドセットのカメラで撮影した現実世界の映像を表示   ホームメニュー（クリフハウス）での操作  アナログスティックを前に倒す ポイントした場所へ移動 アナログスティックを左右に倒す 方向転換 アナログスティックを後方に倒す 後方へ移動   スクリーンショットや録画 スタートメニューを開き、メニュー下部のアイコンを選択するとスクリーンショットや録画が撮れる。 録画の終了は開始と同じ操作。 音声操作 使い道は無いが音声操作にも対応している。誤爆に注意。 Steam VRとWindows Mixed Realityを組み合わせた場合の操作 アナログスティックを押し込むとsteam VRのメニューが開く。</description>
+    </item>
+    
+    <item>
+      <title>2.Telloの改造</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tello/modding/</link>
+      <pubDate>Tue, 22 Feb 2022 06:50:26 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tello/modding/</guid>
+      <description>注意 改造については公式から出されたものではないため扱いには気を付ける。
+実際に触る部分はカバーのところがメインであるため壊すことはないと思うが、怖いものは怖いため気を付けておく。
+改造箇所 前述のとおり、改造の主な部分は天板の白い部分である。
+目的としてはTello内の風通しを良くして、飛行することでTello自体の熱を冷ますことである。この作業によってTelloのオーバーヒートの発生が少なくなり長時間の飛行が可能になった。
+改造箇所は3か所ある。
+  天板
+側面を覆う様になっている斜めの箇所を爪の部分を避けて切り取る。天板を外す際は、バッテリーの挿入口側から隙間を少しずつ開けていき、天板全体が少し浮いたら少し力を込めることで外すことができる。
+天板を付け直す際は、爪をあわせて軽い力で上から押さえつける。すると「カチッ」という音が鳴るのでそれで終了。
+  底面の棒
+Telloの裏側を見ると6本の棒が縦格子状についている。
+その棒を根元からすべて切り離す。
+  バッテリーの下にある板
+バッテリーを挿入する箇所の底に薄い板状のものが存在する。
+両面テープでくっついているため、なにか薄い物で持ち上げた後に引っこ抜くことでとれる。板が取れたら両端の突起を切断する。
+元に戻す際には向きに気を付けて戻す。
+  </description>
+    </item>
+    
+    <item>
+      <title>2.移動距離に関する制御のコード</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/</guid>
+      <description>ファイル内の大まかな説明 移動距離に関する制御のコードは「TelloController1122.cs」内に存在し、大まかに2つの段階に分かれる。
+1つが移動する距離を求める段階であり、もう1つが求めた距離に対して重みを付けて実際の移動する距離を求める段階である。
+段階を2つに分ける理由として、理想の移動距離を求めて移動指示を出した場合、実際のTelloの挙動によりVR視点で酔ってしまった点やARマーカーをカメラの画角外に外してしまうという問題が発生した点があげれられる。そのため、重みを付けて実際の移動距離にバイアスをかけることによって製品として扱いやすいような挙動をさせることができた。
+しかし、重みづけの箇所については不十分であるため、さらに細かく調整する必要がある。
+段階Ⅰ「(理想の)移動する距離を求める段階」 「TelloController1122.cs」内の219～227行目が該当する。
+220～222行でARマーカーとの距離と角度を推定した値を取得、その後、225～227行で他のファイルで計算された(理想の)移動距離を取得している。
+段階Ⅱ「実際の移動距離を求める段階」 「TelloController1122.cs」内の183～213行目が該当する。
+段階Ⅰで取得した移動距離の値をもとに、重みづけを行って実際の挙動を安定させることを目的としている。
+重みづけの種類は前方向、横方向、旋回の3つの種類に分かれている。3つの中で共通していることは動く値が小さいときはさらに動きを小さくし、大きく動くときはその値に近しいように動くように重みを設定した。</description>
+    </item>
+    
+    <item>
+      <title>ARマーカーの検出</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/ar_marker/detectarmarker/</guid>
+      <description>カメラ映像を取り込む OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。
+基のシステムでTelloのカメラ映像をオブジェクトのTextureに変換して表示していたため、
+Texture →(TextureSender)→ Texture2D →(OpenCV for Unity)→ Mat
+ という手順で変換している。
+ 画像をARマーカーの検出に送る用スクリプトを作成 以下のようにコードを変更  このスクリプトでは、オブジェクトのTextureをTexture2Dに変換し、さらにARマーカー検出するEstimateメソッドを呼び出している。
+using System.Collections; using System.Collections.Generic; using UnityEngine; //独自の名前空間 using EstimateTargetTransform_OCVfU; public class TextureSender : MonoBehaviour { // CameraParaCal cameraPara;  public EstimateTra estimater; Texture2D texture; Texture2D result; RenderTexture rt; Rect source; // Start is called before the first frame update  void Start() { // cameraPara = new CameraParaCal();  estimater = new EstimateTra(); } public Texture2D ToTexture2D(Texture self) { var sw = self.</description>
+    </item>
+    
+    <item>
+      <title>OpenCVSharp</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/introduction/opencvsharp/</guid>
+      <description>2021年度の開発で断念したOpenCVライブラリの.NET用ラッパー 1. TextureをMatに変換する関数がない 2. 変換関数を自作したが動作が遅かった これらの理由から利用を断念。OpenCV for Unityの方を利用した。
+OpenCVSharpの導入 1. NuGetの導入  NuGetForUnityから「NuGEtForUnity.〇.〇.〇.unitypackage」をダウンロード  「NuGEtForUnity.〇.〇.〇.unitypackage」をAssetsフォルダにドラッグ&amp;amp;ドロップ  全てチェックを付けたままインポート   2. OpenCVSharpの導入  UnityEditorのヘッダーメニュー「NuGet」→「Manage Nuget Packages」を選択  「OpenCVSharp」を検索しインストール  OpenCVSharp3の場合は、OpenCVSharp3-AnyCPU OpenCVSharp4の場合は、OpenCVSharp4.WindowsやOpenCVSharp4+OpenCVSharp4.runtime.○○    opencvsharpからインストールしたバージョンに近いもののzipファイルをダウンロード ダウンロードしたファイルにある「OpenCvSharp&amp;hellip;/Native/Lib/&amp;hellip;/OpenCVSharpExtern.dll」を「Assets/Packages/OpenCvSharp&amp;hellip;/lib/netstandard2.0」にコピー   </description>
+    </item>
+    
+    <item>
+      <title>カメラ行列の計測</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/parameter/calculation/</guid>
+      <description>カメラ行列・歪み係数の計測の方法  以下の内容のスクリプトを作成。  using System; using System.Collections; using System.Collections.Generic; using OpenCVForUnity.Calib3dModule; using OpenCVForUnity.ImgprocModule; using OpenCVForUnity.CoreModule; using OpenCVForUnity.ArucoModule; using OpenCVForUnity.UnityUtils; using UnityEngine; namespace EstimateTargetTransform_OCVfU { public class CameraParaCal { private Mat img; private Mat gray; private Size crossNum; private List&amp;lt;Mat&amp;gt; objPoints; private List&amp;lt;Mat&amp;gt; imgPoints; private Mat pattern_points; public Mat cameraMatrix; public Mat distCoeffs; public double[] cameraArray; public double[] distArray; bool calculating; // Start is called before the first frame update  public CameraParaCal() { gray = new Mat(); objPoints = new List&amp;lt;Mat&amp;gt;(); imgPoints = new List&amp;lt;Mat&amp;gt;(); pattern_points = new Mat(); cameraMatrix = new Mat(); distCoeffs = new Mat(); calculating = true; int w, h; float pattern_size = 2.</description>
+    </item>
+    
+    <item>
+      <title>数式的な解説</title>
+      <link>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</link>
+      <pubDate>Sat, 25 Dec 2021 08:59:39 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/opencv/recognition/description/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i ARマーカーの持つ値 各ARマーカーから得られる値は以下の3つ
+  座標の値:$[tx, ty, tz]$   回転の値:$[rx, ry, rz]$   ID :$id$</description>
+    </item>
+    
+    <item>
+      <title>Blenderの使い方</title>
+      <link>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</guid>
+      <description>1.Blenderの基本操作
+大前提として私が触っていたBlenderは2.93.1時点のものです。これからアップデートで変わる可能性もあるので最新の資料を調べて参考にしていただければ幸いです。 また、私もBlender歴が長いわけではなくまだまだ分からないことのほうが多いので調べていただいた方が分かりやすい記事が多いかと思うのでそちらを参考になさっても構いません。(分かりやすいもの、好きなものでお勉強するのが一番だと思います。)
+全ての機能を説明するのは難しいので今回説明するのは簡単な基本操作やよく使うモードなどに留めておきます。
+2.動かし方
+最初にマウスの動かし方などの説明をします。
+3.モード
+オブジェクトを操作するにあたってモードというものを選択して操作を行います。 よく使われるものは「オブジェクトモード」と「編集モード」です。 画像の上から1番目がオブジェクトモードで2番目が編集モードです。これらのモードの切り替えはBlenderを開いたときの左上にあります。 最初にオブジェクトモードの操作の説明を行います。 オブジェクトモードは基本的にオブジェクトの移動や大きさの変更などが可能です。
+上の二つは、クリックしたときのモードを切り替えられるものになっています。 マウスカーソルのようなアイコンの方はボックス選択といって
+最後に参考にしたサイトを載せておきます。</description>
+    </item>
+    
+    <item>
+      <title>2.重みづけをした実際の移動距離の計算</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</link>
+      <pubDate>Tue, 22 Mar 2022 15:02:35 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『1.移動距離の計算について』で算出した値を用いて実際に移動する距離を求める。
+重みづけを行うことによって過度な移動を防いだり、ドローン視点の映像を安定させることを目的とした。実際、安定した映像の取得は実現できたが、それと両立したドローンの安定した追従がまだ完璧に出来ていないため、改善の余地があることに留意する。
+「TelloRequestCalculation02.cs」内の説明 if (textureSender.</description>
+    </item>
+    
+    <item>
+      <title>1.移動距離の計算について</title>
+      <link>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</link>
+      <pubDate>Tue, 15 Mar 2022 14:34:00 +0900</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/</guid>
+      <description>MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\[&#39;,&#39;\\]&#39;]],processEscapes: true,processEnvironments: true,skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }}});MathJax.Hub.Queue(function() {// Fix  tags after MathJax finishes running. This is a// hack to overcome a shortcoming of Markdown. Discussion at// https://github.com/mojombo/jekyll/issues/199var all = MathJax.Hub.getAllJax(), i;for(i = 0; i 『2.移動距離に関する制御のコード』では「他のファイルで計算された」と表記したが、その箇所に関しての説明をここで行う。
+移動距離の計算は「TelloRequestCalculation02.cs」で行われており、前後移動、左右移動、旋回の3つについての移動距離の計算を行う。
+前提の説明 「TelloRequestCalculation02.cs」で値を送る前に、「TelloController1122.cs」ではARマーカーとの距離の値を取得する。</description>
     </item>
     
   </channel>

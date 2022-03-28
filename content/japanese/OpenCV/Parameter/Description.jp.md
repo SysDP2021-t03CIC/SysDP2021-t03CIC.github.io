@@ -9,6 +9,8 @@ draft: false
 keywords: ["画像処理","カメラパラメータ","カメラキャリブレーション","内部行列","歪み"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "Tsuchiya Koken"
+# 以下は目次において何番目に表示するか決めるタグです。
+weight: 1
 ---
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">

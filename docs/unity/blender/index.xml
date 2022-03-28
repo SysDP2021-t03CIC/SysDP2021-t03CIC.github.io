@@ -9,23 +9,6 @@
     <copyright>Copyright &amp;copy; 2021 a Hugo theme by [Gethugothemes](https://gethugothemes.com/)</copyright>
     <lastBuildDate>Mon, 20 Dec 2021 13:54:50 +0900</lastBuildDate><atom:link href="https://sysdp2021-t03cic.github.io/unity/blender/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blenderの使い方</title>
-      <link>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</link>
-      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</guid>
-      <description>1.Blenderの基本操作
-大前提として私が触っていたBlenderは2.93.1時点のものです。これからアップデートで変わる可能性もあるので最新の資料を調べて参考にしていただければ幸いです。 また、私もBlender歴が長いわけではなくまだまだ分からないことのほうが多いので調べていただいた方が分かりやすい記事が多いかと思うのでそちらを参考になさっても構いません。(分かりやすいもの、好きなものでお勉強するのが一番だと思います。)
-全ての機能を説明するのは難しいので今回説明するのは簡単な基本操作やよく使うモードなどに留めておきます。
-2.動かし方
-最初にマウスの動かし方などの説明をします。
-3.モード
-オブジェクトを操作するにあたってモードというものを選択して操作を行います。 よく使われるものは「オブジェクトモード」と「編集モード」です。 画像の上から1番目がオブジェクトモードで2番目が編集モードです。これらのモードの切り替えはBlenderを開いたときの左上にあります。 最初にオブジェクトモードの操作の説明を行います。 オブジェクトモードは基本的にオブジェクトの移動や大きさの変更などが可能です。
-上の二つは、クリックしたときのモードを切り替えられるものになっています。 マウスカーソルのようなアイコンの方はボックス選択といって
-最後に参考にしたサイトを載せておきます。</description>
-    </item>
-    
-    <item>
       <title>Blenderの導入</title>
       <link>https://sysdp2021-t03cic.github.io/unity/blender/installation/</link>
       <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
@@ -42,6 +25,23 @@ Blenderのダウンロードサイト
 左上のメニューに「Edit &amp;gt; Preferences」でBlender Preferencesウィンドウを開きます。 「Interface」の中に「Translation」というチェックボックスがあるのでそこをクリックしてください。 TranslationのLanguageを「Japanese(日本語)」と選択し、「Tooltips」と「Interface」というチェックボックスにもチェックを付けてください。 これで日本語化は終了です。
 最後に参考にしたサイトを載せておきます。
 参考サイト</description>
+    </item>
+    
+    <item>
+      <title>Blenderの使い方</title>
+      <link>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</link>
+      <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sysdp2021-t03cic.github.io/unity/blender/howtouse/</guid>
+      <description>1.Blenderの基本操作
+大前提として私が触っていたBlenderは2.93.1時点のものです。これからアップデートで変わる可能性もあるので最新の資料を調べて参考にしていただければ幸いです。 また、私もBlender歴が長いわけではなくまだまだ分からないことのほうが多いので調べていただいた方が分かりやすい記事が多いかと思うのでそちらを参考になさっても構いません。(分かりやすいもの、好きなものでお勉強するのが一番だと思います。)
+全ての機能を説明するのは難しいので今回説明するのは簡単な基本操作やよく使うモードなどに留めておきます。
+2.動かし方
+最初にマウスの動かし方などの説明をします。
+3.モード
+オブジェクトを操作するにあたってモードというものを選択して操作を行います。 よく使われるものは「オブジェクトモード」と「編集モード」です。 画像の上から1番目がオブジェクトモードで2番目が編集モードです。これらのモードの切り替えはBlenderを開いたときの左上にあります。 最初にオブジェクトモードの操作の説明を行います。 オブジェクトモードは基本的にオブジェクトの移動や大きさの変更などが可能です。
+上の二つは、クリックしたときのモードを切り替えられるものになっています。 マウスカーソルのようなアイコンの方はボックス選択といって
+最後に参考にしたサイトを載せておきます。</description>
     </item>
     
   </channel>

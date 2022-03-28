@@ -9,6 +9,8 @@ draft: false
 keywords: ["画像処理","ARマーカー"]
 # 以下は著者名タグです。著者名の苗字をローマ字で記入してください。
 Author: "Tsuchiya Koken"
+# 以下は目次において何番目に表示するか決めるタグです。
+weight: 2
 ---
 #### カメラ映像を取り込む
 OpenCV for UnityでARマーカーの検出を行う際、画像をMatクラスにする必要がある。<br>
