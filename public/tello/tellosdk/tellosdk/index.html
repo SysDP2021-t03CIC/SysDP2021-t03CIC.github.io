@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+  <meta charset="utf-8">
+  <title>TelloSDKについて</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="description" content="TelloSDKについて - システム創成2021 CIC担当チーム 引継ぎ資料 ">
+  
+  <!-- ** CSS Plugins Needed for the Project ** -->
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://sysdp2021-t03cic.github.io/plugins/themify-icons/themify-icons.css">
+
+  <!--Favicon-->
+  <link rel="icon" href="https://sysdp2021-t03cic.github.io/images/favicon.png" type="image/x-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+  
+  <style>
+  :root{
+    --primary-color:#1c7cc5;
+    --body-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --light-color:#f8f9fa;
+    --font-family:Lato;
+  }
+  </style>
+
+<!-- Main Stylesheet -->
+
+<link href="https://sysdp2021-t03cic.github.io/css/style.min.css" rel="stylesheet" media="screen"/>
+  
+<!-- ** JS Plugins Needed for the Project ** -->
+
+<!-- jquiry -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-1.12.4.js"></script>
+
+<!-- jquary ui -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/jquery/jquery-ui.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- match-height JS -->
+<script src="https://sysdp2021-t03cic.github.io/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+
+  
+
+  <!-- create /layouts/partials/overrides/header.html in your own theme or root directory to add your custom content here -->
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="TelloSDKについて"/>
+<meta name="twitter:description" content="TelloSDK 基本的に以下のサイトを見ればわかる。
+ ニート翔ぶ～C#でドローンを飛ばす～
+ 主なTelloコマンド  command
+SDKモードに入る（1番最初に命令するコマンド） takeoff
+Telloが離陸する land
+Telloが着陸する emergency
+全てのモーターが止まる（緊急着陸） streamon
+ビデオストリームをON streamoff
+ビデオストリームをOFF up x
+x cm上昇 down x
+x cm下降 left x
+x cm左へ right x
+x cm右へ forward x
+x cm前進 back x
+x cm後退 cw x
+x 度時計回りに旋回 ccw x
+x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  "/>
+
+
+
+<meta property="og:title" content="TelloSDKについて" />
+<meta property="og:description" content="TelloSDK 基本的に以下のサイトを見ればわかる。
+ ニート翔ぶ～C#でドローンを飛ばす～
+ 主なTelloコマンド  command
+SDKモードに入る（1番最初に命令するコマンド） takeoff
+Telloが離陸する land
+Telloが着陸する emergency
+全てのモーターが止まる（緊急着陸） streamon
+ビデオストリームをON streamoff
+ビデオストリームをOFF up x
+x cm上昇 down x
+x cm下降 left x
+x cm左へ right x
+x cm右へ forward x
+x cm前進 back x
+x cm後退 cw x
+x 度時計回りに旋回 ccw x
+x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/" /><meta property="article:section" content="Tello" />
+<meta property="article:published_time" content="2022-02-18T16:44:39+09:00" />
+<meta property="article:modified_time" content="2022-02-18T16:44:39+09:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TelloSDKについて"/>
+<meta name="twitter:description" content="TelloSDK 基本的に以下のサイトを見ればわかる。
+ ニート翔ぶ～C#でドローンを飛ばす～
+ 主なTelloコマンド  command
+SDKモードに入る（1番最初に命令するコマンド） takeoff
+Telloが離陸する land
+Telloが着陸する emergency
+全てのモーターが止まる（緊急着陸） streamon
+ビデオストリームをON streamoff
+ビデオストリームをOFF up x
+x cm上昇 down x
+x cm下降 left x
+x cm左へ right x
+x cm右へ forward x
+x cm前進 back x
+x cm後退 cw x
+x 度時計回りに旋回 ccw x
+x 度反時計回りに旋回  注意事項  15秒間Telloになにも命令が送られないと、自動で着陸する。 途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。  "/>
+
+
+</head>
+
+  
+  <body>
+    
+    <!-- header -->
+    <header class="shadow-bottom sticky-top bg-white">
+      <nav class="navbar navbar-expand-md navbar-light">
+  <div class="container px-2 px-md-0">
+    <a class="navbar-brand px-2" href="/">
+      
+      
+      
+      システム創成2021 CIC担当チーム 引継ぎ資料
+      
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        
+        
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="https://sysdp2021-t03cic.github.io/">Home</a>
+        </li>
+        
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            docs
+          </a>
+          <div class="dropdown-menu">
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/unity">Unity</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/tello">Tello</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/opencv">OpenCV</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/howtouse">How to use</a>
+            
+            <a class="dropdown-item" href="https://sysdp2021-t03cic.github.io/editS">How to edit</a>
+            
+          </div>
+        </li>
+        
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <!-- /header -->
+    
+    
+
+<!-- details page -->
+<section class="single section-sm pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="sidebar">
+        <a class="back-btn" href="/" aria-label="back"></a>
+          <ul class="list-styled">
+            
+            
+              
+            
+              
+              
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/" title="トイドローンTello" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/">
+    トイドローンTello
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/" title="Telloについて" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tello/">
+    Telloについて
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/specification/" title="基本性能" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tello/specification/">
+    基本性能
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tello/modding/" title="Telloの改造" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tello/modding/">
+    Telloの改造
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellosdk/" title="Tello公式SDKについて" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellosdk/">
+    Tello公式SDKについて
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/" title="TelloSDKについて" class="sidelist
+  active">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellosdk/tellosdk/">
+    TelloSDKについて
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellocode/" title="Telloの制御に使うもの" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellocode/">
+    Telloの制御に使うもの
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellocode/controller/" title="主となる制御のコード" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellocode/controller/">
+    主となる制御のコード
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/" title="移動距離に関する制御のコード" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/tellocode/move_cal/">
+    移動距離に関する制御のコード
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/" title="Telloのカメラ映像の取得" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/video/">
+    Telloのカメラ映像の取得
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/video/t4u/" title="Tello for Unity" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/video/t4u/">
+    Tello for Unity
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/" title="自動追従" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/">
+    自動追従
+  </a>
+  
+  
+    <ul>
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/" title="移動距離の計算について" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/calculation/">
+    移動距離の計算について
+  </a>
+  
+  
+</li>
+
+
+        
+      
+        
+          
+
+
+
+
+
+
+
+
+<li data-nav-id="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/" title="重みづけをした実際の移動距離の計算" class="sidelist
+  ">
+  <a href="https://sysdp2021-t03cic.github.io/tello/autotracking/weighting/">
+    重みづけをした実際の移動距離の計算
+  </a>
+  
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+        
+      
+    </ul>
+  
+</li>
+
+
+              
+            
+              
+            
+              
+            
+              
+            
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-lg-5 p-4 bg-white" id="content">
+          <h2 class="mb-5" id="title">TelloSDKについて</h2>
+          
+          <div class="content"><h4 id="tellosdk">TelloSDK</h4>
+<p>基本的に以下のサイトを見ればわかる。</p>
+<blockquote>
+<p><a href="https://qiita.com/mima_ita/items/f241a519baec6df505d2">ニート翔ぶ～C#でドローンを飛ばす～</a></p>
+</blockquote>
+<h5 id="主なtelloコマンド">主なTelloコマンド</h5>
+<ul>
+<li>command<br>
+SDKモードに入る（1番最初に命令するコマンド）</li>
+<li>takeoff<br>
+Telloが離陸する</li>
+<li>land<br>
+Telloが着陸する</li>
+<li>emergency<br>
+全てのモーターが止まる（緊急着陸）</li>
+<li>streamon<br>
+ビデオストリームをON</li>
+<li>streamoff<br>
+ビデオストリームをOFF</li>
+<li>up x<br>
+x cm上昇</li>
+<li>down x<br>
+x cm下降</li>
+<li>left x<br>
+x cm左へ</li>
+<li>right x<br>
+x cm右へ</li>
+<li>forward x<br>
+x cm前進</li>
+<li>back x<br>
+x cm後退</li>
+<li>cw x<br>
+x 度時計回りに旋回</li>
+<li>ccw x<br>
+x 度反時計回りに旋回</li>
+</ul>
+<h5 id="注意事項">注意事項</h5>
+<ul>
+<li>15秒間Telloになにも命令が送られないと、自動で着陸する。</li>
+<li>途中で命令が聞かなくなった場合はバッテリー切れを待つか、他のPCからWi-fiをつなぎ直して命令を送ることで命令が送れる時がある。</li>
+</ul>
+</div>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Updated on 2022 Feb 18</p>
+          
+          <p class="post-meta border-bottom pb-3 mb-0 mt-3">Written by ban</p>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /details page -->
+
+
+
+
+
+    <!-- footer -->
+<footer class="section pb-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 text-md-left text-center">
+       <p class="mb-md-0 mb-4">Copyright © 2021 a Hugo theme by <a href="https://gethugothemes.com/">Gethugothemes</a></p>
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://github.com/SysDP2021-t03CIC/SysDP2021-t03CIC.github.io" aria-label="Github"><i class="ti-github"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Main Script -->
+
+<script src="https://sysdp2021-t03cic.github.io/js/script.min.js"></script>
+  </body>
+
+</html>
