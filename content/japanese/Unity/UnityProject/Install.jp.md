@@ -12,7 +12,6 @@ Author: "Tsuchiya Koken"
 # 以下は目次において何番目に表示するか決めるタグです。
 weight: 1
 ---
-
 <span style="font-size: 150%; color: red;">1. UnityHubのインストール</span><br>
 1. [Unityのダウンロード](https://unity3d.com/jp/get-unity/download)に移動し、「UnityHubをダウンロード」をクリック
 ![Hubのダウンロード](/images/Unity/UnityProject/Install/UnityHubのインストール方法1.png "Hubのダウンロード")
@@ -26,6 +25,7 @@ weight: 1
 ![Hubのインストール完了](/images/Unity/UnityProject/Install/UnityHubのインストール方法4.png "Hubのインストール完了")
 
 <span style="font-size: 150%; color: red;">2. Unityのインストール</span><br>
+
 1. Unity Hubを起動する。<br>
     Windowsの場合アクセスの許可を求められる。各々チェックを付けて「アクセスを許可する(A)」を選択。
 ![アクセス許可](/images/Unity/UnityProject/Install/Unityのインストール方法1.png "アクセス許可")
@@ -44,5 +44,6 @@ weight: 1
 7. 「インストール」を選び,Unityのバージョンを選ぶ。
     過去のUnityのバージョンを選ぶ際は「ダウンロードアーカイブ」を選択し,ダウンロードアーカイブを開く。インストールするUnityのバージョンの「Unity Hub」を選択する。
 ![バージョンを選ぶ](/images/Unity/UnityProject/Install/Unityのインストール方法9.png "Unityのバージョンを選ぶ")
-9. 必要なモジュールにチェックを入れ「INSTALL」を選択する。
-![モジュールチェック](/images/Unity/UnityProject/Install/Unityのインストール方法10.png "モジュールチェック")
+9. 必要なモジュールがあればチェックを入れ「INSTALL」を選択する。<br>
+(※画像だとAndroid用のモジュールをチェックしているが、Bunshin Drone3を実行する場合は必要無い)
+![インストール](/images/Unity/UnityProject/Install/Unityのインストール方法10.png "インストール")
